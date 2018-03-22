@@ -32,7 +32,7 @@ class Address extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['driver_id', 'street', 'state', 'zip', 'time'], 'required'],
+            [['street', 'state', 'zip', 'time'], 'required'],
             [['driver_id'], 'integer'],
             [['street', 'state', 'zip', 'time'], 'string', 'max' => 255],
             [['driver_id'], 'exist', 'skipOnError' => true, 'targetClass' => Driver::className(), 'targetAttribute' => ['driver_id' => 'id']],

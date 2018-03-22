@@ -45,6 +45,11 @@ return [
         ],
         */
     ],
+    'modules' => [
+        'datecontrol' =>  [
+            'class' => '\kartik\datecontrol\Module'
+        ]
+    ],
 
     'params' => $params,
 ];
