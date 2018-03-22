@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use app\models\EmploymentHistory;
 use Yii;
 use app\models\Address;
 use app\models\Driver;
@@ -75,6 +76,7 @@ class DriverController extends Controller
     {
         $model = new Driver;
         $address = [new Address];
+        $employment_history = [new EmploymentHistory];
 
         if ($model->load(Yii::$app->request->post())) {
             $address = Model::createMultiple(Address::classname());
@@ -102,16 +104,75 @@ class DriverController extends Controller
                             }
                         }
                     }
+                    if ($flag) {
+
+                        $transaction->commit();
+
+                        return $this->redirect(['history', 'id' => $model->id]);
+
+                    }
 
                 } catch (Exception $e) {
                     $transaction->rollBack();
                 }
             }
-            //return $this->redirect(['view', 'id' => $model->id]);
         }else{
             return $this->render('create', [
                 'model' => $model,
-                'address' => (empty($address)) ? [new Address] : $address
+                'address' => (empty($address)) ? [new Address] : $address,
+                'employment_history' => (empty($employment_history)) ? [new EmploymentHistory] : $employment_history
+            ]);
+        }
+
+    }
+
+    public function actionHistory($id)
+    {
+        $model = $this->findModel($id);
+        $history = [new EmploymentHistory];
+
+        if ($model->load(Yii::$app->request->post())) {
+            $address = Model::createMultiple(Address::classname());
+            Model::loadMultiple($address, Yii::$app->request->post());
+            // ajax validation
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ArrayHelper::merge(
+                    ActiveForm::validateMultiple($address),
+                    ActiveForm::validate($model)
+                );
+            }
+            // validate all models
+            $valid = $model->validate();
+            $valid = Model::validateMultiple($address) && $valid;
+            if ($valid) {
+                $transaction = \Yii::$app->db->beginTransaction();
+                try {
+                    if ($flag = $model->save(false)) {
+                        foreach ($address as $single_address) {
+                            $single_address->driver_id = $model->id;
+                            if (!($flag = $single_address->save(false))) {
+                                $transaction->rollBack();
+                                break;
+                            }
+                        }
+                    }
+                    if ($flag) {
+
+                        $transaction->commit();
+
+                        return $this->redirect(['history', 'id' => $model->id]);
+
+                    }
+
+                } catch (Exception $e) {
+                    $transaction->rollBack();
+                }
+            }
+        }else{
+            return $this->render('history', [
+                'model' => $model,
+                //'address' => (empty($address)) ? [new Address] : $address
             ]);
         }
 

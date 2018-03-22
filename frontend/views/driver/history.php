@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Driver */
 
-$this->title = 'Create Driver';
+$this->title = 'Driver History';
 $this->params['breadcrumbs'][] = ['label' => 'Drivers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -14,10 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
+    <?= $this->render('_formHistory', [
         'model' => $model,
-        'address' => (empty($address)) ? [new Address] : $address,
-        'employment_history' => (empty($employment_history)) ? [new EmploymentHistory] : $employment_history
+        //'address' => (empty($address)) ? [new Address] : $address
     ]) ?>
 
 </div>

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use wbraganca\dynamicform\DynamicFormWidget;
+use kartik\datecontrol\DateControl;
 
 $js = '
 
@@ -55,8 +56,12 @@ $this->registerJs($js);
     ?>
     <div class="row">
         <div class="col-md-6">
-            <?= $form->field($model, 'position_id')->textInput() ?>
-
+            <?php
+            echo $form->field($model, 'position_id')
+                ->dropDownList(
+                    ArrayHelper::map(\app\models\Position::find()->asArray()->all(), 'id', 'name')
+                )
+            ?>
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
             <?= $form->field($model, 'mi_name')->textInput(['maxlength' => true]) ?>
@@ -72,7 +77,15 @@ $this->registerJs($js);
 
     <?= $form->field($model, 'legal_right')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'birth_date')->textInput() ?>
+    <?php echo $form->field($model, 'birth_date')->widget(DateControl::classname(), [
+            'displayFormat' => 'dd/MM/yyyy',
+            'autoWidget' => false,
+            'widgetClass' => 'yii\widgets\MaskedInput',
+            'widgetOptions' => [
+            'mask' => '99/99/9999'
+            ],
+            ]);
+    ?>
         </div>
         <div class ="col-md-12">
             <div id="panel-option-values" class="panel panel-default">
@@ -89,6 +102,8 @@ $this->registerJs($js);
                     'formFields' => [
                         'street',
                         'state',
+                        'zip',
+                        'time',
                     ],
 
                 ]); ?>
@@ -145,10 +160,109 @@ $this->registerJs($js);
             <?php DynamicFormWidget::end();
             ?>
         </div>
-    </div>
+        <div class ="col-md-12">
+            <div id="panel-option-values" class="panel panel-default">
 
+                <?php DynamicFormWidget::begin([
+                    'widgetContainer' => 'dynamicform_wrapper',
+                    'widgetBody' => '.container-users',
+                    'widgetItem' => '.user-item',
+                    'min' => 1,
+                    'insertButton' => '.add-item',
+                    'deleteButton' => '.remove-item',
+                    'model' => $employment_history[0],
+                    'formId' => 'dynamic-form',
+                    'formFields' => [
+                        'street',
+                        'state',
+                        'zip',
+                        'time',
+                    ],
+
+                ]); ?>
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+
+                        <i class="fa fa-user"></i> EMPLOYMENT HISTORY
+
+                        <button type="button" class="pull-right add-item btn btn-success btn-xs"><i class="fa fa-plus"></i> Add employer</button>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <table class="table table-bordered table-striped margin-b-none">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                            <th>Contact person</th>
+                            <th>Phone</th>
+                            <th>Date</th>
+                            <th>Position Held</th>
+                            <th>Salary</th>
+                            <th>Reason for leaving</th>
+                            <th style="width: 90px; text-align: center">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody class="container-users">
+                        <?php foreach ($employment_history as $index => $employment): ?>
+                            <tr class="user-item">
+                                <td class="vcenter">
+                                    <?= $form->field($employment, "[{$index}]name")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]address")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]city")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]state")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]zip")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]contact_person")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]phone")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]date")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]position_held")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($employment, "[{$index}]reason_for_leaving")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+
+                                <td class="text-center vcenter">
+                                    <button type="button" class="remove-item btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+            <?php DynamicFormWidget::end();
+            ?>
+        </div>
+    </div>
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+
+        <?= Html::submitButton($model->isNewRecord ? 'Save and continue' : 'Update', ['class' => 'btn btn-primary']) ?>
+
     </div>
 
     <?php ActiveForm::end(); ?>

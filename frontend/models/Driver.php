@@ -53,14 +53,14 @@ class Driver extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'position_id' => 'Position ID',
+            'position_id' => 'Position(s) Applied for',
             'name' => 'Name',
-            'mi_name' => 'Mi Name',
-            'lname' => 'Lname',
-            'ssn' => 'Ssn',
+            'mi_name' => 'Middle Name',
+            'lname' => 'Last Name',
+            'ssn' => 'Social Security Number',
             'phone' => 'Phone',
             'email' => 'Email',
-            'legal_right' => 'Legal Right',
+            'legal_right' => 'Do you have the legal right to work in the United States?',
             'birth_date' => 'Birth Date',
         ];
     }
