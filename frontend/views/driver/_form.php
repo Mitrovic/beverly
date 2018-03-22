@@ -96,9 +96,9 @@ $this->registerJs($js);
 
                     <div class="panel-heading">
 
-                        <i class="fa fa-user"></i> Users
+                        <i class="fa fa-user"></i> Address
 
-                        <button type="button" class="pull-right add-item btn btn-success btn-xs"><i class="fa fa-plus"></i> Add user</button>
+                        <button type="button" class="pull-right add-item btn btn-success btn-xs"><i class="fa fa-plus"></i> Add address</button>
 
                         <div class="clearfix"></div>
                     </div>
@@ -107,6 +107,8 @@ $this->registerJs($js);
                         <tr>
                             <th >street</th>
                             <th >state</th>
+                            <th >zip</th>
+                            <th >time</th>
                             <th style="width: 90px; text-align: center">Delete</th>
                         </tr>
                         </thead>
@@ -118,6 +120,12 @@ $this->registerJs($js);
                                 </td>
                                 <td>
                                     <?= $form->field($single_address, "[{$index}]state")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($single_address, "[{$index}]zip")->label(false)->textInput(['maxlength' => true]) ?>
+                                </td>
+                                <td>
+                                    <?= $form->field($single_address, "[{$index}]time")->label(false)->textInput(['maxlength' => true]) ?>
                                 </td>
 
                                 <td class="text-center vcenter">

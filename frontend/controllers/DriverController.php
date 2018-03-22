@@ -2,17 +2,19 @@
 
 namespace frontend\controllers;
 
-use app\models\Address;
 use Yii;
+use app\models\Address;
 use app\models\Driver;
-use yii\base\Model;
-use yii\data\ActiveDataProvider;
+use app\models\Model;
+
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
+use yii\data\ActiveDataProvider;
 
 
 
@@ -71,7 +73,7 @@ class DriverController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Driver();
+        $model = new Driver;
         $address = [new Address];
 
         if ($model->load(Yii::$app->request->post())) {
@@ -105,14 +107,13 @@ class DriverController extends Controller
                     $transaction->rollBack();
                 }
             }
-            return $this->redirect(['view', 'id' => $model->id]);
+            //return $this->redirect(['view', 'id' => $model->id]);
         }else{
             return $this->render('create', [
                 'model' => $model,
-                'address' => $address,
+                'address' => (empty($address)) ? [new Address] : $address
             ]);
         }
-
 
     }
 
