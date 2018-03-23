@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-
+use app\models\EmploymentHistory;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Driver */
@@ -16,7 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_formHistory', [
         'model' => $model,
-        //'address' => (empty($address)) ? [new Address] : $address
+        'history' => (empty($history)) ? [new EmploymentHistory] : $history,
+        'accidents' => (empty($accidents)) ? [new AccidentRecord] : $accidents
     ]) ?>
 
 </div>

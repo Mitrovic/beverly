@@ -2,7 +2,9 @@
 
 namespace frontend\controllers;
 
+use app\models\AccidentRecord;
 use app\models\EmploymentHistory;
+use Symfony\Component\BrowserKit\History;
 use Yii;
 use app\models\Address;
 use app\models\Driver;
@@ -130,40 +132,47 @@ class DriverController extends Controller
     {
         $model = $this->findModel($id);
         $history = [new EmploymentHistory];
+        $accidents = [new AccidentRecord];
 
         if ($model->load(Yii::$app->request->post())) {
-            $address = Model::createMultiple(Address::classname());
-            Model::loadMultiple($address, Yii::$app->request->post());
+            $history = Model::createMultiple(EmploymentHistory::classname());
+            $accidents = Model::createMultiple(AccidentRecord::classname());
+            Model::loadMultiple($history,Yii::$app->request->post());
             // ajax validation
             if (Yii::$app->request->isAjax) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
-                return ArrayHelper::merge(
-                    ActiveForm::validateMultiple($address),
-                    ActiveForm::validate($model)
-                );
+                return ActiveForm::validateMultiple($history);
             }
             // validate all models
-            $valid = $model->validate();
-            $valid = Model::validateMultiple($address) && $valid;
+            //$valid = $model->validate();
+            $valid = Model::validateMultiple($history);
             if ($valid) {
                 $transaction = \Yii::$app->db->beginTransaction();
+
                 try {
                     if ($flag = $model->save(false)) {
-                        foreach ($address as $single_address) {
-                            $single_address->driver_id = $model->id;
-                            if (!($flag = $single_address->save(false))) {
+                        foreach ($history as $employer) {
+                            $employer->driver_id = $model->id;
+                            if (!($flag = $employer->save(false))) {
+                                $transaction->rollBack();
+                                break;
+                            }
+                        }
+                        foreach ($accidents as $accident) {
+                            $accident->driver_id = $model->id;
+                            if (!($flag = $accident->save(false))) {
                                 $transaction->rollBack();
                                 break;
                             }
                         }
                     }
-                    if ($flag) {
+                    //if ($flag) {
 
                         $transaction->commit();
 
-                        return $this->redirect(['history', 'id' => $model->id]);
+                        return $this->redirect(['history2', 'id' => $model->id]);
 
-                    }
+                    //}
 
                 } catch (Exception $e) {
                     $transaction->rollBack();
@@ -172,7 +181,8 @@ class DriverController extends Controller
         }else{
             return $this->render('history', [
                 'model' => $model,
-                //'address' => (empty($address)) ? [new Address] : $address
+                'history' => (empty($history)) ? [new EmploymentHistory] : $history,
+                'accidents' => (empty($accidents)) ? [new AccidentRecord] : $accidents
             ]);
         }
 
