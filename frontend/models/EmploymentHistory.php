@@ -40,7 +40,7 @@ class EmploymentHistory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['address', 'city', 'state', 'zip', 'contact_person', 'phone', 'date', 'position_held', 'salary', 'reason_for_leaving', 'fmcr', 'safety'], 'required'],
+            [['name','address', 'city', 'state', 'zip', 'contact_person', 'phone', 'date', 'position_held', 'salary', 'reason_for_leaving', 'fmcr', 'safety'], 'required'],
             [['driver_id', 'zip'], 'integer'],
             [['address', 'city', 'state', 'contact_person', 'phone', 'date', 'position_held', 'salary', 'reason_for_leaving', 'fmcr', 'safety'], 'string', 'max' => 255],
             [['driver_id'], 'exist', 'skipOnError' => true, 'targetClass' => Driver::className(), 'targetAttribute' => ['driver_id' => 'id']],
