@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use app\models\AccidentRecord;
+use app\models\CertificateRoadTest;
 use app\models\DrivingExperience;
 use app\models\EmploymentHistory;
 use app\models\Licenses;
@@ -205,7 +206,7 @@ class DriverController extends Controller
 
                         $transaction->commit();
 
-                        return $this->redirect(['history2', 'id' => $model->id]);
+                        return $this->redirect(['certificate', 'id' => $model->id]);
 
                     //}
 
@@ -227,6 +228,23 @@ class DriverController extends Controller
 
     }
 
+
+    public function actionCertificate($id)
+    {
+        $model = $this->findModel($id);
+
+        $certificate = new CertificateRoadTest();
+
+        if ($certificate->load(Yii::$app->request->post())) {
+            $certificate->driver_id = $model->id;
+            $certificate->save(false);
+            return $this->redirect(['road_test_examination', 'id' => $model->id]);
+        }
+
+        return $this->render('certificate', [
+            'certificate' => $certificate,
+        ]);
+    }
     /**
      * Updates an existing Driver model.
      * If update is successful, the browser will be redirected to the 'view' page.
