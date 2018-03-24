@@ -74,15 +74,16 @@ $form = ActiveForm::begin([
                             <?= $form->field($employment, "[{$index}]phone", ['addon' => ['prepend' => ['content'=>'<i class="glyphicon glyphicon-phone"></i>']]
                             ])->label(false)->textInput(['maxlength' => true]) ?>
                         <?php
+                        /*
                         echo $form->field($employment, 'date', [
                             'addon' => [
                                 'append' => ['content' => 'to'],
                                 'groupOptions' => ['class'=>'input-group-md'],
                                 'contentAfter' => '<input type="text" id="date-to" class="form-control" placeholder="End Date">'
                             ]
-                        ]);
+                        ]);*/
                         ?>
-                            <?php // $form->field($employment, "[{$index}]date")->label(false)->textInput(['maxlength' => true]) ?>
+                            <?php echo $form->field($employment, "[{$index}]date")->label(false)->textInput(['maxlength' => true]) ?>
 
                             <?= $form->field($employment, "[{$index}]position_held")->label(false)->textInput(['maxlength' => true]) ?>
 
