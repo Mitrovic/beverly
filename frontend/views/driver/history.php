@@ -17,7 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $this->render('_formHistory', [
         'model' => $model,
         'history' => (empty($history)) ? [new EmploymentHistory] : $history,
-        'accidents' => (empty($accidents)) ? [new AccidentRecord] : $accidents
+        'accidents' => (empty($accidents)) ? [new AccidentRecord] : $accidents,
+        'traffic_convictions' => (empty($traffic_convictions)) ? [new TrafficConvictions] : $traffic_convictions,
+        'licenses' => (empty($licenses)) ? [new Licenses] : $licenses,
+        'licenses_custom' => $licenses_custom,
+        'driving_experience' => $driving_experience,
     ]) ?>
 
 </div>
