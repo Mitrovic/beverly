@@ -3,12 +3,17 @@
 namespace frontend\controllers;
 
 use app\models\AccidentRecord;
+use app\models\AlcoholDrugs;
 use app\models\CertificateRoadTest;
 use app\models\DrivingExperience;
 use app\models\EmploymentHistory;
 use app\models\Licenses;
 use app\models\LicensesCustom;
+use app\models\NonViolationCertification;
+use app\models\OtherCompensatedWork;
+use app\models\RoadTestExamination;
 use app\models\TrafficConvictions;
+use app\models\ViolationCertification;
 use Symfony\Component\BrowserKit\History;
 use Yii;
 use app\models\Address;
@@ -238,13 +243,134 @@ class DriverController extends Controller
         if ($certificate->load(Yii::$app->request->post())) {
             $certificate->driver_id = $model->id;
             $certificate->save(false);
-            return $this->redirect(['road_test_examination', 'id' => $model->id]);
+            return $this->redirect(['examination', 'id' => $model->id]);
         }
 
         return $this->render('certificate', [
             'certificate' => $certificate,
         ]);
     }
+
+    public function actionExamination($id)
+    {
+        //die('ssss');
+        $model = $this->findModel($id);
+
+        $examination = new RoadTestExamination();
+
+        if ($examination->load(Yii::$app->request->post())) {
+            $examination->driver_id = $model->id;
+            $examination->save(false);
+            return $this->redirect(['duty', 'id' => $model->id]);
+        }
+
+        return $this->render('road_test_examination', [
+            'examination' => $examination,
+        ]);
+    }
+
+    public function actionDuty($id)
+    {
+        $model = $this->findModel($id);
+
+        $other_works = new OtherCompensatedWork();
+
+        if ($other_works->load(Yii::$app->request->post())) {
+            $other_works->driver_id = $model->id;
+            $other_works->save(false);
+            return $this->redirect(['violation', 'id' => $model->id]);
+        }
+
+        return $this->render('other_works', [
+            'other_works' => $other_works,
+        ]);
+    }
+
+    public function actionViolation($id)
+    {
+        $model = $this->findModel($id);
+
+        $violations = [new ViolationCertification()];
+
+        if($model->load(Yii::$app->request->post())){
+            $violations = Model::createMultiple(ViolationCertification::classname());
+            Model::loadMultiple($violations, Yii::$app->request->post());
+
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ArrayHelper::merge(
+                    ActiveForm::validateMultiple($violations),
+                    ActiveForm::validate($model)
+                );
+            }
+
+            $valid = $model->validate();
+            $valid = Model::validateMultiple($violations) && $valid;
+
+            if ($valid) {
+                $transaction = \Yii::$app->db->beginTransaction();
+                try {
+                    if ($flag = $model->save(false)) {
+                        foreach ($violations as $violation) {
+                            $violation->driver_id = $model->id;
+                            if (! ($flag = $violation->save(false))) {
+                                $transaction->rollBack();
+                                break;
+                            }
+                        }
+                    }
+                    if ($flag) {
+                        $transaction->commit();
+                        return $this->redirect(['alchoholdrugs', 'id' => $model->id]);
+                    }
+                } catch (Exception $e) {
+                    $transaction->rollBack();
+                }
+            }
+
+        }
+        //die(var_dump($model));
+        return $this->render('violation', [
+            'model'     => $model,
+            'violations' => (empty($violations)) ? [new ViolationCertification] : $violations
+        ]);
+    }
+
+    public function actionNonviolation($id)
+    {
+        $model = $this->findModel($id);
+
+        $non_violation = new NonViolationCertification();
+
+        if ($non_violation->load(Yii::$app->request->post())) {
+            $non_violation->driver_id = $model->id;
+            $non_violation->save(false);
+            return $this->redirect(['alchoholdrugs', 'id' => $model->id]);
+        }
+
+        return $this->render('non_violation', [
+            'non_violation' => $non_violation,
+        ]);
+    }
+
+
+    public function actionAlchoholdrugs($id)
+    {
+        $model = $this->findModel($id);
+
+        $alcohol_drugs = new AlcoholDrugs();
+
+        if ($alcohol_drugs->load(Yii::$app->request->post())) {
+            $alcohol_drugs->driver_id = $model->id;
+            $alcohol_drugs->save(false);
+            return $this->redirect(['', 'id' => $model->id]);
+        }
+
+        return $this->render('alcohol_drugs', [
+            'alcohol_drugs' => $alcohol_drugs,
+        ]);
+    }
+
     /**
      * Updates an existing Driver model.
      * If update is successful, the browser will be redirected to the 'view' page.
