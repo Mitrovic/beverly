@@ -2,7 +2,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-use yii\widgets\ActiveForm;
+use kartik\form\ActiveForm;
+use kartik\builder\Form;
 use wbraganca\dynamicform\DynamicFormWidget;
 use kartik\datecontrol\DateControl;
 
@@ -47,6 +48,9 @@ $this->registerJs($js);
         'enableAjaxValidation' => true,
         'validateOnChange' => true,
         'validateOnBlur' => false,
+        'id' => 'login-form-vertical',
+        'type' => ActiveForm::TYPE_VERTICAL,
+         'formConfig' => ['labelSpan' => 3, 'deviceSize' => ActiveForm::SIZE_SMALL],
         'options' => [
             'enctype' => 'multipart/form-data',
             'id' => 'dynamic-form',
@@ -55,37 +59,50 @@ $this->registerJs($js);
     ]);
     ?>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
+            <div class="col-md-3">
             <?php
             echo $form->field($model, 'position_id')
                 ->dropDownList(
                     ArrayHelper::map(\app\models\Position::find()->asArray()->all(), 'id', 'name')
                 )
             ?>
+            </div>
+            <div class="col-md-2">
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
+            </div>
+            <div class="col-md-2">
             <?= $form->field($model, 'mi_name')->textInput(['maxlength' => true]) ?>
-
+            </div>
+            <div class="col-md-3">
             <?= $form->field($model, 'lname')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-md-6">
-    <?= $form->field($model, 'ssn')->textInput() ?>
-
-    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'legal_right')->textInput(['maxlength' => true]) ?>
-
-    <?php echo $form->field($model, 'birth_date')->widget(DateControl::classname(), [
-            'displayFormat' => 'dd/MM/yyyy',
-            'autoWidget' => false,
-            'widgetClass' => 'yii\widgets\MaskedInput',
-            'widgetOptions' => [
-            'mask' => '99/99/9999'
-            ],
+            </div>
+            <div class="col-md-1">
+            <?php echo $form->field($model, 'birth_date')->widget(DateControl::classname(), [
+                'displayFormat' => 'dd/MM/yyyy',
+                'autoWidget' => false,
+                'widgetClass' => 'yii\widgets\MaskedInput',
+                'widgetOptions' => [
+                    'mask' => '99/99/9999'
+                ],
             ]);
-    ?>
+            ?>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-3">
+            <?= $form->field($model, 'ssn')->textInput() ?>
+            </div>
+            <div class="col-md-2">
+            <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-md-2">
+            <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-md-5">
+            <?= $form->field($model, 'legal_right')->textInput(['maxlength' => true]) ?>
+            </div>
+
         </div>
         <div class ="col-md-12">
             <div id="panel-option-values" class="panel panel-default">

@@ -1,0 +1,102 @@
+#style-switcher h2 a { background: #dacb66 none repeat scroll 0 0 }
+
+/*START SCROLL TO TOP*/
+.topcontrol {background: #dacb66 none repeat scroll 0 0;}
+/*END SCROLL TO TOP*/
+
+a, a:hover {
+    color: #dacb66;
+    text-decoration: none;
+}
+
+
+/*START MENU*/
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #dacb66 !important;
+    background-color: transparent;
+}
+.menu-top li a:hover { color: #dacb66!important }
+.navbar-default.menu-shrink li a:hover { color: #dacb66 !important }
+.navbar-default .navbar-toggle .icon-bar { background-color: #dacb66 }
+/*END MENU*/
+
+
+
+.btn-light-bg {background: #dacb66 none repeat scroll 0 0;border: 2px solid #dacb66;}
+	
+.section-title h2 span { color: #dacb66 }
+
+.section-title div {background: #dacb66  none repeat scroll 0 0;}
+
+.btn-home-bg {background: #dacb66 none repeat scroll 0 0;border: 1px solid #dacb66;}
+
+.single_about:hover i {
+    background: #dacb66;
+    border: 1px solid #dacb66;
+}
+.single_about:hover h4 { color: #dacb66; }
+
+
+.progress-bar > span {background: #dacb66 none repeat scroll 0 0;}
+
+
+.single_feature i {background:#dacb66;}
+
+.carousel-indicators .active {
+    border: 1px solid #dacb66;
+    background: #dacb66 none repeat scroll 0 0;
+}
+.single_service i {color: #dacb66;}
+
+.our_work_menu ul li:hover, .our_work_menu ul li.active{
+	border-color: #dacb66 ;
+	color:#dacb66;
+}
+
+
+.counter i {color: #dacb66;}
+
+.counter:hover i {background: #dacb66 none repeat scroll 0 0;border: 1px solid #dacb66;}
+
+.single_team .social_link a:hover{
+	background: #dacb66;
+	border-color: #dacb66;
+}
+
+
+.signup_form input:focus {
+    border-color:#dacb66;
+}
+.color-two {
+    background: #dacb66;
+    color: #fff;
+}
+.color-three {
+    background: #dacb66;
+    color: #fff;
+}
+.pricing-btn  button {
+    background: #dacb66;
+    border: 1px solid #dacb66;}
+	
+.home_blog_text span {color: #dacb66;}	
+
+.buy_now {
+    background: #dacb66 none repeat scroll 0 0;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color:  #dacb66;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.btn-contact-bg {
+	background: #dacb66 none repeat scroll 0 0 !important;
+	border: 1px solid #dacb66 !important;}
+
+
+

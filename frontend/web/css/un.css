@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Chrome Autofill yellow override */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* Top of nav */
+.cd-slider-nav {
+	border-top: 1px solid #555;
+}
+
+/* Opener on first slider */
+.opener {
+	padding-bottom: 20px;
+	font-size:20px;
+	color:rgba(255,255,255,1.00);
+}
+
+.about_us.section-padding {
+	border-bottom: 1px solid rgba(192,192,192,1.00);
+}
+
+/* Fix short features */
+.single_feature p {
+    min-height: 100px;
+}
+
+/* Login form validation styles */
+#login_form label.error {
+	color:#FFF;
+	font-weight:normal;
+}
+
+#login_form input.error {
+	border:1px solid #F00;
+}
+
+/* Login response styles */
+#row_opener .alert p {
+	margin-bottom:0;
+}
+
+#row_opener .alert-danger p {
+	color:#C00;
+}
+
+.btn_to_link {
+	background:none;
+	border:none;
+	margin:0;
+	padding:0;
+	color:#03a9f4;
+}
+
+.btn_to_link:hover{
+	color:#2f7bbf;
+	transition: color 400ms ease 0s, background-color 400ms ease 0s;
+}
