@@ -18,9 +18,21 @@ use Yii;
  * @property string $legal_right
  * @property string $birth_date
  *
+ * @property AccidentRecord[] $accidentRecords
  * @property Address[] $addresses
+ * @property AlcoholDrugs[] $alcoholDrugs
+ * @property CertificateRoadTest[] $certificateRoadTests
  * @property Position $position
  * @property DriverCustomQuestion[] $driverCustomQuestions
+ * @property DrivingExperience[] $drivingExperiences
+ * @property EmploymentHistory[] $employmentHistories
+ * @property Licenses[] $licenses
+ * @property LicensesCustom[] $licensesCustoms
+ * @property NonViolationCertification[] $nonViolationCertifications
+ * @property OtherCompensatedWork[] $otherCompensatedWorks
+ * @property RoadTestExamination[] $roadTestExaminations
+ * @property TrafficConvictions[] $trafficConvictions
+ * @property ViolationCertification[] $violationCertifications
  */
 class Driver extends \yii\db\ActiveRecord
 {
@@ -53,16 +65,24 @@ class Driver extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'position_id' => 'Position(s) Applied for',
+            'position_id' => 'Position ID',
             'name' => 'Name',
-            'mi_name' => 'Middle Name',
-            'lname' => 'Last Name',
-            'ssn' => 'Social Security Number',
+            'mi_name' => 'Mi Name',
+            'lname' => 'Lname',
+            'ssn' => 'Ssn',
             'phone' => 'Phone',
             'email' => 'Email',
-            'legal_right' => 'Do you have the legal right to work in the United States?',
+            'legal_right' => 'Legal Right',
             'birth_date' => 'Birth Date',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAccidentRecords()
+    {
+        return $this->hasMany(AccidentRecord::className(), ['driver_id' => 'id']);
     }
 
     /**
@@ -71,6 +91,22 @@ class Driver extends \yii\db\ActiveRecord
     public function getAddresses()
     {
         return $this->hasMany(Address::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAlcoholDrugs()
+    {
+        return $this->hasMany(AlcoholDrugs::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCertificateRoadTests()
+    {
+        return $this->hasMany(CertificateRoadTest::className(), ['driver_id' => 'id']);
     }
 
     /**
@@ -87,5 +123,77 @@ class Driver extends \yii\db\ActiveRecord
     public function getDriverCustomQuestions()
     {
         return $this->hasMany(DriverCustomQuestion::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDrivingExperiences()
+    {
+        return $this->hasMany(DrivingExperience::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEmploymentHistories()
+    {
+        return $this->hasMany(EmploymentHistory::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLicenses()
+    {
+        return $this->hasMany(Licenses::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getLicensesCustoms()
+    {
+        return $this->hasMany(LicensesCustom::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getNonViolationCertifications()
+    {
+        return $this->hasMany(NonViolationCertification::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOtherCompensatedWorks()
+    {
+        return $this->hasMany(OtherCompensatedWork::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRoadTestExaminations()
+    {
+        return $this->hasMany(RoadTestExamination::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTrafficConvictions()
+    {
+        return $this->hasMany(TrafficConvictions::className(), ['driver_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getViolationCertifications()
+    {
+        return $this->hasMany(ViolationCertification::className(), ['driver_id' => 'id']);
     }
 }

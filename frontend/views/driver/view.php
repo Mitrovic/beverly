@@ -10,6 +10,7 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Drivers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class = "container">
 <div class="driver-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -40,5 +41,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'birth_date',
         ],
     ]) ?>
-
+    <h2>Adrese</h2>
+    <?php
+    $adrese = $model->addresses;
+    foreach ($adrese as $adresa){
+        echo 'Street'.$adresa->street;
+        echo 'State'.$adresa->state;
+        echo 'Zip'.$adresa->zip;
+        echo 'Time'.$adresa->time;
+    }
+    ?>
+    <h2>AccidentRecord</h2>
+    <?php
+    $accident_records = $model->getAccidentRecords();
+    //var_dump($accident_records);
+    foreach ($accident_records as $record) {
+        var_dump($record);
+    }
+    ?>
+</div>
 </div>
