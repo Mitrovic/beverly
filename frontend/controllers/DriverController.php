@@ -307,9 +307,9 @@ class DriverController extends Controller
             $valid = $model->validate();
             $valid = Model::validateMultiple($violations) && $valid;
 
-            if ($valid) {
                 $transaction = \Yii::$app->db->beginTransaction();
                 try {
+
                     if ($flag = $model->save(false)) {
                         foreach ($violations as $violation) {
                             $violation->driver_id = $model->id;
@@ -326,7 +326,6 @@ class DriverController extends Controller
                 } catch (Exception $e) {
                     $transaction->rollBack();
                 }
-            }
 
         }
         //die(var_dump($model));
