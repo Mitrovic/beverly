@@ -10,10 +10,6 @@ $this->title = 'Job application';
 $this->params['breadcrumbs'][] = ['label' => 'Drivers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
-<div class="container">
-
-</div>
 <section>
     <div class = "container">
         <div class="driver-create">
