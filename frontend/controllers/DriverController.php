@@ -78,6 +78,12 @@ class DriverController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+    public function actionPdfpreview($id)
+    {
+        return $this->render('pdfpreview', [
+            'model' => $this->findModel($id),
+        ]);
+    }
 
     /**
      * Creates a new Driver model.
