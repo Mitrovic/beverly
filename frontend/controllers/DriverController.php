@@ -362,7 +362,7 @@ class DriverController extends Controller
         if ($alcohol_drugs->load(Yii::$app->request->post())) {
             $alcohol_drugs->driver_id = $model->id;
             $alcohol_drugs->save(false);
-            return $this->redirect(['', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('alcohol_drugs', [

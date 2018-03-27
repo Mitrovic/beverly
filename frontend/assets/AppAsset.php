@@ -12,6 +12,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/material-dashboard.css',
         'fonts/font-awesome.min.css',
         'owlcarousel/css/owl.carousel.css',
         'owlcarousel/css/owl.theme.css',
@@ -40,8 +41,8 @@ class AppAsset extends AssetBundle
         'js/wow.min.js',
         'js/jquery.validate.min.js',
         'js/hero-slider.js',
-        'js/scripts.js',
-        'js/un.js'
+        //'js/scripts.js',
+        //'js/un.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

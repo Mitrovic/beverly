@@ -47,9 +47,9 @@ class LicensesCustom extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'driver_id' => 'Driver ID',
-            'denied_license' => 'Denied License',
-            'suspended_license' => 'Suspended License',
-            'answer' => 'Answer',
+            'denied_license' => 'A)Have you ever been denied a license, permit or privilege to operate a motor vehicle?',
+            'suspended_license' => 'B) Has any license, permit or privilege ever been suspended or revoked?',
+            'answer' => 'IF THE ANSWER TO EITHER A OR B IS YES, GIVE DETAILS',
         ];
     }
 

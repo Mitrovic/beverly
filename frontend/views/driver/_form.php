@@ -13,7 +13,7 @@ jQuery(".dynamicform_wrapper").on("afterInsert", function(e, item) {
 
     jQuery(".dynamicform_wrapper .panel-title-address").each(function(index) {
 
-        jQuery(this).html("User: " + (index + 1))
+        jQuery(this).html("Address: " + (index + 1))
 
     });
 
@@ -24,7 +24,7 @@ jQuery(".dynamicform_wrapper").on("afterDelete", function(e) {
 
     jQuery(".dynamicform_wrapper .panel-title-address").each(function(index) {
 
-        jQuery(this).html("User: " + (index + 1))
+        jQuery(this).html("Address: " + (index + 1))
 
     });
 
@@ -60,36 +60,40 @@ $this->registerJs($js);
     ?>
     <div class="row">
         <div class="col-md-12">
-            <div class="col-md-3">
             <?php
             echo $form->field($model, 'position_id')
                 ->dropDownList(
                     ArrayHelper::map(\app\models\Position::find()->asArray()->all(), 'id', 'name')
                 )
             ?>
-            </div>
-            <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row">
+
+            <div class="col-md-3">
             <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
             <?= $form->field($model, 'mi_name')->textInput(['maxlength' => true]) ?>
             </div>
             <div class="col-md-3">
             <?= $form->field($model, 'lname')->textInput(['maxlength' => true]) ?>
             </div>
-            <div class="col-md-1">
+            <div class="col-md-3">
             <?php echo $form->field($model, 'birth_date')->widget(DateControl::classname(), [
-                'displayFormat' => 'dd/MM/yyyy',
-                'autoWidget' => false,
-                'widgetClass' => 'yii\widgets\MaskedInput',
+                'type'=>DateControl::FORMAT_DATE,
+                'ajaxConversion'=>false,
                 'widgetOptions' => [
-                    'mask' => '99/99/9999'
-                ],
+                    'pluginOptions' => [
+                        'autoclose' => true
+                    ]
+                ]
             ]);
             ?>
             </div>
-        </div>
-        <div class="col-md-12">
+    </div>
+    <div class="row">
+
             <div class="col-md-3">
             <?= $form->field($model, 'ssn')->textInput() ?>
             </div>
@@ -103,9 +107,8 @@ $this->registerJs($js);
             <?= $form->field($model, 'legal_right')->textInput(['maxlength' => true]) ?>
             </div>
 
-        </div>
         <div class ="col-md-12">
-            <div id="panel-option-values" class="panel panel-default">
+
 
                 <?php DynamicFormWidget::begin([
                     'widgetContainer' => 'dynamicform_wrapper',
@@ -134,49 +137,65 @@ $this->registerJs($js);
 
                         <div class="clearfix"></div>
                     </div>
-                    <table class="table table-bordered table-striped margin-b-none">
-                        <thead>
-                        <tr>
-                            <th >street</th>
-                            <th >state</th>
-                            <th >zip</th>
-                            <th >time</th>
-                            <th style="width: 90px; text-align: center">Delete</th>
-                        </tr>
-                        </thead>
-                        <tbody class="container-users">
-                        <?php foreach ($address as $index => $single_address): ?>
-                            <tr class="user-item">
-                                <td class="vcenter">
-                                    <?= $form->field($single_address, "[{$index}]street")->label(false)->textInput(['maxlength' => true]) ?>
-                                </td>
-                                <td>
-                                    <?= $form->field($single_address, "[{$index}]state")->label(false)->textInput(['maxlength' => true]) ?>
-                                </td>
-                                <td>
-                                    <?= $form->field($single_address, "[{$index}]zip")->label(false)->textInput(['maxlength' => true]) ?>
-                                </td>
-                                <td>
-                                    <?= $form->field($single_address, "[{$index}]time")->label(false)->textInput(['maxlength' => true]) ?>
-                                </td>
+                    <div class="panel-body container-users"><!-- widgetContainer -->
 
-                                <td class="text-center vcenter">
-                                    <button type="button" class="remove-item btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
-                                </td>
-                            </tr>
+                        <?php foreach ($address as $index => $single_address): ?>
+
+                            <div class="user-item panel panel-default"><!-- widgetBody -->
+
+                                <div class="panel-heading">
+
+                                    <span class="panel-title-address">Address: <?= ($index + 1) ?></span>
+
+                                    <button type="button" class="pull-right remove-item btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
+
+                                    <div class="clearfix"></div>
+
+                                </div>
+
+                                <div class="panel-body">
+
+                                    <?php
+
+                                    // necessary for update action.
+
+                                    if (!$single_address->isNewRecord) {
+
+                                        echo Html::activeHiddenInput($single_address, "[{$index}]id");
+
+                                    }
+
+                                    ?>
+
+                                    <div class="row">
+                                        <div class ="col-sm-3">
+                                            <?= $form->field($single_address, "[{$index}]street")->textInput(['maxlength' => true]) ?>
+                                        </div>
+                                        <div class ="col-sm-3">
+                                            <?= $form->field($single_address, "[{$index}]state")->textInput(['maxlength' => true]) ?>
+                                        </div>
+                                            <div class ="col-sm-3">
+                                            <?= $form->field($single_address, "[{$index}]zip")->textInput(['maxlength' => true]) ?>
+                                            </div>
+                                        <div class ="col-sm-3">
+                                            <?= $form->field($single_address, "[{$index}]time")->textInput(['maxlength' => true]) ?>
+                                        </div>
+
+                                    </div><!-- end:row -->
+
+                                </div>
+
+                            </div>
+
                         <?php endforeach; ?>
-                        </tbody>
-                        <tfoot>
-                        <tr>
-                        </tr>
-                        </tfoot>
-                    </table>
+
+                    </div>
+
                 </div>
 
             </div>
             <?php DynamicFormWidget::end();
             ?>
-        </div>
 
     </div>
     <div class="form-group">
