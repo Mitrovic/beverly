@@ -473,5 +473,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
         }
     ?>
+    <?= Html::a('Preview pdf', ['pdfpreview', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 </div>
 </div>
