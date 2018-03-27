@@ -232,7 +232,7 @@
         <TABLE cellpadding=0 cellspacing=0 class="t3">
             <TR>
                 <TD colspan=2 class="tr0 td66"><P class="p3 ft1">Position(s) Applied for</P></TD>
-                <TD class="tr1 td67"><P class="p3 ft2">&nbsp;</P></TD>
+                <TD class="tr1 td67"><P class="p3 ft1"><?=$model->position->name?></P></TD>
                 <TD class="tr1 td68"><P class="p3 ft2">&nbsp;</P></TD>
             </TR>
             <TR>
