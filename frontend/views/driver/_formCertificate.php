@@ -12,19 +12,20 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <div class="row">
+    <div class="col-md-6">
+        <?= $form->field($certificate, 'license_number')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($certificate, 'state')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($certificate, 'power_unit')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($certificate, 'trailer_type')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($certificate, 'bus')->textInput(['maxlength' => true]) ?>
+    </div>
 
-    <?= $form->field($certificate, 'license_number')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($certificate, 'state')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($certificate, 'power_unit')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($certificate, 'trailer_type')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($certificate, 'bus')->textInput(['maxlength' => true]) ?>
-
+    </div>
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save and continue', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

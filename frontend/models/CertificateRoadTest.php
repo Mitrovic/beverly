@@ -48,11 +48,11 @@ class CertificateRoadTest extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'driver_id' => 'Driver ID',
-            'license_number' => 'License Number',
+            'license_number' => 'Driver’s License Number',
             'state' => 'State',
-            'power_unit' => 'Power Unit',
-            'trailer_type' => 'Trailer Type',
-            'bus' => 'Bus',
+            'power_unit' => 'Type of Power Unit',
+            'trailer_type' => 'Type of Trailer(s)',
+            'bus' => 'If passenger carrier, type of bus',
         ];
     }
 

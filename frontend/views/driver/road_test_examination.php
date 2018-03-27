@@ -11,11 +11,16 @@ $this->params['breadcrumbs'][] = ['label' => 'DRIVER’S ROAD TEST EXAMINATION',
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="driver-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class = "container">
+    <h4 class="title"><?= Html::encode($this->title) ?></h4>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+            <span class="sr-only">0% Complete</span>
+        </div>
+    </div>
 
     <?= $this->render('_formRoadTestExamination', [
         'examination' => $examination,
     ]) ?>
-
+    </div>
 </div>

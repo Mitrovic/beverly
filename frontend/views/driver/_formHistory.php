@@ -12,8 +12,6 @@ $form = ActiveForm::begin([
     'enableAjaxValidation' => true,
     'validateOnChange' => true,
     'validateOnBlur' => false,
-    'id' => 'login-form-inline',
-    'type' => ActiveForm::TYPE_INLINE,
     'options' => [
         'enctype' => 'multipart/form-data',
         'id' => 'dynamic-form',
@@ -21,7 +19,7 @@ $form = ActiveForm::begin([
     ],
 ]);
 ?>
-<div class ="col-md-12">
+
     <div id="panel-option-values" class="">
 
         <?php DynamicFormWidget::begin([
@@ -48,7 +46,7 @@ $form = ActiveForm::begin([
 
             <div class="panel-heading">
 
-                <i class="fa fa-user"></i> EMPLOYMENT HISTORY
+                <i class="fa fa-user"></i> EMPLOYMENT HISTORY (All driver applicants to drive in interstate commerce must provide the following information on all employers.)
 
                 <button type="button" class="pull-right add-item btn btn-success btn-xs"><i class="fa fa-plus"></i> Add employer</button>
 
@@ -57,49 +55,65 @@ $form = ActiveForm::begin([
 
                 <div class="container-users">
                 <?php foreach ($history as $index => $employment): ?>
-                    <div class = "user-item">
+                    <div class = "user-item panel panel-default">
+                        <div class="panel-heading">
 
-                            <?= $form->field($employment, "[{$index}]name")->label(false)->textInput(['maxlength' => true]) ?>
+                            <span class="panel-title-address">Employer: <?= ($index + 1) ?></span>
 
-                            <?= $form->field($employment, "[{$index}]address")->label(false)->textInput(['maxlength' => true]) ?>
+                            <button type="button" class="pull-right remove-item btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
 
-                            <?= $form->field($employment, "[{$index}]city")->label(false)->textInput(['maxlength' => true]) ?>
+                            <div class="clearfix"></div>
 
-                            <?= $form->field($employment, "[{$index}]state")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]zip")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]contact_person")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]phone", ['addon' => ['prepend' => ['content'=>'<i class="glyphicon glyphicon-phone"></i>']]
-                            ])->label(false)->textInput(['maxlength' => true]) ?>
-                        <?php
-                        /*
-                        echo $form->field($employment, 'date', [
-                            'addon' => [
-                                'append' => ['content' => 'to'],
-                                'groupOptions' => ['class'=>'input-group-md'],
-                                'contentAfter' => '<input type="text" id="date-to" class="form-control" placeholder="End Date">'
-                            ]
-                        ]);*/
-                        ?>
-                            <?php echo $form->field($employment, "[{$index}]date")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]position_held")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]salary")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]reason_for_leaving")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]fmcr")->label(false)->textInput(['maxlength' => true]) ?>
-
-                            <?= $form->field($employment, "[{$index}]safety")->label(false)->textInput(['maxlength' => true]) ?>
-
-
-                        <div class="text-center vcenter">
-                            <button type="button" class="remove-item btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
                         </div>
-                    </tr>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class ="col-sm-3">
+                                    <?= $form->field($employment, "[{$index}]name")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-3">
+                                    <?= $form->field($employment, "[{$index}]address")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]city")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]state")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]zip")->textInput(['maxlength' => true]) ?>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]contact_person")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]phone")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?php echo $form->field($employment, "[{$index}]date")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]position_held")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]salary")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-2">
+                                    <?= $form->field($employment, "[{$index}]reason_for_leaving")->textInput(['maxlength' => true]) ?>
+                                </div>
+                            </div>
+                            <div class="row">
+
+
+                                <div class ="col-sm-3">
+                                    <?= $form->field($employment, "[{$index}]fmcr")->textInput(['maxlength' => true]) ?>
+                                </div>
+                                <div class ="col-sm-3">
+                                    <?= $form->field($employment, "[{$index}]safety")->textInput(['maxlength' => true]) ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 <?php endforeach; ?>
                 </div>
@@ -109,8 +123,6 @@ $form = ActiveForm::begin([
 </div>
 <?php DynamicFormWidget::end();
 ?>
-</div>
-    <div class ="col-md-12">
         <div id="panel-option-values" class="panel panel-default">
 
             <?php DynamicFormWidget::begin([
@@ -134,62 +146,63 @@ $form = ActiveForm::begin([
 
                 <div class="panel-heading">
 
-                    <i class="fa fa-user"></i> ACCIDENT RECORD FOR PAST YEARS OR MORE
+                    <i class="fa fa-user"></i> ACCIDENT RECORD FOR PAST YEARS ( If you don't have accident you can skip this section)
 
                     <button type="button" class="pull-right add-accident btn btn-success btn-xs"><i class="fa fa-plus"></i> Add new row</button>
 
                     <div class="clearfix"></div>
                 </div>
-                <table class="table table-bordered table-striped margin-b-none">
-                    <tbody class="container-accidents">
+                <div class="container-accidents">
                     <?php foreach ($accidents as $index => $accident): ?>
-                        <tr class="accident-item">
-                            <td class="vcenter">
-                                <?php // $form->field($accident, "[{$index}]date")->label(false)->textInput(['maxlength' => true]) ?>
-                                <?php echo $form->field($accident, "[{$index}]date")->label(false)->widget(DateControl::classname(), [
-                                    'displayFormat' => 'dd/MM/yyyy',
-                                    'autoWidget' => false,
-                                    'widgetClass' => 'yii\widgets\MaskedInput',
-                                    'widgetOptions' => [
-                                        'mask' => '99/99/9999'
-                                    ],
-                                ]);
-                                ?>
-                            </td>
+                        <div class = "accident-item panel panel-default">
+                            <div class="panel-heading">
 
-                            <td>
-                                <?= $form->field($accident, "[{$index}]accident_nature")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
-                            <td>
-                                <?= $form->field($accident, "[{$index}]fatalities")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
-                            <td>
-                                <?= $form->field($accident, "[{$index}]injuries")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
-                            <td>
-                                <?= $form->field($accident, "[{$index}]hazardous_material")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
+                                <span class="panel-title-address">Accident: <?= ($index + 1) ?></span>
 
+                                <button type="button" class="pull-right remove-accident btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
 
-                            <td class="text-center vcenter">
-                                <button type="button" class="remove-accident btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
-                            </td>
-                        </tr>
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class ="col-sm-3">
+                                        <?php echo $form->field($accident, "[{$index}]date")->widget(DateControl::classname(), [
+                                            'type'=>DateControl::FORMAT_DATE,
+                                            'ajaxConversion'=>false,
+                                            'widgetOptions' => [
+                                                'pluginOptions' => [
+                                                    'autoclose' => true
+                                                ]
+                                            ]
+                                        ]);
+                                        ?>
+                                    </div>
+                                    <div class ="col-sm-3">
+                                        <?= $form->field($accident, "[{$index}]accident_nature")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class ="col-sm-2">
+                                        <?= $form->field($accident, "[{$index}]fatalities")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class ="col-sm-2">
+                                        <?= $form->field($accident, "[{$index}]injuries")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class ="col-sm-2">
+                                        <?= $form->field($accident, "[{$index}]hazardous_material")->textInput(['maxlength' => true]) ?>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                     <?php endforeach; ?>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                    </tr>
-                    </tfoot>
-                </table>
+                </div>
             </div>
 
 
         </div>
         <?php DynamicFormWidget::end();
         ?>
-    </div>
-    <div class ="col-md-12">
         <div id="panel-option-values" class="panel panel-default">
 
             <?php DynamicFormWidget::begin([
@@ -214,58 +227,59 @@ $form = ActiveForm::begin([
                 <div class="panel-heading">
 
                     <i class="fa fa-user"></i> TRAFFIC CONVICTIONS
-                    AND FORFEITURES FOR THE PAST 3 YEARS (OTHER THAN PARKING VIOLATIONS) IF NONE, WRITE
-                    NONE
+                    AND FORFEITURES FOR THE PAST 3 YEARS (OTHER THAN PARKING VIOLATIONS) If none, you can skip this section
 
                     <button type="button" class="pull-right add-conviction btn btn-success btn-xs"><i class="fa fa-plus"></i> Add new row</button>
 
                     <div class="clearfix"></div>
                 </div>
-                <table class="table table-bordered table-striped margin-b-none">
-                    <tbody class="container-convictions">
+                <div class="container-convictions">
                     <?php foreach ($traffic_convictions as $index => $traffic): ?>
-                        <tr class="conviction-item">
-                            <td>
-                                <?= $form->field($traffic, "[{$index}]location")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
-                            <td class="vcenter">
-                                <?php echo $form->field($traffic, "[{$index}]date")->label(false)->widget(DateControl::classname(), [
-                                    'displayFormat' => 'dd/MM/yyyy',
-                                    'autoWidget' => false,
-                                    'widgetClass' => 'yii\widgets\MaskedInput',
-                                    'widgetOptions' => [
-                                        'mask' => '99/99/9999'
-                                    ],
-                                ]);
-                                ?>
-                            </td>
-                            <td>
-                                <?= $form->field($traffic, "[{$index}]charge")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
-                            <td>
-                                <?= $form->field($traffic, "[{$index}]penalty")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
+                        <div class = "conviction-item panel panel-default">
+                            <div class="panel-heading">
 
+                                <span class="panel-title-address">CONVICTION: <?= ($index + 1) ?></span>
 
-                            <td class="text-center vcenter">
-                                <button type="button" class="remove-conviction btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
-                            </td>
-                        </tr>
+                                <button type="button" class="pull-right remove-conviction btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
+
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class ="col-sm-3">
+                                        <?php echo $form->field($traffic, "[{$index}]date")->widget(DateControl::classname(), [
+                                            'type'=>DateControl::FORMAT_DATE,
+                                            'ajaxConversion'=>false,
+                                            'widgetOptions' => [
+                                                'pluginOptions' => [
+                                                    'autoclose' => true
+                                                ]
+                                            ]
+                                        ]);
+                                        ?>
+                                    </div>
+                                    <div class ="col-sm-3">
+                                        <?= $form->field($traffic, "[{$index}]location")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class ="col-sm-3">
+                                        <?= $form->field($traffic, "[{$index}]charge")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class ="col-sm-3">
+                                        <?= $form->field($traffic, "[{$index}]penalty")->textInput(['maxlength' => true]) ?>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                    </tr>
-                    </tfoot>
-                </table>
+                </div>
             </div>
 
 
         </div>
         <?php DynamicFormWidget::end();
         ?>
-    </div>
-    <div class ="col-md-12">
         <div id="panel-option-values" class="panel panel-default">
 
             <?php DynamicFormWidget::begin([
@@ -295,53 +309,55 @@ $form = ActiveForm::begin([
 
                     <div class="clearfix"></div>
                 </div>
-                <table class="table table-bordered table-striped margin-b-none">
-                    <thead>
-
-                    </thead>
-                    <tbody class="container-licenses">
+                    <div class="container-licenses">
                     <?php foreach ($licenses as $index => $license): ?>
-                        <tr class="license-item">
-                            <td>
-                                <?= $form->field($license, "[{$index}]state")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
+                        <div class = "license-item">
+                            <div class="panel-heading">
 
-                            <td>
-                                <?= $form->field($license, "[{$index}]license_no")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
-                            <td>
-                                <?= $form->field($license, "[{$index}]type")->label(false)->textInput(['maxlength' => true]) ?>
-                            </td>
-                            <td class="vcenter">
-                                <?php echo $form->field($license, "[{$index}]expiration_date")->label(false)->widget(DateControl::classname(), [
-                                    'displayFormat' => 'dd/MM/yyyy',
-                                    'autoWidget' => false,
-                                    'widgetClass' => 'yii\widgets\MaskedInput',
-                                    'widgetOptions' => [
-                                        'mask' => '99/99/9999'
-                                    ],
-                                ]);
-                                ?>
-                            </td>
+                                <span class="panel-title-address">DRIVER LICENSE: <?= ($index + 1) ?></span>
 
-                            <td class="text-center vcenter">
-                                <button type="button" class="remove-license btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
-                            </td>
-                        </tr>
+                                <button type="button" class="pull-right remove-license btn btn-danger btn-xs"><i class="fa fa-minus"></i></button>
+
+                                <div class="clearfix"></div>
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class ="col-sm-3">
+                                        <?php echo $form->field($license, "[{$index}]expiration_date")->widget(DateControl::classname(), [
+                                            'type'=>DateControl::FORMAT_DATE,
+                                            'ajaxConversion'=>false,
+                                            'widgetOptions' => [
+                                                'pluginOptions' => [
+                                                    'autoclose' => true
+                                                ]
+                                            ]
+                                        ]);
+                                        ?>
+                                    </div>
+                                    <div class ="col-sm-3">
+                                        <?= $form->field($license, "[{$index}]state")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class ="col-sm-3">
+                                        <?= $form->field($license, "[{$index}]license_no")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                    <div class ="col-sm-3">
+                                        <?= $form->field($license, "[{$index}]type")->textInput(['maxlength' => true]) ?>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                     <?php endforeach; ?>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                    </tr>
-                    </tfoot>
-                </table>
+                    </div>
+
             </div>
 
 
         </div>
         <?php DynamicFormWidget::end();
         ?>
-    </div>
     <?= $form->field($licenses_custom, 'denied_license')->checkbox()?>
 
     <?= $form->field($licenses_custom, 'suspended_license')->checkbox()?>

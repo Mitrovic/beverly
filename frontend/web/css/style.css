@@ -1591,3 +1591,6 @@ padding-top: 150px;
 .m-b-0 {
 	margin-bottom:0;
 }
+.panel-default > .panel-heading{
+    background: none;
+}

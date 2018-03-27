@@ -12,11 +12,16 @@ $this->params['breadcrumbs'][] = ['label' => 'DRIVER CERTIFICATION FOR OTHER COM
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="driver-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class = "container">
+        <h1 class="title"><?= Html::encode($this->title) ?></h1>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <span class="sr-only">100% Complete</span>
+            </div>
+        </div>
 
     <?= $this->render('_formAlcoholDrugs', [
         'alcohol_drugs' => $alcohol_drugs,
     ]) ?>
-
+    </div>
 </div>
