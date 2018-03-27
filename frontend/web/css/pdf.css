@@ -1,4 +1,4 @@
-body {margin-top: 0px;margin-left: 0px;background: url('/img/beverlylogo.png') center center ;background-size: 100%}
+body {margin-top: 0px;margin-left: 0px;/*background: url('/img/beverlylogo.png') center center ;background-size: 100%*/}
 
 #page_1 {position:relative; overflow: hidden;margin: 14px 0px 27px 47px;padding: 0px;border: none;width: 769px;}
 #page_1 #id_1 {border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 769px;overflow: hidden;}
@@ -940,5 +940,11 @@ body {margin-top: 0px;margin-left: 0px;background: url('/img/beverlylogo.png') c
 .t28{width: 733px;margin-left: 11px;margin-top: 1px;font: 13px 'Arial';}
 .t29{width: 626px;margin-left: 1px;margin-top: 77px;font: 19px 'Calibri';}
 .t30{width: 643px;margin-top: 1px;font: 19px 'Calibri';}
+.street{
+    margin-left: 40px;
+}
 
-
+.insert_value{
+    font-size: 14px;
+    font-weight: bold;
+}

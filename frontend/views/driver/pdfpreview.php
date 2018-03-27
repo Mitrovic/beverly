@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<HTML>
+<HTML xmlns="http://www.w3.org/1999/html">
 <HEAD>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <META http-equiv="X-UA-Compatible" content="IE=8">
@@ -232,13 +232,13 @@
         <TABLE cellpadding=0 cellspacing=0 class="t3">
             <TR>
                 <TD colspan=2 class="tr0 td66"><P class="p3 ft1">Position(s) Applied for</P></TD>
-                <TD class="tr1 td67"><P class="p3 ft1"><?=$model->position->name?></P></TD>
+                <TD class="tr1 td67"><P class="p3 ft1 insert_value"><?=$model->position->name?></P></TD>
                 <TD class="tr1 td68"><P class="p3 ft2">&nbsp;</P></TD>
             </TR>
             <TR>
                 <TD colspan=2 class="tr10 td66"><P class="p3 ft3">Name</P></TD>
-                <TD class="tr10 td69"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td70"><P class="p33 ft3">Social Security No.</P></TD>
+                <TD class="tr10 td69"><P class="p3 ft1 insert_value"><?=$model->lname.' '.$model->name.' '.$model->mi_name?></P></TD>
+                <TD class="tr10 td70"><P class="p33 ft3">Social Security No: <span class ="insert_value"><?=$model->ssn?></span></P></TD>
             </TR>
             <TR>
                 <TD class="tr19 td71"><P class="p3 ft2">&nbsp;</P></TD>
@@ -250,109 +250,59 @@
         <P class="p35 ft3">List your addresses of residency for the past 3 years.</P>
         <P class="p36 ft3">Current Address</P>
         <P class="p37 ft1">Street<SPAN style="padding-left:325px;">City</SPAN></P>
-        <TABLE cellpadding=0 cellspacing=0 class="t4">
-            <TR>
-                <TD class="tr19 td75"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td76"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td77"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td78"><P class="p3 ft3">Phone</P></TD>
-                <TD class="tr0 td79"><P class="p3 ft3">How Long?</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr20 td75"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td80"><P class="p38 ft20">State</P></TD>
-                <TD class="tr20 td75"><P class="p39 ft21">Zip Code</P></TD>
-                <TD class="tr20 td81"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td82"><P class="p40 ft20">yr./mo.</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=2 class="tr11 td70"><P class="p3 ft22">Previous</P></TD>
-                <TD class="tr11 td75"><P class="p3 ft13">&nbsp;</P></TD>
-                <TD class="tr11 td81"><P class="p3 ft13">&nbsp;</P></TD>
-                <TD class="tr11 td82"><P class="p3 ft13">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=2 class="tr21 td70"><P class="p3 ft23">Addresses</P></TD>
-                <TD class="tr21 td75"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr21 td81"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr21 td82"><P class="p3 ft1">How Long?</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr19 td75"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td83"><P class="p38 ft1">Street</P></TD>
-                <TD class="tr0 td84"><P class="p39 ft1">City</P></TD>
-                <TD class="tr0 td85"><P class="p41 ft1">State & Zip Code</P></TD>
-                <TD class="tr0 td86"><P class="p40 ft1">yr./mo.</P></TD>
-            </TR>
-        </TABLE>
+        <?php
+        $adrese = $model->addresses;
+        foreach ($adrese as $adresa) {
+            $street = $adresa->street;
+            $state = $adresa->state;
+            $zip = $adresa->zip;
+            //$city = $adresa->city;
+            $time = $adresa->time;
+            ?>
+            <TABLE cellpadding=0 cellspacing=0 class="t4">
+                <TR>
+                    <TD class="tr19 td75"><P class="p3 ft2">&nbsp;</P></TD>
+                    <TD class="tr0 td76"><P class="p3 ft2">&nbsp;</P></TD>
+                    <TD class="tr0 td77"><P class="p3 ft2">&nbsp;</P></TD>
+                    <TD class="tr0 td78"><P class="p3 ft3">Phone</P></TD>
+                    <TD class="tr0 td79"><P class="p3 ft3">How Long?</P></TD>
+                </TR>
+                <TR>
+                    <TD class="tr20 td75"><P class="p3 ft19">&nbsp;</P></TD>
+                    <TD class="tr20 td80"><P class="p38 ft20">State</P></TD>
+                    <TD class="tr20 td75"><P class="p39 ft21">Zip Code</P></TD>
+                    <TD class="tr20 td81"><P class="p3 ft19">&nbsp;</P></TD>
+                    <TD class="tr20 td82"><P class="p40 ft20">yr./mo.</P></TD>
+                </TR>
+                <TR>
+                    <TD colspan=2 class="tr11 td70"><P class="p3 ft22"></P></TD>
+                    <TD class="tr11 td75"><P class="p3 ft13">&nbsp;</P></TD>
+                    <TD class="tr11 td81"><P class="p3 ft13">&nbsp;</P></TD>
+                    <TD class="tr11 td82"><P class="p3 ft13">&nbsp;</P></TD>
+                </TR>
+                <TR>
+                    <TD colspan=2 class="tr21 td70"><P class="p3 ft23">Addresses:<span class="insert_value"><?=$street?></span></P></TD>
+                    <TD class="tr21 td75"><P class="p3 ft1">&nbsp;<span class="insert_value">GRAD</span></P></TD>
+                    <TD class="tr21 td81"><P class="p3 ft1"><P class="insert_value"><?=$state.' '.$zip?></P></TD>
+                    <TD class="tr21 td82"><P class="p3 ft1">How Long: <span class="insert_value"><?=$time?></span></P></TD>
+                </TR>
+                <TR>
+                    <TD class="tr19 td75"><P class="p3 ft2">&nbsp;</P></TD>
+                    <TD class="tr0 td83"><P class="p38 ft1">Street</P></TD>
+                    <TD class="tr0 td84"><P class="p39 ft1">City</P></TD>
+                    <TD class="tr0 td85"><P class="p41 ft1">State & Zip Code</P></TD>
+                    <TD class="tr0 td86"><P class="p40 ft1">yr./mo.</P></TD>
+                </TR>
+            </TABLE>
+        <?php } ?>
+
+
         <TABLE cellpadding=0 cellspacing=0 class="t5">
-            <TR>
-                <TD class="tr19 td87"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td26"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td88"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td41"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td89"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td89"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td90"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td91"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td92"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td93"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td94"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td21"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td95"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td96"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td97"><P class="p30 ft3">How Long?</P></TD>
-                <TD class="tr0 td98"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr1 td87"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr1 td26"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr1 td88"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=4 class="tr1 td0"><P class="p42 ft24">Street</P></TD>
-                <TD class="tr1 td99"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr1 td100"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=3 class="tr1 td101"><P class="p43 ft1">City</P></TD>
-                <TD colspan=3 class="tr1 td102"><P class="p3 ft1">State & Zip Code</P></TD>
-                <TD class="tr1 td103"><P class="p3 ft1">yr./mo.</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr8 td87"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td26"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td88"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td41"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td89"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td89"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td90"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td91"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td92"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td93"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td94"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td21"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td95"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td96"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td97"><P class="p30 ft3">How Long?</P></TD>
-                <TD class="tr15 td98"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr21 td87"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr21 td26"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr21 td88"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=4 class="tr21 td0"><P class="p42 ft24">Street</P></TD>
-                <TD class="tr21 td99"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr21 td100"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=3 class="tr21 td101"><P class="p43 ft1">City</P></TD>
-                <TD colspan=3 class="tr21 td102"><P class="p3 ft1">State & Zip Code</P></TD>
-                <TD class="tr21 td103"><P class="p3 ft1">yr./mo.</P></TD>
-            </TR>
+
             <TR>
                 <TD colspan=9 class="tr6 td104"><P class="p3 ft1">Do you have the legal right to work in the United States?</P></TD>
-                <TD class="tr8 td93"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td94"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td21"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td95"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td96"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td97"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr8 td98"><P class="p3 ft2">&nbsp;</P></TD>
+                <TD colspan=1 class="tr8 td93"><P class="p3 ft2"></P></TD>
+                <TD colspan=6 class="tr8 td93"><P class="p3 ft1"><span class ="insert_value">Yes</span></P></TD>
             </TR>
             <TR>
                 <TD class="tr9 td87"><P class="p3 ft1">Date of Birth</P></TD>
@@ -465,126 +415,24 @@
         <P class="p55 ft6">EMPLOYMENT HISTORY</P>
         <P class="p56 ft8">All driver applicants to drive in interstate commerce must provide the following information on all employers during the preceding 3 years. List complete mailing address, street number, city, state and zip code.</P>
         <P class="p57 ft8">Applicants to drive a commercial motor vehicle* in intrastate or interstate commerce shall also provide an <NOBR>addi-tional</NOBR> 7 years’ information on those employers for whom the applicant operated such ve (NOTE: List employers in reverse order starting with the most recent. Add another sheet as necessary.)</P>
-        <TABLE cellpadding=0 cellspacing=0 class="t6">
-            <TR>
-                <TD class="tr9 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td126"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td127"><P class="p3 ft8">EMPLOYER</P></TD>
-                <TD class="tr12 td128"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td129"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td130"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr12 td131"><P class="p3 ft8">DATE</P></TD>
-                <TD class="tr12 td132"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr17 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr8 td133"><P class="p58 ft1">NAME</P></TD>
-                <TD class="tr17 td134"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td135"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p59 ft16">FROM</P></TD>
-                <TD class="tr17 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td138"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p60 ft16">TO</P></TD>
-                <TD class="tr17 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td139"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td140"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p59 ft16">MO.</P></TD>
-                <TD class="tr17 td142"><P class="p3 ft16">YR.</P></TD>
-                <TD class="tr17 td143"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p61 ft16">MO.</P></TD>
-                <TD class="tr17 td144"><P class="p3 ft16">YR.</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr6 td133"><P class="p58 ft1">ADDRESS</P></TD>
-                <TD class="tr18 td134"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td135"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr18 td108"><P class="p59 ft16">POSITION HELD</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td139"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td140"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td142"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td33"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td144"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr17 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr8 td133"><P class="p58 ft1">CITY</P></TD>
-                <TD rowspan=2 class="tr8 td139"><P class="p62 ft1">STATE</P></TD>
-                <TD rowspan=2 class="tr8 td140"><P class="p62 ft1">ZIP</P></TD>
-                <TD colspan=2 class="tr17 td108"><P class="p59 ft16">SALARY/WAGE</P></TD>
-                <TD class="tr17 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td142"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td33"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td144"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr17 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr22 td145"><P class="p58 ft1">CONTACT PERSON</P></TD>
-                <TD class="tr17 td134"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr22 td135"><P class="p3 ft1">PHONE NUMBER</P></TD>
-                <TD colspan=4 class="tr17 td146"><P class="p59 ft16">REASON FOR LEAVING</P></TD>
-                <TD class="tr17 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr23 td125"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td134"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td136"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td137"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td23"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td136"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td20"><P class="p3 ft26">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr24 td147"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD colspan=3 class="tr24 td148"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td141"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td142"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td33"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td141"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td144"><P class="p3 ft27">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr25 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=3 class="tr25 td149"><P class="p58 ft1">WERE YOU SUBJECT TO THE FMCSRs<SPAN class="ft28">✝ </SPAN>WHILE EMPLOYED? □ YES □ NO</P></TD>
-                <TD class="tr25 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-        </TABLE>
-        <P class="p63 ft24">WAS YOUR JOB DESIGNATED AS A <NOBR>SAFETY-SENSITIVE</NOBR> FUNCTION IN ANY <NOBR>DOT-REGULATED</NOBR> MODE SUBJECT TO THE DRUG AND ALCOHOL TESTING REQUIREMENTS OF 49 CFR PART 40? □ YES □ NO</P>
-    </DIV>
-    <DIV id="id_2">
-        <P class="p64 ft17">PAGE 2 15F (Rev. 2/05) 691</P>
-    </DIV>
-</DIV>
-<DIV id="page_3">
-    <DIV id="p3dimg1">
-        <IMG src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABvAtQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD2ebw1YTzyTPPqoaRixCatdIoJOeFWQAD2AAFM/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAMT/hFNO/5+dY/8HN3/wDHaP8AhFNO/wCfnWP/AAc3f/x2tuigDE/4RTTv+fnWP/Bzd/8Ax2j/AIRTTv8An51j/wAHN3/8drbooAxP+EU07/n51j/wc3f/AMdo/wCEU07/AJ+dY/8ABzd//Ha26KAOM0bw1YSar4hVp9VAj1BFXbq10pI+ywHkiT5jknk5OMDoABsf8Ipp3/PzrH/g5u//AI7Rof8AyGPE3/YST/0kt626AMT/AIRTTv8An51j/wAHN3/8do/4RTTv+fnWP/Bzd/8Ax2tuigDE/wCEU07/AJ+dY/8ABzd//HaP+EU07/n51j/wc3f/AMdrbooAxP8AhFNO/wCfnWP/AAc3f/x2j/hFNO/5+dY/8HN3/wDHa26KAMT/AIRTTv8An51j/wAHN3/8do/4RTTv+fnWP/Bzd/8Ax2tuigDE/wCEU07/AJ+dY/8ABzd//HaP+EU07/n51j/wc3f/AMdrbooAxP8AhFNO/wCfnWP/AAc3f/x2j/hFNO/5+dY/8HN3/wDHa26KAMT/AIRTTv8An51j/wAHN3/8do/4RTTv+fnWP/Bzd/8Ax2tuigDE/wCEU07/AJ+dY/8ABzd//HaP+EU07/n51j/wc3f/AMdrbooAxP8AhFNO/wCfnWP/AAc3f/x2j/hFNO/5+dY/8HN3/wDHa26KAMT/AIRTTv8An51j/wAHN3/8do/4RTTv+fnWP/Bzd/8Ax2tuigDE/wCEU07/AJ+dY/8ABzd//HaK26KACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDE0P/kMeJv+wkn/AKSW9bdYmh/8hjxN/wBhJP8A0kt626ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMTQ/+Qx4m/wCwkn/pJb1t1iaH/wAhjxN/2Ek/9JLetugAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDE0P/AJDHib/sJJ/6SW9bdYmh/wDIY8Tf9hJP/SS3rboAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAxND/AOQx4m/7CSf+klvW3WJof/IY8Tf9hJP/AEkt626ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAMTQ/+Qx4m/7CSf8ApJb1t1iaH/yGPE3/AGEk/wDSS3rboAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAorif+Fu+Bv+g5/5KT//ABFH/C3fA3/Qc/8AJSf/AOIoA7aiuJ/4W74G/wCg5/5KT/8AxFH/AAt3wN/0HP8AyUn/APiKAO2orif+Fu+Bv+g5/wCSk/8A8RR/wt3wN/0HP/JSf/4igDtqK4n/AIW74G/6Dn/kpP8A/EUf8Ld8Df8AQc/8lJ//AIigDtqK4n/hbvgb/oOf+Sk//wARR/wt3wN/0HP/ACUn/wDiKAO2orif+Fu+Bv8AoOf+Sk//AMRR/wALd8Df9Bz/AMlJ/wD4igDtqK4n/hbvgb/oOf8AkpP/APEUf8Ld8Df9Bz/yUn/+IoA7aiuJ/wCFu+Bv+g5/5KT/APxFH/C3fA3/AEHP/JSf/wCIoA7aiuJ/4W74G/6Dn/kpP/8AEUf8Ld8Df9Bz/wAlJ/8A4igDtqK4n/hbvgb/AKDn/kpP/wDEUf8AC3fA3/Qc/wDJSf8A+IoA7aiuJ/4W74G/6Dn/AJKT/wDxFH/C3fA3/Qc/8lJ//iKAO2orif8Ahbvgb/oOf+Sk/wD8RR/wt3wN/wBBz/yUn/8AiKAO2orif+Fu+Bv+g5/5KT//ABFH/C3fA3/Qc/8AJSf/AOIoA7aiuJ/4W74G/wCg5/5KT/8AxFH/AAt3wN/0HP8AyUn/APiKAO2orif+Fu+Bv+g5/wCSk/8A8RR/wt3wN/0HP/JSf/4igDtqK4n/AIW74G/6Dn/kpP8A/EUf8Ld8Df8AQc/8lJ//AIigDtqK4n/hbvgb/oOf+Sk//wARR/wt3wN/0HP/ACUn/wDiKAO2orif+Fu+Bv8AoOf+Sk//AMRR/wALd8Df9Bz/AMlJ/wD4igDtqK4n/hbvgb/oOf8AkpP/APEUf8Ld8Df9Bz/yUn/+IoA7aiuJ/wCFu+Bv+g5/5KT/APxFH/C3fA3/AEHP/JSf/wCIoA7aiuJ/4W74G/6Dn/kpP/8AEUf8Ld8Df9Bz/wAlJ/8A4igDtqK4n/hbvgb/AKDn/kpP/wDEUf8AC3fA3/Qc/wDJSf8A+IoA7aiuJ/4W74G/6Dn/AJKT/wDxFH/C3fA3/Qc/8lJ//iKAO2orif8Ahbvgb/oOf+Sk/wD8RR/wt3wN/wBBz/yUn/8AiKAO2orif+Fu+Bv+g5/5KT//ABFH/C3fA3/Qc/8AJSf/AOIoA7aiuJ/4W74G/wCg5/5KT/8AxFH/AAt3wN/0HP8AyUn/APiKAO2orif+Fu+Bv+g5/wCSk/8A8RR/wt3wN/0HP/JSf/4igDtqK4n/AIW74G/6Dn/kpP8A/EUf8Ld8Df8AQc/8lJ//AIigDtqK4n/hbvgb/oOf+Sk//wARR/wt3wN/0HP/ACUn/wDiKAO2orif+Fu+Bv8AoOf+Sk//AMRR/wALd8Df9Bz/AMlJ/wD4igDtqK4n/hbvgb/oOf8AkpP/APEUf8Ld8Df9Bz/yUn/+IoA7aiuJ/wCFu+Bv+g5/5KT/APxFH/C3fA3/AEHP/JSf/wCIoA7aiuJ/4W74G/6Dn/kpP/8AEUf8Ld8Df9Bz/wAlJ/8A4igDtqK4n/hbvgb/AKDn/kpP/wDEUf8AC3fA3/Qc/wDJSf8A+IoA29D/AOQx4m/7CSf+klvW3XmmlfFHwbbalrks2sbUur5ZYT9lmO5BbwpnhOPmRhz6Vq/8Ld8Df9Bz/wAlJ/8A4igDtqK4n/hbvgb/AKDn/kpP/wDEUf8AC3fA3/Qc/wDJSf8A+IoA7aiuJ/4W74G/6Dn/AJKT/wDxFH/C3fA3/Qc/8lJ//iKAO2orif8Ahbvgb/oOf+Sk/wD8RR/wt3wN/wBBz/yUn/8AiKAO2orif+Fu+Bv+g5/5KT//ABFH/C3fA3/Qc/8AJSf/AOIoA7aiuJ/4W74G/wCg5/5KT/8AxFH/AAt3wN/0HP8AyUn/APiKAO2orif+Fu+Bv+g5/wCSk/8A8RR/wt3wN/0HP/JSf/4igDtqK4n/AIW74G/6Dn/kpP8A/EUf8Ld8Df8AQc/8lJ//AIigDtqK4n/hbvgb/oOf+Sk//wARR/wt3wN/0HP/ACUn/wDiKAO2orif+Fu+Bv8AoOf+Sk//AMRR/wALd8Df9Bz/AMlJ/wD4igDtqK4n/hbvgb/oOf8AkpP/APEUf8Ld8Df9Bz/yUn/+IoA7aiuJ/wCFu+Bv+g5/5KT/APxFFAH/2Q==" alt=""></DIV>
+        <?php $employments_his = $model->employmentHistories;
+        foreach ($employments_his as $emp_his)
+        {
+            $eh_name      = $emp_his->name;
+            $eh_address   = $emp_his->address;
+            $eh_city      = $emp_his->city;
+            $eh_state     = $emp_his->state;
+            $eh_zip       = $emp_his->zip;
+            $eh_contact   = $emp_his->contact_person;
+            $eh_phone     = $emp_his->phone;
+            $eh_date      = $emp_his->date;
+            $eh_position  = $emp_his->position_held;
+            $eh_salary    = $emp_his->salary;
+            $eh_reason    = $emp_his->reason_for_leaving;
+            $eh_fmcr      = $emp_his->fmcr;
+            $eh_safety    = $emp_his->safety;
 
-
-    <DIV id="id_1">
-        <P class="p65 ft6">EMPLOYMENT HISTORY (continued)</P>
-        <TABLE cellpadding=0 cellspacing=0 class="t7">
+            $history = '<TABLE cellpadding=0 cellspacing=0 class="t7">
             <TR>
                 <TD class="tr12 td126"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD class="tr12 td150"><P class="p3 ft8">EMPLOYER</P></TD>
@@ -596,7 +444,7 @@
             </TR>
             <TR>
                 <TD rowspan=2 class="tr8 td133"><P class="p38 ft1">NAME</P></TD>
-                <TD class="tr17 td27"><P class="p3 ft29">&nbsp;</P></TD>
+                <TD class="tr17 td27"><P class="insert_value">&nbsp;Milos</P></TD>
                 <TD class="tr17 td135"><P class="p3 ft29">&nbsp;</P></TD>
                 <TD class="tr17 td136"><P class="p59 ft16">FROM</P></TD>
                 <TD class="tr17 td137"><P class="p3 ft29">&nbsp;</P></TD>
@@ -615,7 +463,7 @@
             </TR>
             <TR>
                 <TD rowspan=2 class="tr15 td145"><P class="p38 ft1">ADDRESS</P></TD>
-                <TD class="tr18 td27"><P class="p3 ft30">&nbsp;</P></TD>
+                <TD class="tr18 td27"><P class="insert_value">Adresa</P></TD>
                 <TD class="tr18 td135"><P class="p3 ft30">&nbsp;</P></TD>
                 <TD colspan=2 class="tr18 td108"><P class="p59 ft16">POSITION HELD</P></TD>
                 <TD class="tr18 td23"><P class="p3 ft30">&nbsp;</P></TD>
@@ -641,7 +489,7 @@
                 <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
             </TR>
             <TR>
-                <TD rowspan=2 class="tr22 td145"><P class="p38 ft1">CITY</P></TD>
+                <TD rowspan=2 class="tr22 td145"><P class="p38 ft1">CITY: <span class="insert_value">CITY</span></P></TD>
                 <TD rowspan=2 class="tr22 td27"><P class="p62 ft1">STATE</P></TD>
                 <TD rowspan=2 class="tr22 td135"><P class="p62 ft1">ZIP</P></TD>
                 <TD colspan=2 class="tr18 td108"><P class="p59 ft16">SALARY/WAGE</P></TD>
@@ -687,7 +535,7 @@
                 <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
             </TR>
             <TR>
-                <TD colspan=3 class="tr6 td156"><P class="p38 ft12">WERE YOU SUBJECT TO THE FMCSRs<SPAN class="ft32">✝ </SPAN>WHILE EMPLOYED? □ YES □ NO</P></TD>
+                <TD colspan=3 class="tr6 td156"><P class="p38 ft12">WERE YOU SUBJECT TO THE FMCSRs WHILE EMPLOYED? □ YES □ NO</P></TD>
                 <TD class="tr6 td136"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD class="tr6 td137"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD class="tr6 td23"><P class="p3 ft2">&nbsp;</P></TD>
@@ -706,451 +554,23 @@
                 <TD class="tr8 td136"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD class="tr8 td152"><P class="p3 ft2">&nbsp;</P></TD>
             </TR>
-        </TABLE>
-        <TABLE cellpadding=0 cellspacing=0 class="t8">
-            <TR>
-                <TD class="tr12 td158"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td150"><P class="p3 ft8">EMPLOYER</P></TD>
-                <TD class="tr12 td128"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td129"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td130"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr12 td131"><P class="p3 ft8">DATE</P></TD>
-                <TD class="tr12 td151"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr8 td159"><P class="p66 ft1">NAME</P></TD>
-                <TD class="tr17 td27"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td135"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p59 ft16">FROM</P></TD>
-                <TD class="tr17 td137"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td138"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p60 ft16">TO</P></TD>
-                <TD class="tr17 td152"><P class="p3 ft29">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr17 td37"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td140"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p59 ft16">MO.</P></TD>
-                <TD class="tr17 td142"><P class="p3 ft16">YR.</P></TD>
-                <TD class="tr17 td143"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p61 ft16">MO.</P></TD>
-                <TD class="tr17 td153"><P class="p3 ft16">YR.</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr22 td160"><P class="p66 ft1">ADDRESS</P></TD>
-                <TD class="tr18 td27"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD class="tr18 td135"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD colspan=2 class="tr18 td108"><P class="p59 ft16">POSITION HELD</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft30">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr26 td27"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td135"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td137"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td23"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td152"><P class="p3 ft31">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr27 td159"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td37"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td140"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD colspan=2 class="tr27 td93"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td33"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td141"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td153"><P class="p3 ft34">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr22 td160"><P class="p66 ft1">CITY</P></TD>
-                <TD rowspan=2 class="tr22 td27"><P class="p62 ft1">STATE</P></TD>
-                <TD rowspan=2 class="tr22 td135"><P class="p62 ft1">ZIP</P></TD>
-                <TD colspan=2 class="tr18 td108"><P class="p59 ft16">SALARY/WAGE</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft30">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td137"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td23"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td152"><P class="p3 ft31">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr24 td159"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td37"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td140"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD colspan=4 class="tr24 td154"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr22 td160"><P class="p66 ft1">CONTACT PERSON</P></TD>
-                <TD class="tr18 td27"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr22 td135"><P class="p3 ft1">PHONE NUMBER</P></TD>
-                <TD colspan=4 class="tr18 td146"><P class="p59 ft16">REASON FOR LEAVING</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft30">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr26 td27"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td137"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td23"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td152"><P class="p3 ft31">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=3 class="tr2 td149"><P class="p66 ft24">WERE YOU SUBJECT TO THE FMCSRs<SPAN class="ft35">✝ </SPAN>WHILE EMPLOYED? □ YES □ NO</P></TD>
-                <TD class="tr2 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr2 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr2 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr2 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr2 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=7 class="tr18 td161"><P class="p66 ft36">WAS YOUR JOB DESIGNATED AS A SAFETY- SENSITIVE FUNCTION IN ANY <NOBR>DOT-REGULATED</NOBR> MODE SUBJECT TO THE DRUG AND</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft30">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=3 class="tr1 td149"><P class="p66 ft1">ALCOHOL TESTING REQUIREMENTS OF 49 CFR PART 40? □ YES □ NO</P></TD>
-                <TD class="tr1 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr1 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr1 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr1 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr1 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-        </TABLE>
-        <TABLE cellpadding=0 cellspacing=0 class="t9">
-            <TR>
-                <TD class="tr6 td158"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr6 td150"><P class="p3 ft8">EMPLOYER</P></TD>
-                <TD class="tr6 td128"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr6 td129"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr6 td130"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr6 td131"><P class="p3 ft8">DATE</P></TD>
-                <TD class="tr6 td151"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr6 td159"><P class="p66 ft1">NAME</P></TD>
-                <TD class="tr17 td27"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td135"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p59 ft16">FROM</P></TD>
-                <TD class="tr17 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td138"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p60 ft16">TO</P></TD>
-                <TD class="tr17 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td37"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td140"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td141"><P class="p59 ft16">MO.</P></TD>
-                <TD class="tr18 td142"><P class="p3 ft16">YR.</P></TD>
-                <TD class="tr18 td143"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td141"><P class="p61 ft16">MO.</P></TD>
-                <TD class="tr18 td153"><P class="p3 ft16">YR.</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr22 td160"><P class="p66 ft1">ADDRESS</P></TD>
-                <TD class="tr17 td27"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td135"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr17 td108"><P class="p59 ft16">POSITION HELD</P></TD>
-                <TD class="tr17 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr23 td27"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td135"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td136"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td137"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td23"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td136"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td152"><P class="p3 ft26">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr24 td159"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td37"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td140"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD colspan=2 class="tr24 td93"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td33"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td141"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr22 td160"><P class="p66 ft1">CITY</P></TD>
-                <TD rowspan=2 class="tr22 td27"><P class="p62 ft1">STATE</P></TD>
-                <TD rowspan=2 class="tr22 td135"><P class="p62 ft1">ZIP</P></TD>
-                <TD colspan=2 class="tr18 td108"><P class="p59 ft16">SALARY/WAGE</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td137"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td23"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td152"><P class="p3 ft31">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr27 td159"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td37"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td140"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD colspan=4 class="tr27 td154"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td153"><P class="p3 ft34">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr19 td160"><P class="p66 ft1">CONTACT PERSON</P></TD>
-                <TD class="tr17 td27"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr19 td135"><P class="p3 ft1">PHONE NUMBER</P></TD>
-                <TD colspan=4 class="tr17 td146"><P class="p59 ft16">REASON FOR LEAVING</P></TD>
-                <TD class="tr17 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr26 td27"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td137"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td23"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td152"><P class="p3 ft31">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=3 class="tr28 td149"><P class="p66 ft24">WERE YOU SUBJECT TO THE FMCSRs<SPAN class="ft35">✝ </SPAN>WHILE EMPLOYED? □ YES □ NO</P></TD>
-                <TD class="tr28 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr28 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr28 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr28 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr28 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-        </TABLE>
-        <P class="p67 ft1">WAS YOUR JOB DESIGNATED AS A SAFETY- SENSITIVE FUNCTION IN ANY <NOBR>DOT-REGULATED</NOBR> MODE SUBJECT TO THE DRUG AND ALCOHOL TESTING REQUIREMENTS OF 49 CFR PART 40? □ YES □ NO</P>
-        <TABLE cellpadding=0 cellspacing=0 class="t10">
-            <TR>
-                <TD class="tr19 td159"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td37"><P class="p3 ft8">EMPLOYER</P></TD>
-                <TD class="tr19 td162"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td163"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td142"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr19 td164"><P class="p60 ft8">DATE</P></TD>
-                <TD class="tr19 td153"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr8 td159"><P class="p66 ft1">NAME</P></TD>
-                <TD class="tr17 td27"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td165"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td166"><P class="p3 ft16">FROM</P></TD>
-                <TD class="tr17 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td138"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p60 ft16">TO</P></TD>
-                <TD class="tr17 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr17 td37"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td162"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td163"><P class="p3 ft16">MO.</P></TD>
-                <TD class="tr17 td142"><P class="p3 ft16">YR.</P></TD>
-                <TD class="tr17 td143"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p61 ft16">MO.</P></TD>
-                <TD class="tr17 td153"><P class="p3 ft16">YR.</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr15 td160"><P class="p66 ft1">ADDRESS</P></TD>
-                <TD class="tr18 td27"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td165"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr18 td111"><P class="p3 ft16">POSITION HELD</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr23 td27"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td165"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td166"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td137"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td23"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td136"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td152"><P class="p3 ft26">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr24 td159"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td37"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td162"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD colspan=2 class="tr24 td95"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td33"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td141"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr22 td160"><P class="p66 ft1">CITY</P></TD>
-                <TD rowspan=2 class="tr22 td27"><P class="p62 ft1">STATE</P></TD>
-                <TD rowspan=2 class="tr22 td165"><P class="p62 ft1">ZIP</P></TD>
-                <TD colspan=2 class="tr18 td111"><P class="p3 ft16">SALARY/WAGE</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr26 td166"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td137"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td23"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td136"><P class="p3 ft31">&nbsp;</P></TD>
-                <TD class="tr26 td152"><P class="p3 ft31">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr24 td159"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td37"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td162"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD colspan=4 class="tr24 td167"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD rowspan=2 class="tr19 td160"><P class="p66 ft1">CONTACT PERSON</P></TD>
-                <TD class="tr18 td27"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr19 td165"><P class="p3 ft1">PHONE NUMBER</P></TD>
-                <TD colspan=4 class="tr18 td168"><P class="p3 ft16">REASON FOR LEAVING</P></TD>
-                <TD class="tr18 td152"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr20 td27"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td166"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td137"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td23"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td136"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td152"><P class="p3 ft19">&nbsp;</P></TD>
-            </TR>
-        </TABLE>
-        <P class="p68 ft24">WERE YOU SUBJECT TO THE FMCSRs<SPAN class="ft35">✝ </SPAN>WHILE EMPLOYED? □ YES □ NO</P>
-        <P class="p69 ft1">WAS YOUR JOB DESIGNATED AS A SAFETY- SENSITIVE FUNCTION IN ANY <NOBR>DOT-REGULATED</NOBR> MODE SUBJECT TO THE DRUG AND ALCOHOL TESTING REQUIREMENTS OF 49 CFR PART 40? □ YES □ NO</P>
-        <TABLE cellpadding=0 cellspacing=0 class="t11">
-            <TR>
-                <TD class="tr9 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td126"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td127"><P class="p3 ft8">EMPLOYER</P></TD>
-                <TD class="tr12 td128"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td129"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td130"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr12 td131"><P class="p3 ft8">DATE</P></TD>
-                <TD class="tr12 td132"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr17 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr8 td133"><P class="p58 ft1">NAME</P></TD>
-                <TD class="tr17 td134"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td135"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p59 ft16">FROM</P></TD>
-                <TD class="tr17 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td138"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td136"><P class="p60 ft16">TO</P></TD>
-                <TD class="tr17 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td139"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td140"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p59 ft16">MO.</P></TD>
-                <TD class="tr17 td142"><P class="p3 ft16">YR.</P></TD>
-                <TD class="tr17 td143"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p61 ft16">MO.</P></TD>
-                <TD class="tr17 td144"><P class="p3 ft16">YR.</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr8 td133"><P class="p58 ft1">ADDRESS</P></TD>
-                <TD class="tr18 td134"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td135"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr18 td108"><P class="p59 ft16">POSITION HELD</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr17 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr13 td139"><P class="p3 ft14">&nbsp;</P></TD>
-                <TD class="tr13 td140"><P class="p3 ft14">&nbsp;</P></TD>
-                <TD class="tr13 td141"><P class="p3 ft14">&nbsp;</P></TD>
-                <TD class="tr13 td142"><P class="p3 ft14">&nbsp;</P></TD>
-                <TD class="tr13 td33"><P class="p3 ft14">&nbsp;</P></TD>
-                <TD class="tr13 td141"><P class="p3 ft14">&nbsp;</P></TD>
-                <TD class="tr13 td144"><P class="p3 ft14">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr15 td145"><P class="p58 ft1">CITY</P></TD>
-                <TD rowspan=2 class="tr15 td134"><P class="p62 ft1">STATE</P></TD>
-                <TD rowspan=2 class="tr15 td135"><P class="p62 ft1">ZIP</P></TD>
-                <TD colspan=2 class="tr18 td108"><P class="p59 ft16">SALARY/WAGE</P></TD>
-                <TD class="tr18 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr18 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr23 td125"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td136"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td137"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td23"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td136"><P class="p3 ft26">&nbsp;</P></TD>
-                <TD class="tr23 td20"><P class="p3 ft26">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr27 td125"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr24 td133"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td139"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td140"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD colspan=4 class="tr24 td154"><P class="p3 ft27">&nbsp;</P></TD>
-                <TD class="tr24 td144"><P class="p3 ft27">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr18 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr19 td145"><P class="p58 ft1">CONTACT PERSON</P></TD>
-                <TD class="tr18 td134"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr19 td135"><P class="p3 ft1">PHONE NUMBER</P></TD>
-                <TD colspan=4 class="tr18 td146"><P class="p59 ft16">REASON FOR LEAVING</P></TD>
-                <TD class="tr18 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr20 td125"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td134"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td136"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td137"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td23"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td136"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td20"><P class="p3 ft19">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr27 td147"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD colspan=3 class="tr27 td148"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td141"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td142"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td33"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td141"><P class="p3 ft34">&nbsp;</P></TD>
-                <TD class="tr27 td144"><P class="p3 ft34">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr25 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=3 class="tr25 td149"><P class="p58 ft1">WERE YOU SUBJECT TO THE FMCSRs<SPAN class="ft28">✝ </SPAN>WHILE EMPLOYED? □ YES □ NO</P></TD>
-                <TD class="tr25 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td137"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td23"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td136"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr25 td20"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-        </TABLE>
-        <P class="p63 ft24">WAS YOUR JOB DESIGNATED AS A <NOBR>SAFETY-SENSITIVE</NOBR> FUNCTION IN ANY <NOBR>DOT-REGULATED</NOBR> MODE SUBJECT TO THE DRUG AND ALCOHOL TESTING REQUIREMENTS OF 49 CFR PART 40? □ YES □ NO</P>
-        <P class="p70 ft8">*Includes vehicles having a GVWR of 26,001 lbs. or more, vehicles designed to transport 16 or more passengers (including the driver), or any size vehicle used to transport hazardous materials in a quantity requiring placarding.</P>
-        <P class="p71 ft37">✝</P>
-        <P class="p72 ft38">The Federal Motor Carrier Safety Regulations (FMCSRs) apply to anyone operating a motor vehicle on a highway in interstate commerce to transport passengers or property when the vehicle: (1) weighs or has a GVWR of 10,001 pounds or more, (2) is designed or used to transport more than 8 passengers (including the driver), OR (3) is of any size and is used to transport hazardous materials in a quantity requiring placarding.</P>
+        </TABLE>';
+            ?>
+
+
+        <?php  } ?>
+
     </DIV>
-    <DIV id="id_2">
-        <P class="p64 ft16">PAGE 3 15F (Rev. 2/05) 691</P>
+</DIV>
+<DIV id="page_3">
+    <DIV id="id_1">
+        <?=$history?>
+
+        <P class="p70 ft8">*Includes vehicles having a GVWR of 26,001 lbs. or more, vehicles designed to transport 16 or more passengers (including the driver), or any size vehicle used to transport hazardous materials in a quantity requiring placarding.</P>
+        <P class="p72 ft38">The Federal Motor Carrier Safety Regulations (FMCSRs) apply to anyone operating a motor vehicle on a highway in interstate commerce to transport passengers or property when the vehicle: (1) weighs or has a GVWR of 10,001 pounds or more, (2) is designed or used to transport more than 8 passengers (including the driver), OR (3) is of any size and is used to transport hazardous materials in a quantity requiring placarding.</P>
     </DIV>
 </DIV>
 <DIV id="page_4">
-    <DIV id="p4dimg1">
-        <IMG src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAHJAowDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKAIL2zg1CxuLK6TzLe4iaKVMkbkYYIyORwe1Zfh7wjoXhX7T/Ytj9l+07fN/eu+7bnH3mOPvHp61t0UAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRXyzRQOx9TUV8s0UBY+pqK+WaKAsfU1FfLNFAWPqaivlmigLH1NRXyzRQFj6mor5ZooCx9TUV8s0UBY+pqK+WaKAsfU1FfLNFAWPqaivlmigLH1NRXyzRQFj6mor5ZooCx9TUV8s0UBY+pqK+WaKAsfU1FfLNFAWPqaivlmigLH1NRXyzRQFj6mor5ZooCx9TUV8s0UBY+pqK+WaKAsfU1FfLNFAWPqaivlmigLH1NRXyzRQFj6mor5ZooCx9TUV8s0UBY+pqK+WaKAsfU1FfLNFAWPqaivlmigLH1NRXyzRQFj6mor5ZooCx9TUV8s0UBY+pqK+WaKAsfU1FfLNFAWPqaivlmigLH1NRXyzRQFj6mor5ZooCx9TUV8s0UBY+pqK+WaKAsfU1FfLNFAWPqaivlmigLH/2Q==" alt=""></DIV>
-
-
     <DIV id="id_1">
         <DIV id="id_1_1">
             <P class="p64 ft1"><SPAN class="ft39">ACCIDENT RECORD </SPAN>FOR PAST 3 YEARS OR MORE (ATTACH SHEET IF MORE SPACE IS NEEDED) IF NONE, WRITE</P>
