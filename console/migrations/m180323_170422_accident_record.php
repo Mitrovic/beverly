@@ -15,11 +15,11 @@ class m180323_170422_accident_record extends Migration
         $this->createTable('accident_record', [
             'id' => $this->primaryKey(),
             'driver_id' => $this->integer()->notNull(),
-            'date' => $this->dateTime()->notNull(),
-            'accident_nature' => $this->string()->notNull(),
-            'fatalities' => $this->string()->notNull(),
-            'injuries' => $this->string()->notNull(),
-            'hazardous_material' => $this->string()->notNull(),
+            'date' => $this->dateTime()->null(),
+            'accident_nature' => $this->string()->null(),
+            'fatalities' => $this->string()->null(),
+            'injuries' => $this->string()->null(),
+            'hazardous_material' => $this->string()->null(),
         ]);
         // creates index for column `author_id`
         $this->createIndex(

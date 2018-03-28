@@ -177,22 +177,21 @@ class DriverController extends Controller
         $traffic_convictions = [new TrafficConvictions];
         $licenses = [new Licenses];
         $licenses_custom = new LicensesCustom();
-        $driving_experience = new DrivingExperience();
-        $driving_experience_answers = [new DrivingExperienceAnswers];
+
 
         if ($model->load(Yii::$app->request->post())) {
             $history = Model::createMultiple(EmploymentHistory::classname());
             $accidents = Model::createMultiple(AccidentRecord::classname());
             $traffic_convictions = Model::createMultiple(TrafficConvictions::classname());
             $licenses = Model::createMultiple(Licenses::classname());
-            $driving_experience_answers = Model::createMultiple(DrivingExperienceAnswers::classname());
+
             Model::loadMultiple($history,Yii::$app->request->post());
             Model::loadMultiple($accidents,Yii::$app->request->post());
             Model::loadMultiple($traffic_convictions,Yii::$app->request->post());
             Model::loadMultiple($licenses,Yii::$app->request->post());
-            Model::loadMultiple($driving_experience_answers,Yii::$app->request->post());
+
             $licenses_custom->load(Yii::$app->request->post());
-            $driving_experience->load(Yii::$app->request->post());
+            //$driving_experience->load(Yii::$app->request->post());
             // ajax validation
             if (Yii::$app->request->isAjax) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
@@ -235,17 +234,14 @@ class DriverController extends Controller
                                 break;
                             }
                         }
+
                         $licenses_custom->driver_id = $model->id;
                         $licenses_custom->save(false);
-                        $driving_experience->driver_id = $model->id;
-                        $driving_experience->save(false);
-
                     }
                     //if ($flag) {
-
                         $transaction->commit();
 
-                        return $this->redirect(['certificate', 'id' => $model->id]);
+                        return $this->redirect(['drivingexperience', 'id' => $model->id]);
 
                     //}
 
@@ -261,11 +257,31 @@ class DriverController extends Controller
                 'traffic_convictions' => (empty($traffic_convictions)) ? [new TrafficConvictions] : $traffic_convictions,
                 'licenses' => (empty($licenses)) ? [new Licenses] : $licenses,
                 'licenses_custom' => $licenses_custom,
-                'driving_experience' => $driving_experience,
-                'driving_experience_answers' => (empty($driving_experience_answers)) ? [new DrivingExperienceAnswers] : $driving_experience_answers,
+
             ]);
         }
 
+    }
+    public function actionDrivingexperience($id)
+    {
+        $model = $this->findModel($id);
+        $driving_experience = DrivingExperience::find()->all();
+        $driving_experience_answers = [new DrivingExperienceAnswers];
+
+        if (Model::loadMultiple($driving_experience_answers,Yii::$app->request->post())) {
+            $driving_experience_answers = Model::createMultiple(DrivingExperienceAnswers::classname());
+            Model::loadMultiple($driving_experience_answers,Yii::$app->request->post());
+            foreach ($driving_experience_answers as $index=>$answers) {
+                $answers->driver_id = $model->id;
+                $answers->save(false);
+            }
+            return $this->redirect(['certificate', 'id' => $model->id]);
+        }
+
+        return $this->render('drivingexperience', [
+            'driving_experience' => $driving_experience,
+            'driving_experience_answers' => (empty($driving_experience_answers)) ? [new DrivingExperienceAnswers] : $driving_experience_answers,
+        ]);
     }
 
 

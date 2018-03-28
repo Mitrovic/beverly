@@ -386,35 +386,12 @@ $form = ActiveForm::begin([
         <?= $form->field($licenses_custom, 'answer')->textInput(['maxlength' => true]) ?>
         </div>
     </div>
-<?php
-
-foreach ($driving_experience_answers as $ex_answer){
-    $type = $form->field($ex_answer, '[]type')->textInput(['maxlength' => true]);
-}
-?>
-    <div class = "row">
-        <div class="form-group">
-            <h3>DRIVING EXPERIENCE</h3>
-            <div class = "col-md-12">
-                <?= $form->field($driving_experience, 'straight_truck')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
-                <?=$type?>
-
-            </div>
-                <?= $form->field($driving_experience, 'tractor_semi_trailer')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
-                <?= $form->field($driving_experience, 'tractor_two_trailer')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
-                <?= $form->field($driving_experience, 'tractor_three_trailer')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
-                <?= $form->field($driving_experience, 'motorcoach_eight')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
-                <?= $form->field($driving_experience, 'motorcoach_fifteen')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
-                <?= $form->field($driving_experience, 'other')->textInput(['maxlength' => true]) ?>
-                <?= $form->field($driving_experience, 'states')->textInput(['maxlength' => true]) ?>
-            </div>
-        </div>
-    </div>
 
     <div class="form-group">
     <div class="col-md-12">
         <?= Html::submitButton($employment->isNewRecord ? 'Save and continue' : 'Update', ['class' => 'btn btn-primary']) ?>
     </div>
+
     </div>
 
 <?php ActiveForm::end(); ?>
