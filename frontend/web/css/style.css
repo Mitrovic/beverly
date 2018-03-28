@@ -1594,3 +1594,6 @@ padding-top: 150px;
 .panel-default > .panel-heading{
     background: none;
 }
+#licensescustom-suspended_license .active,#licensescustom-denied_license .active{
+    background: #4caf50;
+}

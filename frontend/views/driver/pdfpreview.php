@@ -10,10 +10,6 @@
 
 <BODY>
 <DIV id="page_1">
-    <DIV id="p1dimg1">
-        <IMG src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCADQAtQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3HSNIsdB0uHTdNg8izh3eXHvZsZYseWJPUnvV6iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAOd17wL4b8T3yXusad9puEiESv58iYQEkDCsB1Y/nRXRUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUU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" alt=""></DIV>
-
-
     <DIV id="id_1">
         <P class="p0 ft0">DRIVER’S APPLICATION</P>
         <P class="p1 ft0">FOR EMPLOYMENT</P>
@@ -222,9 +218,6 @@
     </DIV>
 </DIV>
 <DIV id="page_2">
-    <DIV id="p2dimg1">
-        <IMG src="data:image/jpg;base64,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UAFIRkg+lLRQBXsbKDTrG3srZPLt7eJYokyTtVRgDJyTwB1NWKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACqWs/8AID1D/r2k/wDQTV2qWs/8gPUP+vaT/wBBNAFHwb/yI/h//sG2/wD6LWtusTwb/wAiP4f/AOwbb/8Aota26ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKZJu2/KcH1xmn0UAU9KlvZtKtZNRiSK9aFGnjT7qSEDco5PAOR1NXKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACqWs/8gPUP+vaT/wBBNXapaz/yA9Q/69pP/QTQBR8G/wDIj+H/APsG2/8A6LWtusTwb/yI/h//ALBtv/6LWtugAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACjOOtFNYHII5xQA4EEZByKKr2NqbKygtjPNP5MSR+bO26R9oxuZu5PUn1zVigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqlrP/ID1D/r2k/9BNXapaz/AMgPUP8Ar2k/9BNAFHwb/wAiP4f/AOwbb/8Aota26xPBv/Ij+H/+wbb/APota26ACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAqlrP8AyA9Q/wCvaT/0E1dqlrP/ACA9Q/69pP8A0E0Acx4T8K6N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" alt=""></DIV>
-
 
     <DIV id="id_1">
         <P class="p31 ft18">APPLICANT TO COMPLETE</P>
@@ -248,8 +241,7 @@
             </TR>
         </TABLE>
         <P class="p35 ft3">List your addresses of residency for the past 3 years.</P>
-        <P class="p36 ft3">Current Address</P>
-        <P class="p37 ft1">Street<SPAN style="padding-left:325px;">City</SPAN></P>
+
         <?php
         $adrese = $model->addresses;
         foreach ($adrese as $adresa) {
@@ -260,20 +252,6 @@
             $time = $adresa->time;
             ?>
             <TABLE cellpadding=0 cellspacing=0 class="t4">
-                <TR>
-                    <TD class="tr19 td75"><P class="p3 ft2">&nbsp;</P></TD>
-                    <TD class="tr0 td76"><P class="p3 ft2">&nbsp;</P></TD>
-                    <TD class="tr0 td77"><P class="p3 ft2">&nbsp;</P></TD>
-                    <TD class="tr0 td78"><P class="p3 ft3">Phone</P></TD>
-                    <TD class="tr0 td79"><P class="p3 ft3">How Long?</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr20 td75"><P class="p3 ft19">&nbsp;</P></TD>
-                    <TD class="tr20 td80"><P class="p38 ft20">State</P></TD>
-                    <TD class="tr20 td75"><P class="p39 ft21">Zip Code</P></TD>
-                    <TD class="tr20 td81"><P class="p3 ft19">&nbsp;</P></TD>
-                    <TD class="tr20 td82"><P class="p40 ft20">yr./mo.</P></TD>
-                </TR>
                 <TR>
                     <TD colspan=2 class="tr11 td70"><P class="p3 ft22"></P></TD>
                     <TD class="tr11 td75"><P class="p3 ft13">&nbsp;</P></TD>
@@ -324,45 +302,6 @@
                 <TD class="tr21 td112"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD class="tr21 td113"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD class="tr21 td103"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=8 class="tr8 td114"><P class="p3 ft3">Have you worked for this company before?</P></TD>
-                <TD class="tr15 td92"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=3 class="tr15 td115"><P class="p46 ft3">Where?</P></TD>
-                <TD class="tr15 td95"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td96"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td97"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td98"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr16 td87"><P class="p3 ft3">Dates: From</P></TD>
-                <TD class="tr16 td26"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td116"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td41"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td89"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td89"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td90"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD colspan=2 class="tr9 td105"><P class="p47 ft3">To</P></TD>
-                <TD class="tr9 td93"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr16 td109"><P class="p48 ft3">Rate of Pay</P></TD>
-                <TD class="tr9 td21"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td95"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr16 td112"><P class="p49 ft3">Position</P></TD>
-                <TD class="tr9 td97"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td98"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=4 class="tr10 td117"><P class="p3 ft3">Reason for leaving</P></TD>
-                <TD colspan=3 class="tr12 td118"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td91"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td92"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td93"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td94"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td21"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td95"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td96"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td97"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td98"><P class="p3 ft2">&nbsp;</P></TD>
             </TR>
             <TR>
                 <TD colspan=5 class="tr9 td119"><P class="p3 ft3">Are you now employed?</P></TD>
@@ -444,7 +383,7 @@
             </TR>
             <TR>
                 <TD rowspan=2 class="tr8 td133"><P class="p38 ft1">NAME</P></TD>
-                <TD class="tr17 td27"><P class="insert_value">&nbsp;Milos</P></TD>
+                <TD class="tr17 td27"><P class="insert_value">'.$eh_name.'</P></TD>
                 <TD class="tr17 td135"><P class="p3 ft29">&nbsp;</P></TD>
                 <TD class="tr17 td136"><P class="p59 ft16">FROM</P></TD>
                 <TD class="tr17 td137"><P class="p3 ft29">&nbsp;</P></TD>
@@ -455,19 +394,19 @@
             <TR>
                 <TD class="tr17 td37"><P class="p3 ft29">&nbsp;</P></TD>
                 <TD class="tr17 td140"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p59 ft16">MO.</P></TD>
-                <TD class="tr17 td142"><P class="p3 ft16">YR.</P></TD>
+                <TD class="tr17 td141"><P class="p59 ft16 insert_value">april</P></TD>
+                <TD class="tr17 td142"><P class="p3 ft16 insert_value">2015.</P></TD>
                 <TD class="tr17 td143"><P class="p3 ft29">&nbsp;</P></TD>
-                <TD class="tr17 td141"><P class="p61 ft16">MO.</P></TD>
-                <TD class="tr17 td153"><P class="p3 ft16">YR.</P></TD>
+                <TD class="tr17 td141"><P class="p61 ft16 insert_value">avgust</P></TD>
+                <TD class="tr17 td153"><P class="p3 ft16 insert_value">2016.</P></TD>
             </TR>
             <TR>
                 <TD rowspan=2 class="tr15 td145"><P class="p38 ft1">ADDRESS</P></TD>
-                <TD class="tr18 td27"><P class="insert_value">Adresa</P></TD>
+                <TD class="tr18 td27"><P class="insert_value">'.$eh_address.'</P></TD>
                 <TD class="tr18 td135"><P class="p3 ft30">&nbsp;</P></TD>
                 <TD colspan=2 class="tr18 td108"><P class="p59 ft16">POSITION HELD</P></TD>
                 <TD class="tr18 td23"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft30">&nbsp;</P></TD>
+                <TD class="tr18 td136"><P class="p3 ft30 insert_value">'.$eh_position.'</P></TD>
                 <TD class="tr18 td152"><P class="p3 ft30">&nbsp;</P></TD>
             </TR>
             <TR>
@@ -489,12 +428,12 @@
                 <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
             </TR>
             <TR>
-                <TD rowspan=2 class="tr22 td145"><P class="p38 ft1">CITY: <span class="insert_value">CITY</span></P></TD>
-                <TD rowspan=2 class="tr22 td27"><P class="p62 ft1">STATE</P></TD>
-                <TD rowspan=2 class="tr22 td135"><P class="p62 ft1">ZIP</P></TD>
+                <TD rowspan=2 class="tr22 td145"><P class="p38 ft1">CITY: <span class="insert_value">'.$eh_city.'</span></P></TD>
+                <TD rowspan=2 class="tr22 td145"><P class="p38 ft1">STATE: <span class="insert_value">'.$eh_state.'</span></P></TD>
+                <TD rowspan=2 class="tr22 td135"><P class="p62 ft1">ZIP: <span class="insert_value">'.$eh_zip.'</span></P></TD>
                 <TD colspan=2 class="tr18 td108"><P class="p59 ft16">SALARY/WAGE</P></TD>
                 <TD class="tr18 td23"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD class="tr18 td136"><P class="p3 ft30">&nbsp;</P></TD>
+                <TD class="tr18 td136"><P class="p3 ft30">&nbsp;<span class="insert_value">'.$eh_salary.'</span></P></TD>
                 <TD class="tr18 td152"><P class="p3 ft30">&nbsp;</P></TD>
             </TR>
             <TR>
@@ -512,10 +451,10 @@
                 <TD class="tr24 td153"><P class="p3 ft27">&nbsp;</P></TD>
             </TR>
             <TR>
-                <TD rowspan=2 class="tr15 td145"><P class="p38 ft1">CONTACT PERSON</P></TD>
+                <TD rowspan=2 class="tr15 td145"><P class="p38 ft1">CONTACT PERSON: <span class="insert_value">'.$eh_contact.'</span></P></TD>
                 <TD class="tr18 td27"><P class="p3 ft30">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr15 td135"><P class="p3 ft1">PHONE NUMBER</P></TD>
-                <TD colspan=4 class="tr18 td146"><P class="p59 ft16">REASON FOR LEAVING</P></TD>
+                <TD rowspan=2 class="tr15 td135"><P class="p3 ft1">PHONE NUMBER: <span class="insert_value">'.$eh_phone.'</span></P></TD>
+                <TD colspan=4 class="tr18 td146"><P class="p59 ft16">REASON FOR LEAVING: <span class="insert_value">'.$eh_reason.'</span></P></TD>
                 <TD class="tr18 td152"><P class="p3 ft30">&nbsp;</P></TD>
             </TR>
             <TR>
@@ -573,39 +512,69 @@
 <DIV id="page_4">
     <DIV id="id_1">
         <DIV id="id_1_1">
-            <P class="p64 ft1"><SPAN class="ft39">ACCIDENT RECORD </SPAN>FOR PAST 3 YEARS OR MORE (ATTACH SHEET IF MORE SPACE IS NEEDED) IF NONE, WRITE</P>
-            <TABLE cellpadding=0 cellspacing=0 class="t12">
-                <TR>
-                    <TD class="tr21 td169"></TD>
-                    <TD rowspan=2 class="tr12 td0"><P class="p3 ft1">DATES</P></TD>
-                    <TD class="tr21 td170"><P class="p73 ft1">NATURE OF ACCIDENT</P></TD>
-                    <TD rowspan=2 class="tr12 td171"><P class="p3 ft1">FATALITIES</P></TD>
-                    <TD rowspan=2 class="tr12 td136"><P class="p3 ft1">INJURIES</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr23 td169"></TD>
-                    <TD rowspan=2 class="tr21 td170"><P class="p73 ft16"><NOBR>(HEAD-ON,</NOBR> <NOBR>REAR-END,</NOBR> UPSET, ETC.)</P></TD>
-                </TR>
-                <TR>
-                    <TD class="tr20 td169"></TD>
-                    <TD class="tr20 td0"><P class="p3 ft19">&nbsp;</P></TD>
-                    <TD class="tr20 td171"><P class="p3 ft19">&nbsp;</P></TD>
-                    <TD class="tr20 td136"><P class="p3 ft19">&nbsp;</P></TD>
-                </TR>
-            </TABLE>
-            <P class="p74 ft1">LAST ACCIDENT</P>
-            <P class="p75 ft1">NEXT PREVIOUS</P>
-            <P class="p76 ft1">NEXT PREVIOUS</P>
+            <P class="p64 ft1"><SPAN class="ft39">ACCIDENT RECORD </SPAN>FOR PAST 3 YEARS OR MORE (ATTACH SHEET IF MORE SPACE IS NEEDED) IF NONE, WRITE NONE</P>
+            <TABLE cellpadding=0 cellspacing=0 class="t13 accident_table">
+                <thead>
+                <tr>
+                    <th>
+                        ACCIDENT
+                    </th>
+                    <th>
+                        DATE
+                    </th>
+                    <th>
+                        NATURE OF ACCIDENT
+                    </th>
+                    <th>
+                        FATALITIES
+                    </th>
+                    <th>
+                        INJURIES
+                    </th>
+                    <th>
+                        HAZARDOUS MATERIAL SPILL
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+            <?php
+            $accident_records = $model->accidentRecords;
+            //var_dump($accident_records);
+            $i=1;
+            foreach ($accident_records as $record) {
+                $record_date     = $record->date;
+                $accident_nature = $record->accident_nature;
+                $fatalities      = $record->fatalities;
+                $injuries        = $record->injuries;
+                $hazaard         = $record->hazardous_material;
+                $accident_table = '';
+                echo $accident_table;
+                ?>
+
+                    <tr class ="table_row">
+                        <td><?= $i ?></td>
+                        <td><?= $record_date ?></td>
+
+                        <td><?= $accident_nature ?></td>
+
+                        <td><?= $fatalities  ?></td>
+
+                        <td><?= $injuries ?></td>
+
+                        <td><?= $hazaard ?></td>
+                    </tr>
+
+            <?php
+            $i++;} ?>
+                    </tbody>
+                </TABLE>
         </DIV>
-        <DIV id="id_1_2">
-            <P class="p64 ft39">NONE</P>
-            <P class="p77 ft1">HAZARDOUS</P>
-            <P class="p78 ft1">MATERIAL SPILL</P>
-        </DIV>
+
     </DIV>
     <DIV id="id_2">
         <P class="p64 ft1"><SPAN class="ft39">TRAFFIC CONVICTIONS </SPAN>AND FORFEITURES FOR THE PAST 3 YEARS (OTHER THAN PARKING VIOLATIONS) IF NONE, WRITE <SPAN class="ft39">NONE</SPAN></P>
-        <TABLE cellpadding=0 cellspacing=0 class="t13">
+        NEDOSTAJE
+        <TABLE cellpadding=0 cellspacing=0 class="t13 accident_table">
             <TR>
                 <TD class="tr22 td172"><P class="p79 ft1">LOCATION</P></TD>
                 <TD class="tr22 td173"><P class="p80 ft1">DATE</P></TD>
@@ -618,113 +587,50 @@
                 <TD class="tr19 td178"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD class="tr19 td179"><P class="p3 ft2">&nbsp;</P></TD>
             </TR>
-            <TR>
-                <TD class="tr22 td176"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td177"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td178"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td179"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr19 td176"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td177"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td178"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td179"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
+
         </TABLE>
-        <P class="p83 ft1">(ATTACH SHEET IF MORE SPACE IS NEEDED)</P>
         <P class="p84 ft40">EXPERIENCE AND QUALIFICATIONS – DRIVER</P>
         <P class="p64 ft41">List all driver licenses or permits held in the past 3 years</P>
         <TABLE cellpadding=0 cellspacing=0 class="t14">
+            <TR class = "row_border">
+                <TD colspan="1">LICENSES</TD>
+                <TD>STATE</TD>
+                <TD>LICENSE NO</TD>
+                <TD>TYPE</TD>
+                <TD>EXPIRATION DATE</TD>
+            </TR>
+            <?php
+            $license_number = 1;
+            $licences = $model->licenses;
+            foreach ($licences as $licence){
+                $l_state     = $licence->state;
+                $l_number    = $licence->license_no;
+                $l_type      = $licence->type;
+                $l_exp_date  = $licence->expiration_date; ?>
+
+                <TR class = "row_border">
+                    <TD colspan="1"><?=$license_number?></TD>
+                    <TD><?=$l_state?></TD>
+                    <TD><?=$l_number?></TD>
+                    <TD><?=$l_type?></TD>
+                    <TD><?=$l_exp_date?></TD>
+                </TR>
+            <?php
+                $license_number ++;
+            }
+            ?>
+
             <TR>
-                <TD class="tr22 td180"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td181"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td182"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td183"><P class="p85 ft1">STATE</P></TD>
-                <TD colspan=2 class="tr22 td184"><P class="p86 ft1">LICENSE NO.</P></TD>
-                <TD colspan=2 class="tr22 td185"><P class="p87 ft1">TYPE</P></TD>
-                <TD class="tr22 td185"><P class="p7 ft1">EXPIRATION DATE</P></TD>
+                <TD colspan=3>A. Have you ever been denied a license, permit or privilege to operate a motor vehicle?</P></TD>
+                <TD colspan=1>ODOGOVR</TD>
             </TR>
             <TR>
-                <TD class="tr20 td186"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD class="tr20 td125"><P class="p3 ft19">&nbsp;</P></TD>
-                <TD rowspan=2 class="tr29 td187"><P class="p3 ft39">DRIVER</P></TD>
-                <TD class="tr30 td177"><P class="p3 ft42">&nbsp;</P></TD>
-                <TD class="tr30 td154"><P class="p3 ft42">&nbsp;</P></TD>
-                <TD class="tr30 td178"><P class="p3 ft42">&nbsp;</P></TD>
-                <TD class="tr30 td188"><P class="p3 ft42">&nbsp;</P></TD>
-                <TD class="tr30 td189"><P class="p3 ft42">&nbsp;</P></TD>
-                <TD class="tr30 td190"><P class="p3 ft42">&nbsp;</P></TD>
+                <TD colspan=2><P class="p3 ft1">B. Has any license, permit or privilege ever been suspended or revoked?</P></TD>
+                <TD colspan=2>oDGOVOR</TD>
             </TR>
             <TR>
-                <TD class="tr9 td186"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr9 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td177"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td154"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td178"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td188"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td189"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td190"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=3 class="tr9 td191"><P class="p27 ft39">LICENSES</P></TD>
-                <TD class="tr10 td177"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td154"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td178"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td188"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td189"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr10 td190"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr12 td192"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td147"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td193"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td177"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td154"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td178"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td188"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td189"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr12 td190"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=6 class="tr15 td194"><P class="p3 ft1">A. Have you ever been denied a license, permit or privilege to operate a motor vehicle?</P></TD>
-                <TD class="tr15 td195"><P class="p46 ft1">YES</P></TD>
-                <TD class="tr22 td92"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td50"><P class="p88 ft1">NO</P></TD>
-            </TR>
-            <TR>
-                <TD colspan=6 class="tr0 td194"><P class="p3 ft1">B. Has any license, permit or privilege ever been suspended or revoked?</P></TD>
-                <TD colspan=2 class="tr0 td196"><P class="p46 ft1">YES</P></TD>
-                <TD class="tr0 td196"><P class="p88 ft1">NO</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr19 td10"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td125"><P class="p3 ft2">&nbsp;</P></TD>
                 <TD colspan=4 class="tr19 td197"><P class="p3 ft1">IF THE ANSWER TO EITHER A OR B IS YES, GIVE DETAILS</P></TD>
-                <TD class="tr19 td195"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td198"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td199"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr15 td10"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr15 td125"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td200"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td139"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr22 td154"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td201"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td202"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td203"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr19 td204"><P class="p3 ft2">&nbsp;</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr19 td10"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td147"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td200"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td139"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td154"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td205"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td188"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td92"><P class="p3 ft2">&nbsp;</P></TD>
-                <TD class="tr0 td50"><P class="p3 ft2">&nbsp;</P></TD>
+
             </TR>
         </TABLE>
         <P class="p89 ft40">DRIVING EXPERIENCE <SPAN class="ft24">CHECK YES OR NO</SPAN></P>
@@ -921,20 +827,31 @@
 <DIV id="page_5">
     <DIV id="p5dimg1">
         <IMG src="data:image/jpg;base64,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P/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0fbPGH/AEAtD/8ABzN/8i0AdBRXP/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0fbPGH/AEAtD/8ABzN/8i0AdBRXP/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0fbPGH/AEAtD/8ABzN/8i0AdBRXP/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0fbPGH/AEAtD/8ABzN/8i0AdBRXP/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0fbPGH/AEAtD/8ABzN/8i0AdBRXP/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0fbPGH/AEAtD/8ABzN/8i0AdBRXP/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0fbPGH/AEAtD/8ABzN/8i0AdBRXP/bPGH/QC0P/AMHM3/yLR9s8Yf8AQC0P/wAHM3/yLQB0FFc/9s8Yf9ALQ/8Awczf/ItH2zxh/wBALQ//AAczf/ItAHQUVz/2zxh/0AtD/wDBzN/8i0UAdBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUV8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUf8J34w/6GvXP/BjN/wDFUAfb9FfEH/Cd+MP+hr1z/wAGM3/xVH/Cd+MP+hr1z/wYzf8AxVAH2/RXxB/wnfjD/oa9c/8ABjN/8VR/wnfjD/oa9c/8GM3/AMVQB9v0V8Qf8J34w/6GvXP/AAYzf/FUUAf/2Q==" alt=""></DIV>
+    <?php
+    $road_tests = $model->certificateRoadTests;
+    foreach ($road_tests as $road_test)
+    {
+        $rt_license_number = $road_test->license_number;
+        $rt_state          = $road_test->state;
+        $rt_power_unit     = $road_test->power_unit;
+        $rt_trailer_type   = $road_test->trailer_type;
+        $rt_bus            = $road_test->bus;
+    }
 
+    ?>
 
     <P class="p105 ft46">CERTIFICATE OF DRIVER’S ROAD TEST</P>
     <P class="p106 ft47">Instructions:</P>
     <P class="p107 ft48">The original or copy of the certificate shall be retained in the employing motor carrier’s driver qualification file of the person examined and copy given to the person who was examined. (49 CFR 391.31(e)(f)(g)).</P>
     <P class="p108 ft49">CERTIFICATION OF ROAD TEST</P>
-    <P class="p109 ft48">Driver’s Name</P>
-    <P class="p110 ft48">Social Security Number</P>
-    <P class="p111 ft48">Driver’s License Number</P>
-    <P class="p110 ft48">State</P>
+    <P class="p109 ft48">Driver’s Name: <span class="insert_value"><?=$model->name?></span></P>
+    <P class="p110 ft48">Social Security Number: <span class="insert_value"><?=$model->ssn?></span></P>
+    <P class="p111 ft48">Driver’s License Number: <span class="insert_value"><?=$rt_license_number?></span></P>
+    <P class="p110 ft48">State: <span class="insert_value"><?=$rt_state?></span></P>
     <TABLE cellpadding=0 cellspacing=0 class="t18">
         <TR>
             <TD colspan=3 class="tr0 td259"><P class="p3 ft48">Type of Power Unit</P></TD>
-            <TD class="tr0 td260"><P class="p62 ft48">80,000 GW TRACTOR</P></TD>
+            <TD class="tr0 td260"><P class="p62 ft48"><span class="insert_value"><?=$rt_power_unit?></span></P></TD>
             <TD class="tr0 td261"><P class="p3 ft50">&nbsp;</P></TD>
         </TR>
         <TR>
@@ -946,7 +863,7 @@
         </TR>
         <TR>
             <TD colspan=3 class="tr6 td259"><P class="p3 ft48">Type of Trailer(s)</P></TD>
-            <TD class="tr6 td260"><P class="p112 ft48">53’ SEMI TRAILER</P></TD>
+            <TD class="tr6 td260"><P class="p112 ft48"><span class="insert_value"><?=$rt_trailer_type?></span></P></TD>
             <TD class="tr6 td261"><P class="p3 ft50">&nbsp;</P></TD>
         </TR>
         <TR>
@@ -957,7 +874,7 @@
         </TR>
         <TR>
             <TD colspan=3 class="tr12 td259"><P class="p3 ft48">If passenger carrier, type of bus</P></TD>
-            <TD class="tr12 td260"><P class="p113 ft48">N/A</P></TD>
+            <TD class="tr12 td260"><P class="p113 ft48"><span class="insert_value"><?=$rt_bus?></span></P></TD>
             <TD class="tr12 td261"><P class="p3 ft50">&nbsp;</P></TD>
         </TR>
         <TR>
@@ -995,7 +912,18 @@
     <P class="p122 ft48">(Organization and Address of Examiner)</P>
 </DIV>
 <DIV id="page_6">
-
+    <?php $examination_tests = $model->roadTestExaminations;
+    foreach ($examination_tests as $examination_test)
+    {
+    $et_inspect       = $examination_test->pre_trip_inspect;
+    $et_combination   = $examination_test->combination_units;
+    $et_placing_eq    = $examination_test->placing_equipment;
+    $et_emergency_eq  = $examination_test->energency_equipment;
+    $et_operating_ven = $examination_test->operating_venchile;
+    $et_turning_ven   = $examination_test->turning_venchile;
+    $et_breaking_ven  = $examination_test->breaking_venchile;
+    $et_backing_par   = $examination_test->backing_parking;
+    $et_other         = $examination_test->other;} ?>
 
     <TABLE cellpadding=0 cellspacing=0 class="t20">
         <TR>
@@ -1023,10 +951,10 @@
         <TR>
             <TD colspan=2 class="tr0 td276"><P class="p3 ft59">Name</P></TD>
             <TD class="tr0 td274"><P class="p3 ft50">&nbsp;</P></TD>
-            <TD class="tr0 td12"><P class="p3 ft50">&nbsp;</P></TD>
+            <TD class="tr0 td12"><P class="p3 ft50"><span class="insert_value"><?=$model->name?></span></P></TD>
             <TD class="tr0 td277"><P class="p3 ft50">&nbsp;</P></TD>
             <TD class="tr0 td278"><P class="p3 ft50">&nbsp;</P></TD>
-            <TD colspan=4 class="tr0 td281"><P class="p66 ft59">Phone</P></TD>
+            <TD colspan=4 class="tr0 td281"><P class="p66 ft59">Phone: <span class="insert_value"><?=$model->phone?></span></P></TD>
         </TR>
         <TR>
             <TD colspan=2 class="tr21 td276"><P class="p3 ft60">Driver’s</P></TD>
@@ -1042,7 +970,7 @@
         <TR>
             <TD colspan=2 class="tr0 td276"><P class="p3 ft59">Address</P></TD>
             <TD class="tr0 td274"><P class="p3 ft50">&nbsp;</P></TD>
-            <TD class="tr1 td288"><P class="p3 ft50">&nbsp;</P></TD>
+            <TD class="tr1 td288"><P class="p3 ft50"><span class="insert_value"><?='adresa'?></span></P></TD>
             <TD class="tr1 td289"><P class="p3 ft50">&nbsp;</P></TD>
             <TD class="tr1 td290"><P class="p3 ft50">&nbsp;</P></TD>
             <TD class="tr1 td291"><P class="p3 ft50">&nbsp;</P></TD>
@@ -1075,15 +1003,15 @@
         </TR>
     </TABLE>
     <P class="p124 ft48">The road test shall be given by the motor carrier or a person designated by it. However, a driver who is a motor carrier must be given the test by another person. The test shall be given buy a person who is competent to evaluate and determine whether the person who takes the test has demonstrated that he or she is capable of operating the vehicle and associated equipment that the motor carrier intends to assign.</P>
-    <P class="p125 ft48">_______ The <NOBR>pre-trip</NOBR> inspection. (As required by Sec. 392.7)</P>
-    <P class="p126 ft48">_______ Coupling and uncoupling of combination units, if the equipment he or she may drive includes combination units.</P>
-    <P class="p127 ft48">_______ Placing the equipment in operation.</P>
-    <P class="p128 ft48">_______ Use of vehicle’s controls and emergency equipment.</P>
-    <P class="p129 ft48">_______ Operating the vehicle in traffic and while passing other vehicles.</P>
-    <P class="p128 ft48">_______ Turning the vehicle.</P>
-    <P class="p128 ft48">_______ Braking, and slowing the vehicle by means other than braking.</P>
-    <P class="p129 ft48">_______ Backing, and parking the vehicle.</P>
-    <P class="p128 ft48">_______ Other, explain:</P>
+    <P class="p125 ft48"><span class="insert_value element_bottom_border"><?=$et_inspect?></span> The <NOBR>pre-trip</NOBR> inspection. (As required by Sec. 392.7)</P>
+    <P class="p126 ft48"><span class="insert_value element_bottom_border"><?=$et_combination?></span> Coupling and uncoupling of combination units, if the equipment he or she may drive includes combination units.</P>
+    <P class="p127 ft48"><span class="insert_value element_bottom_border"><?=$et_placing_eq?></span> Placing the equipment in operation.</P>
+    <P class="p128 ft48"><span class="insert_value element_bottom_border"><?=$et_emergency_eq?></span> Use of vehicle’s controls and emergency equipment.</P>
+    <P class="p129 ft48"><span class="insert_value element_bottom_border"><?=$et_operating_ven?></span> Operating the vehicle in traffic and while passing other vehicles.</P>
+    <P class="p128 ft48"><span class="insert_value element_bottom_border"><?=$et_turning_ven?></span> Turning the vehicle.</P>
+    <P class="p128 ft48"><span class="insert_value element_bottom_border"><?=$et_breaking_ven?></span> Braking, and slowing the vehicle by means other than braking.</P>
+    <P class="p129 ft48"><span class="insert_value element_bottom_border"><?=$et_backing_par?></span> Backing, and parking the vehicle.</P>
+    <P class="p128 ft48"><span class="insert_value element_bottom_border"><?=$et_other?></span> Other, explain:</P>
     <P class="p128 ft48">________________________________________________________________________________________________</P>
     <P class="p130 ft48">____________</P>
     <P class="p131 ft48">Type of equipment used in giving test: <SPAN class="ft63">80,000 GW TRACTOR, 53” SEMI TRAILER</SPAN></P>
@@ -1105,253 +1033,30 @@
 </DIV>
 <DIV id="page_7">
 
+    <?php $comp_works = $model->otherCompensatedWorks;
+    foreach ($comp_works as $comp_work)
+    {
+        $cp_another_emp = $comp_work->another_employer;
+        $cp_empl_by_co  = $comp_work->employed_by_company; ?>
 
-    <P class="p64 ft64">Beverly Freight INC</P>
-    <P class="p130 ft65">1426 W Rosemont Ave #G</P>
-    <P class="p64 ft55">Chicago,IL 60660</P>
-    <P class="p133 ft66">DRIVER STATEMENT OF <NOBR>ON-DUTY</NOBR> HOURS</P>
-    <P class="p134 ft66">(For Newly Hired Drivers)</P>
-    <P class="p135 ft67">INSTRUCTION: Motor carriers when using a driver for the first time shall obtain from the driver a signed statement giving the total time <NOBR>on-duty</NOBR> during the immediately preceding 7 days and time at which such driver was last relieved from duty prior to beginning work for such carrier. Rule 395.8(j)(2) Federal Motor Carrier Safety Regulations. NOTE: Hours for any compensated work during the preceding 7 days, including work for a <NOBR>non-motor</NOBR> carrier entity, must be recorded on this form.</P>
-    <P class="p136 ft67">Driver Name (Print) _________________________________________________________________________________</P>
-    <P class="p137 ft67">Social Security Number _____________________________________________________________________________</P>
-    <P class="p137 ft67">Driver’s License: State _____ Number _________________ Class _____ Endorsement(s) ______ Restriction(s) _______</P>
-    <P class="p138 ft67">Type of License __________________________________ Issuing State ______________________________________</P>
-    <TABLE cellpadding=0 cellspacing=0 class="t22">
-        <TR>
-            <TD rowspan=2 class="tr9 td299"><P class="p38 ft67">DAY</P></TD>
-            <TD class="tr1 td300"><P class="p118 ft67">1</P></TD>
-            <TD class="tr1 td301"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td302"><P class="p139 ft67">2</P></TD>
-            <TD class="tr1 td303"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td304"><P class="p140 ft67">3</P></TD>
-            <TD class="tr1 td284"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td305"><P class="p141 ft67">4</P></TD>
-            <TD class="tr1 td304"><P class="p140 ft67">5</P></TD>
-            <TD class="tr1 td306"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td307"><P class="p141 ft67">6</P></TD>
-            <TD class="tr1 td284"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td305"><P class="p141 ft67">7</P></TD>
-            <TD class="tr0 td66"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD rowspan=2 class="tr1 td308"><P class="p66 ft67">(yesterday)</P></TD>
-            <TD class="tr13 td309"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td310"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td311"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td312"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td278"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td313"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td312"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td314"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td315"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td278"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td313"><P class="p3 ft14">&nbsp;</P></TD>
-            <TD class="tr13 td66"><P class="p3 ft14">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr20 td316"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td309"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td310"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td311"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td312"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td278"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td313"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td312"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td314"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td315"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td278"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td313"><P class="p3 ft19">&nbsp;</P></TD>
-            <TD class="tr20 td66"><P class="p3 ft19">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr24 td317"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td318"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td319"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td320"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td321"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td322"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td290"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td323"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td322"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td324"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td325"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td290"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr24 td323"><P class="p3 ft27">&nbsp;</P></TD>
-            <TD class="tr27 td66"><P class="p3 ft34">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr0 td316"><P class="p38 ft67">DATE</P></TD>
-            <TD class="tr0 td308"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td309"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td310"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td311"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td312"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td313"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td312"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td314"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td315"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td313"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr0 td66"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr22 td317"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td318"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td319"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td320"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td321"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td322"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td290"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td323"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td322"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td324"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td325"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td290"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td323"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr22 td326"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr1 td316"><P class="p38 ft67">HOURS</P></TD>
-            <TD class="tr1 td308"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td309"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td310"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td311"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td312"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td313"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td312"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td314"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td315"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td313"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td327"><P class="p66 ft67">TOTAL HOURS</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr21 td316"><P class="p38 ft67">WORKED</P></TD>
-            <TD class="tr21 td308"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td309"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td310"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td311"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td312"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td313"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td312"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td314"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td315"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td313"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td327"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr30 td317"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td318"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD colspan=3 class="tr30 td322"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td322"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD colspan=2 class="tr30 td322"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td322"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td324"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td325"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td290"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td323"><P class="p3 ft42">&nbsp;</P></TD>
-            <TD class="tr30 td328"><P class="p3 ft42">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr16 td329"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD colspan=9 class="tr16 td330"><P class="p38 ft67">I hereby certify that the information given above is correct to the best of my</P></TD>
-            <TD class="tr16 td277"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr16 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr16 td331"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr16 td66"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr11 td329"><P class="p3 ft13">&nbsp;</P></TD>
-            <TD colspan=9 class="tr11 td330"><P class="p38 ft68">knowledge and belief, and that I was last relieved from work at</P></TD>
-            <TD class="tr11 td277"><P class="p3 ft13">&nbsp;</P></TD>
-            <TD class="tr11 td278"><P class="p3 ft13">&nbsp;</P></TD>
-            <TD class="tr11 td331"><P class="p3 ft13">&nbsp;</P></TD>
-            <TD class="tr11 td66"><P class="p3 ft13">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr21 td329"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td332"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td309"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td310"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td137"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD colspan=2 class="tr21 td333"><P class="p142 ft67">A.M.</P></TD>
-            <TD class="tr21 td331"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td334"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td314"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td277"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td331"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td66"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr7 td329"><P class="p3 ft11">&nbsp;</P></TD>
-            <TD colspan=6 class="tr7 td335"><P class="p143 ft69">___________________ P.M.</P></TD>
-            <TD colspan=5 class="tr7 td336"><P class="p144 ft70">On _________________________________</P></TD>
-            <TD class="tr7 td331"><P class="p3 ft11">&nbsp;</P></TD>
-            <TD class="tr7 td66"><P class="p3 ft11">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr21 td329"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD colspan=2 class="tr21 td329"><P class="p145 ft67">Time</P></TD>
-            <TD class="tr21 td310"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td137"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td334"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td331"><P class="p146 ft67">Day</P></TD>
-            <TD colspan=2 class="tr21 td58"><P class="p147 ft67">Month</P></TD>
-            <TD class="tr21 td277"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD colspan=2 class="tr21 td337"><P class="p3 ft67">Year</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr4 td329"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD colspan=7 class="tr4 td338"><P class="p146 ft67">_____________________________________________</P></TD>
-            <TD colspan=2 class="tr4 td58"><P class="p148 ft67">______________</P></TD>
-            <TD class="tr4 td277"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr4 td278"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr4 td331"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr4 td66"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr1 td329"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td332"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td309"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td310"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD colspan=3 class="tr1 td117"><P class="p94 ft67">Driver’s Signature</P></TD>
-            <TD class="tr1 td331"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td334"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td314"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD colspan=2 class="tr1 td232"><P class="p4 ft67">Date</P></TD>
-            <TD class="tr1 td331"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr1 td66"><P class="p3 ft2">&nbsp;</P></TD>
-        </TR>
-    </TABLE>
-    <P class="p149 ft71">_________________________________________________________________________________________________</P>
-    <P class="p150 ft72">_________________________________________________________________________________________________________________________</P>
-    <P class="p151 ft72">_________________________________________________________________________________________________________________________</P>
+
+    <?php  }  ?>
+
     <P class="p152 ft66">DRIVER CERTIFICATION FOR OTHER COMPENSATED WORK</P>
     <P class="p153 ft67">INSTRUCTIONS: When employed by a motor carrier, a driver must report to the carrier all <NOBR>on-duty</NOBR> time including time working for other employers. The definition of <NOBR>on-duty</NOBR> time found in Section 395.2 paragraphs (8) and (9) of the Federal Motor Carrier Safety Regulations includes time performing any other work in the capacity of, or in the employ or service of, a common, contract or private motor carrier, also performing any compensated work for any nonmotor carrier entity.</P>
-    <TABLE cellpadding=0 cellspacing=0 class="t23">
-        <TR>
-            <TD class="tr21 td339"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td258"><P class="p3 ft2">&nbsp;</P></TD>
-            <TD class="tr21 td340"><P class="p3 ft67">(check one)</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr16 td339"><P class="p3 ft67">Are you currently working for another employer?</P></TD>
-            <TD class="tr16 td258"><P class="p3 ft67">□ Yes</P></TD>
-            <TD class="tr16 td340"><P class="p154 ft67">□ No</P></TD>
-        </TR>
-        <TR>
-            <TD class="tr35 td339"><P class="p3 ft67">At this time do you intend to work for another employer while still employed by this company?</P></TD>
-            <TD class="tr35 td258"><P class="p3 ft67">□ Yes</P></TD>
-            <TD class="tr35 td340"><P class="p154 ft67">□ No</P></TD>
-        </TR>
-    </TABLE>
+    <table class="table detail-view">
+        <tbody>
+        <tr>
+            <td>Are you currently working for another employer?</td>
+            <td><?= ($cp_another_emp)?'Yes':'No' ?></td>
+        </tr>
+        <tr>
+            <td>At this time do you intend to work for another employer while still employed by this company?</td>
+            <td><?= ($cp_empl_by_co)?'Yes':'No' ?></td>
+        </tr>
+
+        </tbody>
+    </table>
     <P class="p155 ft67">I hereby certify that the information given above is true and I understand that once I become employed with this company, if I begin working for any additional employer(s) for compensation that I must inform this company immediately of such employment activity.</P>
     <TABLE cellpadding=0 cellspacing=0 class="t24">
         <TR>

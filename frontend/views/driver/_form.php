@@ -106,7 +106,31 @@ $this->registerJs($js);
             <div class="col-md-5">
             <?= $form->field($model, 'legal_right')->textInput(['maxlength' => true]) ?>
             </div>
+    </div>
+    <div class="row">
 
+        <div class="col-md-5">
+            <?= $form->field($driver_custom_questions, 'now_employed')->textInput() ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($driver_custom_questions, 'refereed_you')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-md-3">
+            <?= $form->field($driver_custom_questions, 'rate_of_pay')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <?= $form->field($driver_custom_questions, 'bonded')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-md-12">
+            <?= $form->field($driver_custom_questions, 'convicted')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-md-12">
+            <?= $form->field($driver_custom_questions, 'unable_reason')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
+    <div class="row">
         <div class ="col-md-12">
 
 
@@ -171,13 +195,16 @@ $this->registerJs($js);
                                         <div class ="col-sm-3">
                                             <?= $form->field($single_address, "[{$index}]street")->textInput(['maxlength' => true]) ?>
                                         </div>
+                                        <div class ="col-sm-2">
+                                            <?= $form->field($single_address, "[{$index}]city")->textInput(['maxlength' => true]) ?>
+                                        </div>
                                         <div class ="col-sm-3">
                                             <?= $form->field($single_address, "[{$index}]state")->textInput(['maxlength' => true]) ?>
                                         </div>
-                                            <div class ="col-sm-3">
+                                            <div class ="col-sm-2">
                                             <?= $form->field($single_address, "[{$index}]zip")->textInput(['maxlength' => true]) ?>
                                             </div>
-                                        <div class ="col-sm-3">
+                                        <div class ="col-sm-2">
                                             <?= $form->field($single_address, "[{$index}]time")->textInput(['maxlength' => true]) ?>
                                         </div>
 

@@ -12,7 +12,27 @@ class m180324_193847_driving_experience_answers extends Migration
      */
     public function safeUp()
     {
-
+        $this->createTable('driving_experience_answers', [
+            'id' => $this->primaryKey(),
+            'driving_experience_id' => $this->integer()->notNull(),
+            'type' => $this->string()->null(),
+            'dates' => $this->string()->null(),
+            'miles' => $this->string()->null(),
+        ]);
+        // creates index for column `author_id`
+        $this->createIndex(
+            'idx-driving_experience_id',
+            'driving_experience_answers',
+            'driving_experience_id'
+        );
+        $this->addForeignKey(
+            'fk-driving_experience_id',
+            'driving_experience_answers',
+            'driving_experience_id',
+            'driving_experience',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**
@@ -20,9 +40,16 @@ class m180324_193847_driving_experience_answers extends Migration
      */
     public function safeDown()
     {
-        echo "m180324_193847_driving_experience_answers cannot be reverted.\n";
-
-        return false;
+        $this->dropForeignKey(
+            'fk-driving_experience_id',
+            'driving_experience_answers'
+        );
+        // drops index for column `author_id`
+        $this->dropIndex(
+            'idx-driving_experience_id',
+            'driving_experience_answers'
+        );
+        $this->dropTable('driving_experience_answers');
     }
 
     /*
