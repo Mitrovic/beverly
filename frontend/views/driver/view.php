@@ -225,7 +225,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <!-- DRIVING EXPERIENCE   -->
     <h2>DRIVING EXPERIENCE</h2>
-    <?php $driving_expirience = $model->drivingExperiences;
+    <?php /* $driving_expirience = $model->drivingExperiences;
     //TODO FALI TABELA CELA MITROVICU
         foreach ($driving_expirience as $driv_exp)
         {
@@ -238,7 +238,7 @@ $this->params['breadcrumbs'][] = $this->title;
             $de_other           = $driv_exp->other;
             $de_states          = $driv_exp->states; ?>
         <h5>Fali tabela</h5>
-    <?php } ?>
+    <?php }*/ ?>
     <!-- END OF DRIVING EXP   -->
 
     <!-- CERTIFICATE OF DRIVER’S ROAD TEST   -->

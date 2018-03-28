@@ -15,10 +15,10 @@ class m180323_170916_traffic_convictions extends Migration
         $this->createTable('traffic_convictions', [
             'id' => $this->primaryKey(),
             'driver_id' => $this->integer()->notNull(),
-            'location' => $this->string()->notNull(),
-            'date' => $this->dateTime()->notNull(),
-            'charge' => $this->string()->notNull(),
-            'penalty' => $this->string()->notNull(),
+            'location' => $this->string()->null(),
+            'date' => $this->dateTime()->null(),
+            'charge' => $this->string()->null(),
+            'penalty' => $this->string()->null(),
         ]);
         // creates index for column `author_id`
         $this->createIndex(

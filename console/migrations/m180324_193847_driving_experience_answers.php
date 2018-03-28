@@ -14,6 +14,7 @@ class m180324_193847_driving_experience_answers extends Migration
     {
         $this->createTable('driving_experience_answers', [
             'id' => $this->primaryKey(),
+            'driver_id' => $this->integer()->notNull(),
             'driving_experience_id' => $this->integer()->notNull(),
             'type' => $this->string()->null(),
             'dates' => $this->string()->null(),
@@ -33,6 +34,19 @@ class m180324_193847_driving_experience_answers extends Migration
             'id',
             'CASCADE'
         );
+        $this->createIndex(
+            'idx-driver_id',
+            'driving_experience_answers',
+            'driver_id'
+        );
+        $this->addForeignKey(
+            'fk14-driver_id',
+            'driving_experience_answers',
+            'driver_id',
+            'driver',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**
@@ -47,6 +61,16 @@ class m180324_193847_driving_experience_answers extends Migration
         // drops index for column `author_id`
         $this->dropIndex(
             'idx-driving_experience_id',
+            'driving_experience_answers'
+        );
+
+        $this->dropForeignKey(
+            'fk14-driver_id',
+            'driving_experience_answers'
+        );
+        // drops index for column `author_id`
+        $this->dropIndex(
+            'idx-driver_id',
             'driving_experience_answers'
         );
         $this->dropTable('driving_experience_answers');

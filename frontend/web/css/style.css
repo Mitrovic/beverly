@@ -1597,3 +1597,17 @@ padding-top: 150px;
 #licensescustom-suspended_license .active,#licensescustom-denied_license .active{
     background: #4caf50;
 }
+.driving-label{
+    margin: 39px 0;
+    color: #000;
+    font-size: 15px;
+}
+.btn-primary{
+    float:right;
+}
+.not_home .navbar-header{
+    height: 120px;
+}
+.not_home nav{
+    margin:40px 0;
+}

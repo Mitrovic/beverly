@@ -33,7 +33,6 @@ class AccidentRecord extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'accident_nature', 'fatalities', 'injuries', 'hazardous_material'], 'required'],
             [['driver_id'], 'integer'],
             [['date'], 'safe'],
             [['accident_nature', 'fatalities', 'injuries', 'hazardous_material'], 'string', 'max' => 255],
