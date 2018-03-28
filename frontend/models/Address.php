@@ -32,9 +32,9 @@ class Address extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['street', 'state', 'zip', 'time'], 'required'],
+            [['street','city', 'state', 'zip', 'time'], 'required'],
             [['driver_id'], 'integer'],
-            [['street', 'state', 'zip', 'time'], 'string', 'max' => 255],
+            [['street', 'city','state', 'zip', 'time'], 'string', 'max' => 255],
             [['driver_id'], 'exist', 'skipOnError' => true, 'targetClass' => Driver::className(), 'targetAttribute' => ['driver_id' => 'id']],
         ];
     }
@@ -47,10 +47,11 @@ class Address extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'driver_id' => 'Driver ID',
+            'city' => 'City',
             'street' => 'Street',
             'state' => 'State',
             'zip' => 'Zip',
-            'time' => 'Time',
+            'time' => 'How Long?',
         ];
     }
 

@@ -18,7 +18,7 @@ class m180318_195348_driver extends Migration
             'name' => $this->string()->notNull(),
             'mi_name' => $this->string()->notNull(),
             'lname' => $this->string()->notNull(),
-            'ssn' => $this->integer()->notNull(),
+            'ssn' => $this->string()->notNull(),
             'phone' => $this->string()->notNull(),
             'email' => $this->string()->notNull(),
             'legal_right' => $this->string()->notNull(),

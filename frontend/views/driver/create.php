@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         <?= $this->render('_form', [
             'model' => $model,
+            'driver_custom_questions' => $driver_custom_questions,
             'address' => (empty($address)) ? [new Address] : $address,
             'employment_history' => (empty($employment_history)) ? [new EmploymentHistory] : $employment_history
         ]) ?>

@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use kartik\form\ActiveForm;
 use kartik\builder\Form;
+use kartik\daterange\DateRangePicker;
 use wbraganca\dynamicform\DynamicFormWidget;
 use kartik\datecontrol\DateControl;
 ?>
@@ -91,7 +92,23 @@ $form = ActiveForm::begin([
                                     <?= $form->field($employment, "[{$index}]phone")->textInput(['maxlength' => true]) ?>
                                 </div>
                                 <div class ="col-sm-2">
-                                    <?php echo $form->field($employment, "[{$index}]date")->textInput(['maxlength' => true]) ?>
+                                <div class = "form-group required">
+                                    <?php
+                                    echo '<label class="control-label">How long</label>';
+                                    echo DateRangePicker::widget([
+                                        'model'=>$employment,
+                                        'attribute'=>"[{$index}]date",
+                                        'convertFormat'=>true,
+                                        'pluginOptions'=>[
+                                            'timePicker'=>false,
+                                            'timePickerIncrement'=>30,
+                                            'locale'=>[
+                                                'format'=>'Y-m-d'
+                                            ]
+                                        ]
+                                    ]);
+                                    ?>
+                                </div>
                                 </div>
                                 <div class ="col-sm-2">
                                     <?= $form->field($employment, "[{$index}]position_held")->textInput(['maxlength' => true]) ?>
@@ -358,24 +375,42 @@ $form = ActiveForm::begin([
         </div>
         <?php DynamicFormWidget::end();
         ?>
-    <?= $form->field($licenses_custom, 'denied_license')->checkbox()?>
-
-    <?= $form->field($licenses_custom, 'suspended_license')->checkbox()?>
-    <?= $form->field($licenses_custom, 'answer')->textInput(['maxlength' => true]) ?>
-    <div class="form-group">
-    <div class = "col-md-12">
-        <h3>DRIVING EXPERIENCE</h3>
-
-    <?= $form->field($driving_experience, 'straight_truck')->checkbox()?>
-    <?= $form->field($driving_experience, 'tractor_semi_trailer')->checkbox()?>
-    <?= $form->field($driving_experience, 'tractor_two_trailer')->checkbox()?>
-    <?= $form->field($driving_experience, 'tractor_three_trailer')->checkbox()?>
-    <?= $form->field($driving_experience, 'motorcoach_eight')->checkbox()?>
-    <?= $form->field($driving_experience, 'motorcoach_fifteen')->checkbox()?>
-    <?= $form->field($driving_experience, 'other')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($driving_experience, 'states')->textInput(['maxlength' => true]) ?>
+    <div class = "row">
+        <div class ="col-md-12 ">
+            <?= $form->field($licenses_custom, 'denied_license')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+        </div>
+        <div class ="col-md-12">
+        <?= $form->field($licenses_custom, 'suspended_license')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+        </div>
+        <div class ="col-md-12">
+        <?= $form->field($licenses_custom, 'answer')->textInput(['maxlength' => true]) ?>
+        </div>
     </div>
+<?php
+
+foreach ($driving_experience_answers as $ex_answer){
+    $type = $form->field($ex_answer, '[]type')->textInput(['maxlength' => true]);
+}
+?>
+    <div class = "row">
+        <div class="form-group">
+            <h3>DRIVING EXPERIENCE</h3>
+            <div class = "col-md-12">
+                <?= $form->field($driving_experience, 'straight_truck')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+                <?=$type?>
+
+            </div>
+                <?= $form->field($driving_experience, 'tractor_semi_trailer')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+                <?= $form->field($driving_experience, 'tractor_two_trailer')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+                <?= $form->field($driving_experience, 'tractor_three_trailer')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+                <?= $form->field($driving_experience, 'motorcoach_eight')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+                <?= $form->field($driving_experience, 'motorcoach_fifteen')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
+                <?= $form->field($driving_experience, 'other')->textInput(['maxlength' => true]) ?>
+                <?= $form->field($driving_experience, 'states')->textInput(['maxlength' => true]) ?>
+            </div>
+        </div>
     </div>
+
     <div class="form-group">
     <div class="col-md-12">
         <?= Html::submitButton($employment->isNewRecord ? 'Save and continue' : 'Update', ['class' => 'btn btn-primary']) ?>

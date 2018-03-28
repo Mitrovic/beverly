@@ -60,12 +60,12 @@ class DriverCustomQestion extends \yii\db\ActiveRecord
             'worked_rp' => 'Worked Rp',
             'worked_position' => 'Worked Position',
             'reason_living' => 'Reason Living',
-            'now_employed' => 'Now Employed',
-            'refereed_you' => 'Refereed You',
-            'rate_of_pay' => 'Rate Of Pay',
-            'bonded' => 'Bonded',
-            'convicted' => 'Convicted',
-            'unable_reason' => 'Unable Reason',
+            'now_employed' => 'Are you now employed',
+            'refereed_you' => 'Who referred you?',
+            'rate_of_pay' => 'Rate of pay expected',
+            'bonded' => 'Have you ever been bonded?',
+            'convicted' => 'Have you ever been convicted of a felony?',
+            'unable_reason' => 'Is there any reason you might be unable to perform the functions of the job for which you have applied',
         ];
     }
 

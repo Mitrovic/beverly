@@ -32,7 +32,7 @@ body {margin-top: 0px;margin-left: 0px;/*background: url('/img/beverlylogo.png')
 
 #page_4 {position:relative; overflow: hidden;margin: 20px 0px 27px 48px;padding: 0px;border: none;width: 768px;}
 #page_4 #id_1 {border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 768px;overflow: hidden;}
-#page_4 #id_1 #id_1_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 591px;overflow: hidden;}
+#page_4 #id_1 #id_1_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;overflow: hidden;}
 #page_4 #id_1 #id_1_2 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 177px;overflow: hidden;}
 #page_4 #id_2 {border:none;margin: 19px 0px 0px 0px;padding: 0px;border:none;width: 768px;overflow: hidden;}
 #page_4 #id_3 {border:none;margin: 6px 0px 0px 0px;padding: 0px;border:none;width: 768px;overflow: hidden;}
@@ -305,7 +305,7 @@ body {margin-top: 0px;margin-left: 0px;/*background: url('/img/beverlylogo.png')
 .p61{text-align: right;padding-right: 30px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p62{text-align: left;padding-left: 32px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p63{text-align: left;padding-left: 7px;padding-right: 139px;margin-top: 0px;margin-bottom: 0px;}
-.p64{text-align: left;margin-top: 0px;margin-bottom: 0px;}
+.p64{text-align: left;margin-top: 0px;margin-bottom: 15px;}
 .p65{text-align: left;padding-left: 246px;margin-top: 0px;margin-bottom: 0px;}
 .p66{text-align: left;padding-left: 7px;margin-top: 0px;margin-bottom: 0px;white-space: nowrap;}
 .p67{text-align: left;padding-left: 9px;padding-right: 94px;margin-top: 0px;margin-bottom: 0px;}
@@ -947,4 +947,22 @@ body {margin-top: 0px;margin-left: 0px;/*background: url('/img/beverlylogo.png')
 .insert_value{
     font-size: 14px;
     font-weight: bold;
+}
+.table_row{
+
+}
+.table_row td{
+    border: #292526 1px solid;
+    font-size: 14px;
+    text-align: center;
+    height: 20px;
+    padding: 5px;
+}
+.accident_table th, .row_border td{
+    text-align: center;
+    border: #292526 1px solid;
+    padding: 5px;
+}
+.element_bottom_border{
+    border-bottom: #292526 1px solid;
 }
