@@ -6,6 +6,7 @@ use kartik\builder\Form;
 use kartik\daterange\DateRangePicker;
 use wbraganca\dynamicform\DynamicFormWidget;
 use kartik\datecontrol\DateControl;
+
 ?>
 <?php
 $form = ActiveForm::begin([
@@ -185,7 +186,7 @@ $form = ActiveForm::begin([
                                     <div class ="col-sm-3">
                                         <?php echo $form->field($accident, "[{$index}]date")->widget(DateControl::classname(), [
                                             'type'=>DateControl::FORMAT_DATE,
-                                            'ajaxConversion'=>false,
+                                            'ajaxConversion'=>true,
                                             'widgetOptions' => [
                                                 'pluginOptions' => [
                                                     'autoclose' => true
@@ -193,6 +194,7 @@ $form = ActiveForm::begin([
                                             ]
                                         ]);
                                         ?>
+
                                     </div>
                                     <div class ="col-sm-3">
                                         <?= $form->field($accident, "[{$index}]accident_nature")->textInput(['maxlength' => true]) ?>
