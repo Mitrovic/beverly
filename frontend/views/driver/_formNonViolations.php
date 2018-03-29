@@ -12,16 +12,18 @@ use yii\widgets\ActiveForm;
 <div class="examination-road-test-form">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?php echo $form->field($non_violation, 'date')->label('Date')->widget(DateControl::classname(), [
-        'displayFormat' => 'dd/MM/yyyy',
-        'autoWidget' => false,
-        'widgetClass' => 'yii\widgets\MaskedInput',
+    <?php echo $form->field($non_violation, "date")->widget(DateControl::classname(), [
+        'type'=>DateControl::FORMAT_DATE,
+        'ajaxConversion'=>false,
         'widgetOptions' => [
-            'mask' => '99/99/9999'
-        ],
+            'pluginOptions' => [
+                'autoclose' => true
+            ]
+        ]
     ]);
-    ?>    <?= $form->field($non_violation, 'motor_name')->textInput(['maxlength' => true]); ?>
+    ?>
+
+    <?= $form->field($non_violation, 'motor_name')->textInput(['maxlength' => true]); ?>
     <?= $form->field($non_violation, 'motor_address')->textInput(['maxlength' => true]); ?>
     <?= $form->field($non_violation, 'motor_state')->textInput(['maxlength' => true]); ?>
     <?= $form->field($non_violation, 'revied_by')->textInput(['maxlength' => true]); ?>

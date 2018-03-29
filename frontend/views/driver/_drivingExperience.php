@@ -30,11 +30,25 @@ $form = ActiveForm::begin([
         foreach ($driving_experience_answers as $ex_answer) {
 
             ?>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <?= $form->field($ex_answer, "[{$index}]type")->textInput(['maxlength' => true]) ?>
             </div>
-            <div class="col-sm-3">
-                <?= $form->field($ex_answer, "[{$index}]dates")->textInput(['maxlength' => true]) ?>
+            <div class="col-sm-2">
+                <?php
+                echo '<label class="control-label">How long</label>';
+                echo DateRangePicker::widget([
+                    'model'=>$ex_answer,
+                    'attribute'=>"[{$index}]dates",
+                    'convertFormat'=>true,
+                    'pluginOptions'=>[
+                        'timePicker'=>false,
+                        'timePickerIncrement'=>30,
+                        'locale'=>[
+                            'format'=>'Y-m-d'
+                        ]
+                    ]
+                ]);
+                ?>
             </div>
             <div class="col-sm-3">
                 <?= $form->field($ex_answer, "[{$index}]miles")->textInput(['maxlength' => true]) ?>
@@ -46,23 +60,49 @@ $form = ActiveForm::begin([
         echo '</div>';
     }
     ?>
+
+</div>
+<div class ="row">
+    <div class="col-sm-12"><?= $form->field($qualifications, "states")->textInput(['maxlength' => true]) ?></div>
 </div>
 <div class ="row">
     <div class="col-sm-12">
         <h4>EXPERIENCE AND QUALIFICATIONS – OTHER</h4>
     </div>
     <div class="col-sm-12">
-        <p>SHOW ANY TRUCKING, TRANSPORTATION OR OTHER EXPERIENCE THAT MAY HELP IN YOUR WORK FOR THIS COMPANY</p>
-        <p>  LIST COURSES AND TRAINING OTHER THAN SHOWN ELSEWHERE IN THIS APPLICATION</p>
-        <p>  LIST SPECIAL EQUIPMENT OR TECHNICAL MATERIALS YOU CAN WORK WITH (OTHER THAN THOSE ALREADY SHOWN)</p>
+        <?= $form->field($qualifications, "other_experience")->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-sm-12">
+        <?= $form->field($qualifications, "courses_training")->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-sm-12">
+        <?= $form->field($qualifications, "special_equipment")->textInput(['maxlength' => true]) ?>
     </div>
 </div>
 <div class ="row">
     <div class="col-sm-12">
         <h4>EDUCATION</h4>
     </div>
-    <div class="col-sm-12">
-
+    <div class="col-sm-4">
+        <?= $form->field($education, "highest_school")->dropDownList(
+            ['0' => 'select','1' => '1','2' => '2','3' => '3', '4' => '4', '5' => '5','6' => '6','7' => '7','8' => '8']
+        ); ?>
+    </div>
+    <div class="col-sm-4">
+        <?= $form->field($education, "high_school")->dropDownList(
+            ['0' => 'select','1' => '1','2' => '2','3' => '3', '4' => '4', '5' => '5','6' => '6','7' => '7','8' => '8']
+        ); ?>
+    </div>
+    <div class="col-sm-4">
+        <?= $form->field($education, "college")->dropDownList(
+            ['0' => 'select','1' => '1','2' => '2','3' => '3', '4' => '4', '5' => '5','6' => '6','7' => '7','8' => '8']
+        ); ?>
+    </div>
+    <div class="col-sm-6">
+        <?= $form->field($education, "last_school")->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-sm-6">
+        <?= $form->field($education, "last_school_state")->textInput(['maxlength' => true]) ?>
     </div>
 </div>
     <div class="form-group">

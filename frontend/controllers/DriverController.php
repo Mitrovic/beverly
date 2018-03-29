@@ -8,7 +8,9 @@ use app\models\CertificateRoadTest;
 use app\models\DriverCustomQestion;
 use app\models\DrivingExperience;
 use app\models\DrivingExperienceAnswers;
+use app\models\Education;
 use app\models\EmploymentHistory;
+use app\models\ExperienceQualification;
 use app\models\Licenses;
 use app\models\LicensesCustom;
 use app\models\NonViolationCertification;
@@ -267,6 +269,8 @@ class DriverController extends Controller
         $model = $this->findModel($id);
         $driving_experience = DrivingExperience::find()->all();
         $driving_experience_answers = [new DrivingExperienceAnswers];
+        $qualifications = new ExperienceQualification();
+        $education = new Education();
 
         if (Model::loadMultiple($driving_experience_answers,Yii::$app->request->post())) {
             $driving_experience_answers = Model::createMultiple(DrivingExperienceAnswers::classname());
@@ -280,6 +284,8 @@ class DriverController extends Controller
 
         return $this->render('drivingexperience', [
             'driving_experience' => $driving_experience,
+            'qualifications'=>$qualifications,
+            'education'=>$education,
             'driving_experience_answers' => (empty($driving_experience_answers)) ? [new DrivingExperienceAnswers] : $driving_experience_answers,
         ]);
     }

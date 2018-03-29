@@ -49,9 +49,9 @@ class DrivingExperienceAnswers extends \yii\db\ActiveRecord
             'id' => 'ID',
             'driver_id' => 'Driver ID',
             'driving_experience_id' => 'Driving Experience ID',
-            'type' => 'Type',
-            'dates' => 'Dates',
-            'miles' => 'Miles',
+            'type' => 'Circle type of equipment(van,tank,flat,dump,refer)',
+            'dates' => 'Dates(from/to)',
+            'miles' => 'Approx. no. of miles(TOTAL)',
         ];
     }
 

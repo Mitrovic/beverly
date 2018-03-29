@@ -65,8 +65,9 @@ class EmploymentHistory extends \yii\db\ActiveRecord
             'position_held' => 'Position Held',
             'salary' => 'Salary/Wage',
             'reason_for_leaving' => 'Reason For Leaving',
-            'fmcr' => 'Fmcr',
-            'safety' => 'Safety',
+            'fmcr' => 'WERE YOU SUBJECT TO THE FMCSRs WHILE EMPLOYED? ',
+            'safety' => 'WAS YOUR JOB DESIGNATED AS A SAFETY-SENSITIVE FUNCTION IN ANY DOT-REGULATED MODE SUBJECT TO THE DRUG AND
+ALCOHOL TESTING REQUIREMENTS OF 49 CFR PART 40? ',
         ];
     }
 

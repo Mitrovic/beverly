@@ -5,25 +5,26 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "address".
+ * This is the model class for table "education".
  *
  * @property int $id
  * @property int $driver_id
- * @property string $street
- * @property string $state
- * @property string $zip
- * @property string $time
+ * @property int $highest_school
+ * @property int $high_school
+ * @property int $college
+ * @property string $last_school
+ * @property string $last_school_state
  *
  * @property Driver $driver
  */
-class Address extends \yii\db\ActiveRecord
+class Education extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'address';
+        return 'education';
     }
 
     /**
@@ -32,9 +33,9 @@ class Address extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['street','city', 'state', 'zip', 'time'], 'required'],
             [['driver_id'], 'integer'],
-            [['street', 'city','state', 'zip', 'time'], 'string', 'max' => 255],
+            [['highest_school', 'high_school', 'college'], 'string', 'max' => 3],
+            [['last_school', 'last_school_state'], 'string', 'max' => 255],
             [['driver_id'], 'exist', 'skipOnError' => true, 'targetClass' => Driver::className(), 'targetAttribute' => ['driver_id' => 'id']],
         ];
     }
@@ -47,11 +48,11 @@ class Address extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'driver_id' => 'Driver ID',
-            'city' => 'City',
-            'street' => 'Street',
-            'state' => 'State',
-            'zip' => 'Zip',
-            'time' => 'How Long ?',
+            'highest_school' => 'CIRCLE HIGHEST GRADE COMPLETED',
+            'high_school' => 'High School',
+            'college' => 'College',
+            'last_school' => 'LAST SCHOOL ATTENDED',
+            'last_school_state' => 'City/State',
         ];
     }
 
