@@ -275,10 +275,13 @@ class DriverController extends Controller
         if (Model::loadMultiple($driving_experience_answers,Yii::$app->request->post())) {
             $driving_experience_answers = Model::createMultiple(DrivingExperienceAnswers::classname());
             Model::loadMultiple($driving_experience_answers,Yii::$app->request->post());
+            $education->load(Yii::$app->request->post());
             foreach ($driving_experience_answers as $index=>$answers) {
                 $answers->driver_id = $model->id;
                 $answers->save(false);
             }
+            $education->driver_id = $model->id;
+            $education->save(false);
             return $this->redirect(['certificate', 'id' => $model->id]);
         }
 
