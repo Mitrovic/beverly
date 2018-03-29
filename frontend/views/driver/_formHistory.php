@@ -122,12 +122,11 @@ $form = ActiveForm::begin([
                             </div>
                             <div class="row">
 
-
-                                <div class ="col-sm-3">
-                                    <?= $form->field($employment, "[{$index}]fmcr")->textInput(['maxlength' => true]) ?>
+                                <div class ="col-sm-12 button_small">
+                                    <?= $form->field($employment, "[{$index}]fmcr")->radioButtonGroup([ 1 => 'Yes', 0 => 'No']) ?>
                                 </div>
-                                <div class ="col-sm-3">
-                                    <?= $form->field($employment, "[{$index}]safety")->textInput(['maxlength' => true]) ?>
+                                <div class ="col-sm-12 button_small">
+                                    <?= $form->field($employment, "[{$index}]safety")->radioButtonGroup([ 1 => 'Yes', 0 => 'No']) ?>
                                 </div>
                             </div>
                         </div>
@@ -376,10 +375,10 @@ $form = ActiveForm::begin([
         <?php DynamicFormWidget::end();
         ?>
     <div class = "row">
-        <div class ="col-md-12 ">
+        <div class ="col-md-12 button_small">
             <?= $form->field($licenses_custom, 'denied_license')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
         </div>
-        <div class ="col-md-12">
+        <div class ="col-md-12 button_small">
         <?= $form->field($licenses_custom, 'suspended_license')->radioButtonGroup([ 1 => 'Yes', 0 => 'No']);?>
         </div>
         <div class ="col-md-12">

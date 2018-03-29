@@ -205,7 +205,9 @@ $this->registerJs($js);
                                             <?= $form->field($single_address, "[{$index}]zip")->textInput(['maxlength' => true]) ?>
                                             </div>
                                         <div class ="col-sm-2">
-                                            <?= $form->field($single_address, "[{$index}]time")->textInput(['maxlength' => true]) ?>
+                                            <?= $form->field($single_address, "[{$index}]time")->dropDownList(
+                                                ['six month' => 'les than six month', 'one year' => 'one year', 'two year' => 'two years', 'three years' => 'three years', 'four years' => 'four years','longer than four years' => 'longer than four years']
+                                            ); ?>
                                         </div>
 
                                     </div><!-- end:row -->

@@ -64,13 +64,15 @@ use wbraganca\dynamicform\DynamicFormWidget;
                             ?>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <?php echo $form->field($violation, "[{$i}]date")->label('Date')->widget(DateControl::classname(), [
-                                        'displayFormat' => 'dd/MM/yyyy',
-                                        'autoWidget' => false,
-                                        'widgetClass' => 'yii\widgets\MaskedInput',
+
+                                    <?php echo $form->field($violation, "[{$i}]date")->widget(DateControl::classname(), [
+                                        'type'=>DateControl::FORMAT_DATE,
+                                        'ajaxConversion'=>false,
                                         'widgetOptions' => [
-                                            'mask' => '99/99/9999'
-                                        ],
+                                            'pluginOptions' => [
+                                                'autoclose' => true
+                                            ]
+                                        ]
                                     ]);
                                     ?>
                                 </div>
@@ -93,14 +95,18 @@ use wbraganca\dynamicform\DynamicFormWidget;
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save and continue', ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
+    <div class = "row">
+        <div class = "col-sm-12">
     <?= Html::encode('If no violations are listed above, I certify that I have not been convicted or forfeited bond or collateral on account of any
             violation required to be listed during the past 12 months.' ) ?>
-
+        </div>
+    </div>
+    <div class="form-group">
     <?= Html::a('Not Convicted', ['nonviolation','id' => $model->id], ['class' => 'btn btn-primary']) ?>
+    </div>
 
 </div>

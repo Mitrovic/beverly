@@ -22,7 +22,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $this->render('_drivingExperience', [
             'driving_experience' => $driving_experience,
-            'driving_experience_answers' => (empty($driving_experience_answers)) ? [new DrivingExperienceAnswers] : $driving_experience_answers
+            'qualifications'=>$qualifications,
+            'education'=>$education,
+            'driving_experience_answers' => (empty($driving_experience_answers)) ? [new DrivingExperienceAnswers] : $driving_experience_answers,
         ]) ?>
 
     </div>
