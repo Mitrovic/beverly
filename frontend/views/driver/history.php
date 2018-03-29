@@ -28,8 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'traffic_convictions' => (empty($traffic_convictions)) ? [new TrafficConvictions] : $traffic_convictions,
             'licenses' => (empty($licenses)) ? [new Licenses] : $licenses,
             'licenses_custom' => $licenses_custom,
-            'driving_experience' => $driving_experience,
-            'driving_experience_answers' => (empty($driving_experience_answers)) ? [new DrivingExperienceAnswers] : $driving_experience_answers
         ]) ?>
 
     </div>

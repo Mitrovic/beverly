@@ -32,7 +32,6 @@ class TrafficConvictions extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['location', 'date', 'charge', 'penalty'], 'required'],
             [['driver_id'], 'integer'],
             [['date'], 'safe'],
             [['location', 'charge', 'penalty'], 'string', 'max' => 255],
