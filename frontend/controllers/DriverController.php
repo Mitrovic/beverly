@@ -280,6 +280,8 @@ class DriverController extends Controller
                 $answers->driver_id = $model->id;
                 $answers->save(false);
             }
+            $qualifications->driver_id = $model->id;
+            $qualifications->save(false);
             $education->driver_id = $model->id;
             $education->save(false);
             return $this->redirect(['certificate', 'id' => $model->id]);

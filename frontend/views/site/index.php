@@ -163,7 +163,7 @@ $this->title = 'Beverly Freight INC';
 <section class="buy_now">
     <div class="container text-center">
         <h3 class="buy_now_title">We are hiring!</h3>
-        <a href="#contact" class="btn btn-default btn-promotion-bg page-scroll">Apply now</a>
+        <a href="/driver/create" class="btn btn-default btn-promotion-bg page-scroll">Apply now</a>
     </div><!--- END CONTAINER -->
 </section>
 <!-- END PROMOTION -->

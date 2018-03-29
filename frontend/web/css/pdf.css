@@ -971,7 +971,7 @@ body {margin-top: 0px;margin-left: 0px;background: url('/img/beverly_background.
     border-collapse: collapse;
     border: #292526 1px solid;
 }
-.driver-view table td{
+.driver-view table td, .driver-view table th{
     border: #292526 1px solid;
     font-size: 14px;
     text-align: center;

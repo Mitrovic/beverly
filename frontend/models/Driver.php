@@ -124,7 +124,7 @@ class Driver extends \yii\db\ActiveRecord
      */
     public function getDriverCustomQuestions()
     {
-        return $this->hasMany(DriverCustomQuestion::className(), ['driver_id' => 'id']);
+        return $this->hasOne(DriverCustomQestion::className(), ['driver_id' => 'id']);
     }
 
     /**
@@ -207,5 +207,9 @@ class Driver extends \yii\db\ActiveRecord
     public function getDrivingExperienceQualification()
     {
         return $this->hasMany(ExperienceQualification::className(), ['driver_id' => 'id']);
+    }
+    public function getOneDrivingExperienceQualification()
+    {
+        return $this->hasOne(ExperienceQualification::className(), ['driver_id' => 'id']);
     }
 }

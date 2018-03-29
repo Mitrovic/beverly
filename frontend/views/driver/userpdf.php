@@ -227,15 +227,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <DIV id="id_1">
         <h2>APPLICANT TO COMPLETE</h2>
-        <p>(answer all questions - please print)</p>
     </DIV>
 </DIV>
 <div class = "container">
     <div class="driver-view">
+        <h3>Personal information</h3>
         <table id="table-example-1">
             <tr>
                 <td width="50%">Position(s) Applied for</td>
-                <td><?=$model->position_id?></td>
+                <td><?=$model->position->name?></td>
             </tr>
             <tr>
                 <td width="50%">Name</td>
@@ -270,11 +270,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 <td><?=$model->birth_date?></td>
             </tr>
         </table>
-        <h2>Address</h2>
+        <h3>Address</h3>
         <?php
         $adrese = $model->addresses;
+        $address_count = 0;
         foreach ($adrese as $adresa) {
+            if($address_count ==0){
+                echo '<h4>Current Address</h4>';
+            }else{
+                echo '<h4>Previous Address '.$address_count.'</h4>';
+            }
             $street = $adresa->street;
+
             $state = $adresa->state;
             $zip = $adresa->zip;
             $time = $adresa->time;
@@ -299,7 +306,43 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
                 </tbody>
             </table>
-        <?php } ?>
+            <?php
+            $address_count++;
+        }
+        ?>
+        <h3>Other</h3>
+        <?php
+        echo DetailView::widget([
+            'model' => $model,
+            'attributes' => [
+                [
+                    'attribute' => 'Are you now employed?',
+                    'value'=>$model->driverCustomQuestions->now_employed,
+                ],
+                [
+                    'attribute' => 'Who referred you?',
+                    'value'=>$model->driverCustomQuestions->refereed_you,
+                ],
+                [
+                    'attribute' => 'Rate of pay expected',
+                    'value'=>$model->driverCustomQuestions->rate_of_pay,
+                ],
+                [
+                    'attribute' => 'Have you ever been bonded?',
+                    'value'=>$model->driverCustomQuestions->bonded,
+                ],
+                [
+                    'attribute' => 'Have you ever been convicted of a felony?',
+                    'value'=>$model->driverCustomQuestions->convicted,
+                ],
+                [
+                    'attribute' => 's there any reason you might be unable to perform the functions of the job for which you have applied ?',
+                    'value'=>$model->driverCustomQuestions->unable_reason,
+                ],
+            ],
+        ]);
+        ?>
+
         <!--  Employment History    -->
         <h2>Employment History</h2>
         <p>All driver applicants to drive in interstate commerce must provide the following information on all employers during the
@@ -327,7 +370,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <table class="table table-striped table-bordered detail-view pdf_table">
                 <tbody>
                 <tr>
-                    <td>Name</td>
+                    <td>Employer Name</td>
                     <td width="50%"><?= $eh_name ?></td>
                 </tr>
                 <tr>
@@ -371,12 +414,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     <td><?= $eh_reason ?></td>
                 </tr>
                 <tr>
-                    <td>FMCR</td>
-                    <td><?= $eh_fmcr ?></td>
+                    <td>WERE YOU SUBJECT TO THE FMCSRs WHILE EMPLOYED </td>
+                    <td><?php if($eh_fmcr){echo 'Yes';}else{echo 'No';} ?></td>
                 </tr>
                 <tr>
-                    <td>Safety</td>
-                    <td><?= $eh_safety ?></td>
+                    <td>WAS YOUR JOB DESIGNATED AS A SAFETY-SENSITIVE FUNCTION IN ANY DOT-REGULATED MODE SUBJECT TO THE DRUG AND
+                        ALCOHOL TESTING REQUIREMENTS OF 49 CFR PART 40?</td>
+                    <td><?php if($eh_safety){echo 'Yes';}else{echo 'No';} ?></td>
                 </tr>
                 <hr>
                 </tbody>
@@ -388,17 +432,23 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php
         $accident_records = $model->accidentRecords;
         //var_dump($accident_records);
+        $accident_count = 0;
         foreach ($accident_records as $record) {
             $record_date     = $record->date;
             $accident_nature = $record->accident_nature;
             $fatalities      = $record->fatalities;
             $injuries        = $record->injuries;
             $hazaard         = $record->hazardous_material;
+            if($accident_count ==0){
+                echo '<h4>LAST ACCIDENT</h4>';
+            }else{
+                echo '<h4>PREVIOUS ACCIDENT '.$accident_count.'</h4>';
+            }
             ?>
             <table class="table table-striped table-bordered detail-view">
                 <tbody>
                 <tr>
-                    <td>Date</td>
+                    <td width="50%">Date</td>
                     <td><?= $record_date ?></td>
                 </tr>
                 <tr>
@@ -419,11 +469,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
                 </tbody>
             </table>
-        <?php } ?>
+        <?php
+            $accident_count++;
+        } ?>
         <!-- END OF Accident Record   -->
 
-        <h2>Traffic Convictions and Forfeitures for the Past 3 Years</h2>
-
+        <h2>Traffic Convictions and Forfeitures</h2>
+        <table class="table table-striped table-bordered detail-view">
+            <tbody>
+            <tr>
+                <td width = "25%">Location</td>
+                <td width = "25%">Date</td>
+                <td width = "25%">Charge</td>
+                <td width = "25%">Penalty</td>
+            </tr>
         <?php $convictions = $model->trafficConvictions;
         foreach($convictions as $convict)
         {
@@ -432,30 +491,18 @@ $this->params['breadcrumbs'][] = $this->title;
             $c_charge   = $convict->charge;
             $c_penalty  = $convict->penalty; ?>
 
-            <table class="table table-striped table-bordered detail-view">
-                <tbody>
+
                 <tr>
-                    <td width="50%">Location</td>
                     <td><?= $c_location ?></td>
-                </tr>
-                <tr>
-                    <td>Date</td>
                     <td><?= $c_date ?></td>
-                </tr>
-                <tr>
-                    <td>Charge</td>
                     <td><?= $c_charge  ?></td>
-                </tr>
-                <tr>
-                    <td>Penalty</td>
                     <td><?= $c_penalty ?></td>
                 </tr>
-                </tbody>
-            </table>
+
         <?php    }
         ?>
-
-
+            </tbody>
+        </table>
 
 
         <!--  EXPERIENCE AND QUALIFICATIONS – DRIVER  -->
@@ -542,8 +589,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </table>
         <?php
         ?>
-        <!-- END OF DRIVING EXP   -->
-
         <h2>EXPERIENCE AND QUALIFICATIONS – OTHER</h2>
 
         <?php $exp_qualifications = ExperienceQualification::findAll(['driver_id' => $model->id]);
