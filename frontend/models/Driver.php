@@ -22,9 +22,11 @@ use Yii;
  * @property Address[] $addresses
  * @property AlcoholDrugs[] $alcoholDrugs
  * @property CertificateRoadTest[] $certificateRoadTests
+ * @property DrivingExperienceAnswers[] $drivingExperienceAnswers
  * @property Position $position
  * @property DriverCustomQuestion[] $driverCustomQuestions
  * @property DrivingExperience[] $drivingExperiences
+ * @property ExperienceQualification[] $experienceQualification
  * @property EmploymentHistory[] $employmentHistories
  * @property Licenses[] $licenses
  * @property LicensesCustom[] $licensesCustoms
@@ -195,5 +197,15 @@ class Driver extends \yii\db\ActiveRecord
     public function getViolationCertifications()
     {
         return $this->hasMany(ViolationCertification::className(), ['driver_id' => 'id']);
+    }
+
+    public function getDrivingExperienceAnswers()
+    {
+        return $this->hasMany(DrivingExperienceAnswers::className(), ['driver_id' => 'id']);
+    }
+
+    public function getDrivingExperienceQualification()
+    {
+        return $this->hasMany(ExperienceQualification::className(), ['driver_id' => 'id']);
     }
 }

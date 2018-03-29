@@ -1,5 +1,9 @@
 <?php
 
+use app\models\DrivingExperience;
+use app\models\DrivingExperienceAnswers;
+use app\models\Education;
+use app\models\ExperienceQualification;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -110,6 +114,40 @@ $this->params['breadcrumbs'][] = $this->title;
         </table>
     <?php } ?>
     <!-- END OF Accident Record   -->
+
+    <h2>Traffic Convictions and Forfeitures for the Past 3 Years</h2>
+
+    <?php $convictions = $model->trafficConvictions;
+        foreach($convictions as $convict)
+        {
+            $c_location = $convict->location;
+            $c_date     = $convict->date;
+            $c_charge   = $convict->charge;
+            $c_penalty  = $convict->penalty; ?>
+
+            <table class="table table-striped table-bordered detail-view">
+                <tbody>
+                <tr>
+                    <td>Location</td>
+                    <td><?= $c_location ?></td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td><?= $c_date ?></td>
+                </tr>
+                <tr>
+                    <td>Charge</td>
+                    <td><?= $c_charge  ?></td>
+                </tr>
+                <tr>
+                    <td>Penalty</td>
+                    <td><?= $c_penalty ?></td>
+                </tr>
+                </tbody>
+            </table>
+        <?php    }
+        ?>
+
 
     <!--  Employment History    -->
     <h2>Employment History</h2>
@@ -225,22 +263,123 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <!-- DRIVING EXPERIENCE   -->
     <h2>DRIVING EXPERIENCE</h2>
-    <?php /* $driving_expirience = $model->drivingExperiences;
-    //TODO FALI TABELA CELA MITROVICU
-        foreach ($driving_expirience as $driv_exp)
-        {
-            $de_straight_truk   = $driv_exp->straight_truck;
-            $de_tractor_st      = $driv_exp->tractor_semi_trailer;
-            $de_tractor_2       = $driv_exp->tractor_two_trailer;
-            $de_tractor_3       = $driv_exp->tractor_three_trailer;
-            $de_motor_8         = $driv_exp->motorcoach_eight;
-            $de_motor_15        = $driv_exp->motorcoach_fifteen;
-            $de_other           = $driv_exp->other;
-            $de_states          = $driv_exp->states; ?>
-        <h5>Fali tabela</h5>
-    <?php }*/ ?>
+    <?php
+        $drv_experience_types = DrivingExperience::find()->all();
+
+
+    ?>
+    <table class="table table-striped table-bordered detail-view">
+        <thead>
+            <th>CLASS OF EQUIPMENT</th>
+            <th>CIRCLE TYPE OF EQUIPMENT</th>
+            <th>DATES</th>
+            <th>APPROX. NO. OF MILES</th>
+        </thead>
+        <tbody>
+
+            <?php foreach ($drv_experience_types as $drv_type)
+            { ?>
+            <tr>
+                <td><?= $drv_type->name ?></td>
+                <td>
+                    <?php $customers = DrivingExperienceAnswers::findAll(['driving_experience_id' => $drv_type->id,'driver_id' => $model->id]);
+                    foreach ($customers as $customer)
+                    {
+                        echo $customer->type;
+                    }
+                    ?>
+                </td>
+                <td>
+                    <?php $customers = DrivingExperienceAnswers::findAll(['driving_experience_id' => $drv_type->id,'driver_id' => $model->id]);
+                    foreach ($customers as $customer)
+                    {
+                        echo $customer->dates;
+                    }
+                    ?>
+                </td>
+                <td>
+                    <?php $customers = DrivingExperienceAnswers::findAll(['driving_experience_id' => $drv_type->id,'driver_id' => $model->id]);
+                    foreach ($customers as $customer)
+                    {
+                        echo $customer->miles;
+                    }
+                    ?>
+                </td>
+            </tr>
+
+           <?php } ?>
+
+        </tbody>
+    </table>
+    <?php
+    ?>
     <!-- END OF DRIVING EXP   -->
 
+    <h2>EXPERIENCE AND QUALIFICATIONS – OTHER</h2>
+
+    <?php $exp_qualifications = ExperienceQualification::findAll(['driver_id' => $model->id]);
+        foreach ($exp_qualifications as $exp_qualification)
+        {
+            $eq_states = $exp_qualification->states;
+            $eq_other  = $exp_qualification->other_experience;
+            $eq_course = $exp_qualification->courses_training;
+            $eq_spec   = $exp_qualification->special_equipment; ?>
+    <table class="table table-striped table-bordered detail-view">
+        <tbody>
+        <tr>
+            <td>LIST STATES OPERATED IN FOR LAST FIVE YEARS:</td>
+            <td><?= $eq_states ?></td>
+        </tr>
+        <tr>
+            <td>SHOW ANY TRUCKING, TRANSPORTATION OR OTHER EXPERIENCE THAT MAY HELP IN YOUR WORK FOR THIS COMPANY</td>
+            <td><?= $eq_other ?></td>
+        </tr>
+        <tr>
+            <td>LIST COURSES AND TRAINING OTHER THAN SHOWN ELSEWHERE IN THIS APPLICATION</td>
+            <td><?= $eq_course  ?></td>
+        </tr>
+        <tr>
+            <td>LIST SPECIAL EQUIPMENT OR TECHNICAL MATERIALS YOU CAN WORK WITH (OTHER THAN THOSE ALREADY SHOWN)</td>
+            <td><?= $eq_spec ?></td>
+        </tr>
+        </tbody>
+    </table>
+    <?php }
+    ?>
+
+
+    <h2>EDUCATION</h2>
+
+    <?php $educations = Education::findAll(['driver_id' => $model->id]);
+
+    foreach ($educations as $education)
+    {   ?>
+        <table class="table table-striped table-bordered detail-view">
+            <tbody>
+            <tr>
+                <td>HIGHEST GRADE COMPLETED</td>
+                <td><?= $education->highest_school ?></td>
+            </tr>
+            <tr>
+                <td>HIGH SCHOOL</td>
+                <td><?= $education->high_school ?></td>
+            </tr>
+            <tr>
+                <td>COLLEGE:</td>
+                <td><?= $education->college  ?></td>
+            </tr>
+            <tr>
+                <td>LAST SCHOOL ATTENDED</td>
+                <td><?= $education->last_school ?></td>
+            </tr>
+            <tr>
+                <td>LAST SCHOOL ATTENDED - State</td>
+                <td><?= $education->last_school_state ?></td>
+            </tr>
+            </tbody>
+        </table>
+    <?php }
+    ?>
     <!-- CERTIFICATE OF DRIVER’S ROAD TEST   -->
     <h2>CERTIFICATE OF DRIVER’S ROAD TEST</h2>
     <?php $road_tests = $model->certificateRoadTests;
