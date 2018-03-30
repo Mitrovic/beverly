@@ -243,6 +243,12 @@ fieldset {
     text-transform: uppercase;
 	font-family: "Montserrat",sans-serif;
 }
+.menu-shrink .navbar-brand img{
+    width: 50px;
+}
+.menu-shrink .navbar-brand{
+    padding-top: 0px;
+}
 .not_home .menu-top{
     background-color: #000 !important;
     position: relative;
