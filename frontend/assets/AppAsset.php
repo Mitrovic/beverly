@@ -20,12 +20,13 @@ class AppAsset extends AssetBundle
         'css/animate.css',
         'css/style.css',
         'css/hero-style.css',
-        'js/modernizr.js',
+        //'js/modernizr.js',
         'css/switcher/style9.css',
         'css/un.css'
     ];
     public $js = [
-        'js/ajax-modal-popup.js',
+        //'js/ajax-modal-popup.js',
+        'js/jquery-migrate-3.0.0.js',
         'js/modernizr-2.8.3.min.js',
         //'http://maps.google.com/maps/api/js?sensor=true',
         //'js/js.storage.min.js',
@@ -36,12 +37,12 @@ class AppAsset extends AssetBundle
         'js/jquery.mixitup.js',
         'js/venobox.min.js',
         'js/scrolltopcontrol.js',
-        'js/form-contact.js',
+        //'js/form-contact.js',
         'js/jquery.appear.js',
         'js/wow.min.js',
         'js/jquery.validate.min.js',
         'js/hero-slider.js',
-        //'js/scripts.js',
+        'js/scripts.js',
         //'js/un.js'
     ];
     public $depends = [
