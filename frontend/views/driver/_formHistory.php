@@ -103,7 +103,18 @@ $form = ActiveForm::begin([
                     </div>
                 <?php endforeach; ?>
                 </div>
+            <div class="panel-footer">
+                <p>*Includes vehicles having a GVWR of 26,001 lbs. or more, vehicles designed to transport 16 or more passengers
+                (including the driver), or any size vehicle used to transport hazardous materials in a quantity requiring placarding.<br/>
+                ✝
+                The Federal Motor Carrier Safety Regulations (FMCSRs) apply to anyone operating a motor vehicle on a highway
+                in interstate commerce to transport passengers or property when the vehicle: (1) weighs or has a GVWR of 10,001 pounds
+                or more, (2) is designed or used to transport more than 8 passengers (including the driver), OR (3) is of any size and is
+                used to transport hazardous materials in a quantity requiring placarding.
+                </p>
+            </div>
         </div>
+
 
 
 </div>

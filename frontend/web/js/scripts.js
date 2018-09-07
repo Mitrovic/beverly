@@ -168,6 +168,31 @@ Version      : 1.0
 
 	/*START WOW ANIMATION JS*/
 	  new WOW().init();
-	/*END WOW ANIMATION JS*/	
+	/*END WOW ANIMATION JS*/
+    $("#agre").attr('disabled',true);
+    $("#txt").attr('disabled',true);
+    $("textarea").scroll(function(){
+
+        var scrol=$("textarea").scrollTop();
+
+        if (scrol >= '373'){
+            $("#agre").prop('disabled',false);
+
+        }
+        else
+        {
+            $("#agre").attr('disabled',true);
+        }
+    });
+    $(":checkbox").change(function(){
+        if($(this).is(':checked'))
+        {
+            $("#txt").attr('disabled',false);
+        }
+        else
+        {
+            $("#txt").attr('disabled',true);
+        }
+    });
 				
 })(jQuery);

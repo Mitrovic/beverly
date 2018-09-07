@@ -13,6 +13,7 @@ use app\models\NonViolationCertification;
 use app\models\OtherCompensatedWork;
 use app\models\RoadTestExamination;
 use app\models\TrafficConvictions;
+use app\models\UserSignature;
 use app\models\ViolationCertification;
 use Symfony\Component\BrowserKit\History;
 use Yii;
@@ -26,6 +27,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\web\Response;
+use yii\web\UploadedFile;
 use yii\widgets\ActiveForm;
 use yii\data\ActiveDataProvider;
 
@@ -369,6 +371,34 @@ class DriverController extends Controller
             'alcohol_drugs' => $alcohol_drugs,
         ]);
     }
+    /*
+     * USER SIGNATURE
+     */
+    public function actionPolicy($id)
+    {
+        $model = $this->findModel($id);
+
+        $policy = new UserSignature();
+
+        if ($policy->load(Yii::$app->request->post())) {
+            $policy->driver_id = $model->id;
+            $policy->signature = UploadedFile::getInstance($policy, 'signature');
+            if ($policy->upload()) {
+                // file is uploaded successfully
+                return;
+            }
+            $policy->save(false);
+
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('policy', [
+            'policy' => $policy,
+        ]);
+    }
+    /**
+     *
+     */
 
     /**
      * Updates an existing Driver model.

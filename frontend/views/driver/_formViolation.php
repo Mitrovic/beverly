@@ -91,7 +91,11 @@ use wbraganca\dynamicform\DynamicFormWidget;
             <?php DynamicFormWidget::end(); ?>
         </div>
     </div>
-
+    <div class="panel-footer text-warning">
+        <p>*I certify that the following is a true and complete list of traffic violations (other than parking violations) which I have been
+            convicted or forfeited bond or collateral during the past 12 months.
+        </p>
+    </div>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
