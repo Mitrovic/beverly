@@ -92,10 +92,10 @@ class DriverController extends Controller
     public function actionMpdfDemo1($id) {
         $pdf = new Pdf([
             'mode' => Pdf::MODE_CORE, // leaner size using standard fonts
-            'content' => $this->renderPartial('userpdf', [
+            'content' => $this->renderPartial('pdfpreview', [
                 'model' => $this->findModel($id)
             ]),
-            'cssFile' => '@app/web/css/pdf.css',
+            'cssFile' => '@app/web/css/newpdf.css',
             'options' => [
                 'title' => 'Privacy Policy - Krajee.com',
                 'subject' => 'Generating PDF files via yii2-mpdf extension has never been easy'
