@@ -108,7 +108,7 @@ class Driver extends \yii\db\ActiveRecord
      */
     public function getCertificateRoadTests()
     {
-        return $this->hasMany(CertificateRoadTest::className(), ['driver_id' => 'id']);
+        return $this->hasOne(CertificateRoadTest::className(), ['driver_id' => 'id']);
     }
 
     /**
@@ -156,7 +156,7 @@ class Driver extends \yii\db\ActiveRecord
      */
     public function getLicensesCustoms()
     {
-        return $this->hasMany(LicensesCustom::className(), ['driver_id' => 'id']);
+        return $this->hasOne(LicensesCustom::className(), ['driver_id' => 'id']);
     }
 
     /**
@@ -172,7 +172,7 @@ class Driver extends \yii\db\ActiveRecord
      */
     public function getOtherCompensatedWorks()
     {
-        return $this->hasMany(OtherCompensatedWork::className(), ['driver_id' => 'id']);
+        return $this->hasOne(OtherCompensatedWork::className(), ['driver_id' => 'id']);
     }
 
     /**
@@ -180,7 +180,7 @@ class Driver extends \yii\db\ActiveRecord
      */
     public function getRoadTestExaminations()
     {
-        return $this->hasMany(RoadTestExamination::className(), ['driver_id' => 'id']);
+        return $this->hasOne(RoadTestExamination::className(), ['driver_id' => 'id']);
     }
 
     /**
