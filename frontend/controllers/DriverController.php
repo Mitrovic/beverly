@@ -15,6 +15,7 @@ use app\models\Licenses;
 use app\models\LicensesCustom;
 use app\models\NonViolationCertification;
 use app\models\OtherCompensatedWork;
+use app\models\Policy;
 use app\models\RoadTestExamination;
 use app\models\TrafficConvictions;
 use app\models\ViolationCertification;
@@ -111,6 +112,23 @@ class DriverController extends Controller
      * Creates a new Driver model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
+     */
+    public function actionJobApplication()
+    {
+        $application = new Policy();
+
+        if ($application->load(Yii::$app->request->post())&& $application->save()) {
+
+            return $this->redirect(['create', 'id' => $application->id]);
+        }else{
+            return $this->render('job-application', [
+                'application' => $application,
+            ]);
+        }
+
+    }
+    /*
+     *
      */
     public function actionCreate()
     {

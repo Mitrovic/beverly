@@ -1,0 +1,48 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "policy".
+ *
+ * @property int $id
+ * @property int $agree
+ * @property string $sign
+ */
+class Policy extends \yii\db\ActiveRecord
+{
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'policy';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['agree'], 'required'],
+            [['agree'], 'integer'],
+            [['sign'], 'required'],
+            [['sign'], 'string', 'max' => 255],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'agree' => 'Agree',
+            'sign' => 'Sign',
+        ];
+    }
+}
