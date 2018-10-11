@@ -127,11 +127,13 @@ class DriverController extends Controller
             $imgData = str_replace(' ','+',$image);
             $imgData =  substr($imgData,strpos($imgData,",")+1);
             $imgData = base64_decode($imgData);
-            file_put_contents('/web/uploads/image.png', $imgData);
-            /*$filepath =  Yii::app() -> getBaseUrl() . "/uploads";
-
-// Save the image in a defined path
-            file_put_contents($filepath,$imgData);*/
+            $filename = 'img_'.date('Y-m-d-H-s').'.png';
+            $filePath = Yii::$app->basePath.'/web/uploads/'.$filename;
+            // Write $imgData into the image file
+            $file = fopen($filePath, 'w');
+            fwrite($file, $imgData);
+            fclose($file);
+            $application->sign = $filename;
             if ($application->save(false)) {
 
                 return $this->redirect(['create', 'id' => $application->id]);
