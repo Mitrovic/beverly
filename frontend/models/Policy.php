@@ -29,8 +29,7 @@ class Policy extends \yii\db\ActiveRecord
         return [
             [['agree'], 'required'],
             [['agree'], 'integer'],
-            [['sign'], 'required'],
-            [['sign'], 'string', 'max' => 255],
+            [['sign'], 'string'],
         ];
     }
 
