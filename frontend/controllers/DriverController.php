@@ -31,9 +31,11 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\web\Response;
+use yii\web\UploadedFile;
 use yii\widgets\ActiveForm;
 use yii\data\ActiveDataProvider;
 use kartik\mpdf\Pdf;
+
 
 
 
@@ -117,9 +119,27 @@ class DriverController extends Controller
     {
         $application = new Policy();
 
-        if ($application->load(Yii::$app->request->post())&& $application->save()) {
 
-            return $this->redirect(['create', 'id' => $application->id]);
+        if ($application->load(Yii::$app->request->post())) {
+
+            $image = $application->sign;
+
+            $imgData = str_replace(' ','+',$image);
+            $imgData =  substr($imgData,strpos($imgData,",")+1);
+            $imgData = base64_decode($imgData);
+            file_put_contents('/web/uploads/image.png', $imgData);
+            /*$filepath =  Yii::app() -> getBaseUrl() . "/uploads";
+
+// Save the image in a defined path
+            file_put_contents($filepath,$imgData);*/
+            if ($application->save(false)) {
+
+                return $this->redirect(['create', 'id' => $application->id]);
+            }
+            else {
+                var_dump ($application->getErrors()); die();
+            }
+
         }else{
             return $this->render('job-application', [
                 'application' => $application,
