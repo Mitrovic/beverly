@@ -136,7 +136,7 @@ class DriverController extends Controller
             $application->sign = $filename;
             if ($application->save(false)) {
 
-                return $this->redirect(['create', 'id' => $application->id]);
+                return $this->redirect(['create', 'policy_id' => $application->id]);
             }
             else {
                 var_dump ($application->getErrors()); die();
@@ -152,7 +152,7 @@ class DriverController extends Controller
     /*
      *
      */
-    public function actionCreate()
+    public function actionCreate($policy_id)
     {
         $model = new Driver;
         $address = [new Address];
@@ -160,6 +160,7 @@ class DriverController extends Controller
         $employment_history = [new EmploymentHistory];
 
         if ($model->load(Yii::$app->request->post())) {
+            $model->policy_id = $policy_id;
             $address = Model::createMultiple(Address::classname());
             Model::loadMultiple($address, Yii::$app->request->post());
             $driver_custom_questions->load(Yii::$app->request->post());

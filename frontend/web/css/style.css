@@ -1628,3 +1628,6 @@ padding-top: 150px;
     font-size: 15px;
     color: #000;
 }
+.signature-pad canvas{
+    border:1px solid;
+}
