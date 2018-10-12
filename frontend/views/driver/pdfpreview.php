@@ -12,6 +12,8 @@
 $signature = '/uploads/'.$model->policy->sign;
 $signature = '<img src="'.$signature.'" width="200" />';
 $current_date = date('Y-m-d');
+$driver_name = $model->name.' '.$model->lname;
+$ssn = $model->ssn;
 ?>
 <BODY>
 <DIV id="page_1">
@@ -1284,8 +1286,8 @@ $current_date = date('Y-m-d');
     <P class="p144 ft88">DRIVER STATEMENT OF <NOBR>ON-DUTY</NOBR> HOURS</P>
     <P class="p145 ft88">(For Newly Hired Drivers)</P>
     <P class="p146 ft89">INSTRUCTION: Motor carriers when using a driver for the first time shall obtain from the driver a signed statement giving the total time <NOBR>on-duty</NOBR> during the immediately preceding 7 days and time at which such driver was last relieved from duty prior to beginning work for such carrier. Rule 395.8(j)(2) Federal Motor Carrier Safety Regulations. NOTE: Hours for any compensated work during the preceding 7 days, including work for a <NOBR>non-motor</NOBR> carrier entity, must be recorded on this form.</P>
-    <P class="p147 ft89">Driver Name (Print) <SPAN class="ft15 color">Type your text</SPAN></P>
-    <P class="p148 ft89">Social Security Number <SPAN class="ft15 color">Type your text</SPAN></P>
+    <P class="p147 ft89">Driver Name (Print) <SPAN class="ft15 color"><?=$driver_name?></SPAN></P>
+    <P class="p148 ft89">Social Security Number <SPAN class="ft15 color"><?=$ssn?></SPAN></P>
     <P class="p149 ft89">Driver’s License: State _____ Number _________________ Class _____ Endorsement(s) ______ Restriction(s) _______</P>
     <TABLE cellpadding=0 cellspacing=0 class="t21">
         <TR>
@@ -2221,7 +2223,7 @@ $current_date = date('Y-m-d');
     <DIV class="dclr"></DIV>
     <P class="p260 ft146">CELLPHONE DEVICE REGULATION</P>
     <P class="p261 ft130">Cell Phone device are <SPAN class="ft120">STRICTLY </SPAN>forbidden to be used in the truck while operating Commercial Motor Vehicle by the section <NOBR><SPAN class="ft120">392.2-SLLT</SPAN></NOBR><SPAN class="ft120"> </SPAN>of DOT Driving regulation law. It’s mandatory to have <NOBR>hands-free</NOBR> or Bluetooth if your intentions are talking on the phone while driving a CMV. Texting is forbidden at <SPAN class="ft120">ALL TIME!!</SPAN></P>
-    <P class="p262 ft130">Driver Name________________________________</P>
+    <P class="p262 ft130">Driver Name: <?=$driver_name?></P>
     <P class="p263 ft130">By signing this agreement the person stated above agrees that will accept a company charge of <SPAN class="ft147">$</SPAN><SPAN class="ft148">2000 </SPAN>if at any point driver violate the <SPAN class="ft120">Cellphone Device</SPAN></P>
     <P class="p77 ft120">Regulation</P>
     <P class="p264 ft130">Drivers Signature<?=$signature?></P>

@@ -38,7 +38,7 @@ $this->title = 'Beverly Freight INC';
 
                                     <div class="col-md-12">
                                         <h3>We are hiring!</h3>
-                                        <p><a class="btn btn-skin btn-light-bg" href="/driver/create">Apply now</a></p>
+                                        <p><a class="btn btn-skin btn-light-bg" href="/driver/job-application">Apply now</a></p>
 
                                     </div>
                                 </div>
@@ -163,7 +163,7 @@ $this->title = 'Beverly Freight INC';
 <section class="buy_now">
     <div class="container text-center">
         <h3 class="buy_now_title">We are hiring!</h3>
-        <a href="/driver/create" class="btn btn-default btn-promotion-bg page-scroll">Apply now</a>
+        <a href="/driver/job-application" class="btn btn-default btn-promotion-bg page-scroll">Apply now</a>
     </div><!--- END CONTAINER -->
 </section>
 <!-- END PROMOTION -->
