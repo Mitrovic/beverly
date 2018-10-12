@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property int $position_id
+ * @property int $policy_id
  * @property string $name
  * @property string $mi_name
  * @property string $lname
@@ -24,6 +25,7 @@ use Yii;
  * @property CertificateRoadTest[] $certificateRoadTests
  * @property DrivingExperienceAnswers[] $drivingExperienceAnswers
  * @property Position $position
+ * @property Policy $policy
  * @property DriverCustomQuestion[] $driverCustomQuestions
  * @property DrivingExperience[] $drivingExperiences
  * @property ExperienceQualification[] $experienceQualification
@@ -52,11 +54,12 @@ class Driver extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['position_id', 'name', 'mi_name', 'lname', 'ssn', 'phone', 'email', 'legal_right', 'birth_date'], 'required'],
-            [['position_id', 'ssn'], 'integer'],
+            [['position_id','name', 'mi_name', 'lname', 'ssn', 'phone', 'email', 'legal_right', 'birth_date'], 'required'],
+            [['position_id', 'ssn','policy_id'], 'integer'],
             [['birth_date'], 'safe'],
             [['name', 'mi_name', 'lname', 'phone', 'email', 'legal_right'], 'string', 'max' => 255],
             [['position_id'], 'exist', 'skipOnError' => true, 'targetClass' => Position::className(), 'targetAttribute' => ['position_id' => 'id']],
+            [['policy_id'], 'exist', 'skipOnError' => true, 'targetClass' => Policy::className(), 'targetAttribute' => ['policy_id' => 'id']],
         ];
     }
 
@@ -68,6 +71,7 @@ class Driver extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'position_id' => 'Position(s) Applied for',
+            'policy_id'=> 'Policy',
             'name' => 'Name',
             'mi_name' => 'Middle Name',
             'lname' => 'Last Name',
@@ -117,6 +121,13 @@ class Driver extends \yii\db\ActiveRecord
     public function getPosition()
     {
         return $this->hasOne(Position::className(), ['id' => 'position_id']);
+    }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPolicy()
+    {
+        return $this->hasOne(Policy::className(), ['id' => 'policy_id']);
     }
 
     /**

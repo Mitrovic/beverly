@@ -41,7 +41,12 @@ class Policy extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'agree' => 'Agree',
-            'sign' => 'Sign',
+            'sign' => 'Signature',
         ];
+    }
+
+    public function getDrivers()
+    {
+        return $this->hasMany(Driver::className(), ['policy_id' => 'id']);
     }
 }

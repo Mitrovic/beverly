@@ -8,7 +8,11 @@
 
     <link rel="stylesheet" href="/css/newpdf.css">
 </HEAD>
-
+<?php
+$signature = '/uploads/'.$model->policy->sign;
+$signature = '<img src="'.$signature.'" width="200" />';
+$current_date = date('Y-m-d');
+?>
 <BODY>
 <DIV id="page_1">
 
@@ -33,7 +37,7 @@
             <TR>
                 <TD colspan=4 class="tr2 td5"><P class="p3 ft3">Applicant Name</P></TD>
                 <TD class="tr2 td6"><P class="p0 ft0">&nbsp;</P></TD>
-                <TD colspan=4 class="tr2 td7"><P class="p4 ft4">Date of Application</P></TD>
+                <TD colspan=4 class="tr2 td7"><P class="p4 ft4">Date of Application: <?=$current_date?></P></TD>
             </TR>
             <TR>
                 <TD class="tr3 td0"><P class="p5 ft4">(print)</P></TD>
@@ -263,6 +267,8 @@
         <?php
         $adrese = $model->addresses;
         $address_count = 0;
+        $current_address = '';
+        $previous_address = '';
         foreach ($adrese as $adresa) {
             $street = $adresa->street;
             $state = $adresa->state;
@@ -1002,9 +1008,9 @@
         <P class="p111 ft10">This certifies that this application was completed by me, and that all entries on it and information in it are true and complete to the best of my knowledge.</P>
         <TABLE cellpadding=0 cellspacing=0 class="t16">
             <TR>
-                <TD class="tr8 td328"><P class="p0 ft55"><SPAN class="ft59">Signature: </SPAN>Type your text</P></TD>
+                <TD class="tr8 td328"><P class="p0 ft55"><SPAN class="ft59">Signature: </SPAN><?=$signature?></P></TD>
                 <TD class="tr8 td104"><P class="p0 ft10">Date:</P></TD>
-                <TD class="tr8 td72"><P class="p0 ft55 color">Type your text</P></TD>
+                <TD class="tr8 td72"><P class="p0 ft55 color"><?=$current_date?></P></TD>
             </TR>
         </TABLE>
     </DIV>
@@ -1136,7 +1142,7 @@
     <P class="p119 ft62">Skill to operate safely the type of commercial motor vehicle listed above.</P>
     <TABLE cellpadding=0 cellspacing=0 class="t18">
         <TR>
-            <TD class="tr6 td347"><P class="p120 ft73 color">Type your text</P></TD>
+            <TD class="tr6 td347"><P class="p120 ft73 color"><?=$signature?></P></TD>
             <TD class="tr6 td348"><P class="p121 ft73 color">Type your text</P></TD>
         </TR>
         <TR>
@@ -1507,7 +1513,7 @@
         <TR>
             <TD class="tr20 td378"><P class="p0 ft0">&nbsp;</P></TD>
             <TD class="tr20 td3"><P class="p0 ft0">&nbsp;</P></TD>
-            <TD colspan=3 class="tr20 td325"><P class="p158 ft15 color">Type your text</P></TD>
+            <TD colspan=3 class="tr20 td325"><P class="p158 ft15 color"><?=$signature?></P></TD>
             <TD class="tr20 td38"><P class="p0 ft0">&nbsp;</P></TD>
             <TD class="tr20 td109"><P class="p0 ft0">&nbsp;</P></TD>
             <TD class="tr20 td381"><P class="p0 ft0">&nbsp;</P></TD>
@@ -1562,7 +1568,7 @@
     <TABLE cellpadding=0 cellspacing=0 class="t23">
         <TR>
             <TD class="tr13 td415"><P class="p0 ft0">&nbsp;</P></TD>
-            <TD class="tr13 td416"><P class="p170 ft15 color">Type your text</P></TD>
+            <TD class="tr13 td416"><P class="p170 ft15 color"><?=$signature?></P></TD>
             <TD class="tr13 td203"><P class="p171 ft98 color">Type your text</P></TD>
         </TR>
         <TR>
@@ -1713,7 +1719,7 @@
             <TD class="tr13 td431"><P class="p0 ft0">&nbsp;</P></TD>
             <TD class="tr13 td381"><P class="p0 ft0">&nbsp;</P></TD>
             <TD class="tr13 td32"><P class="p0 ft0">&nbsp;</P></TD>
-            <TD class="tr13 td432"><P class="p25 ft15 color">Type your text</P></TD>
+            <TD class="tr13 td432"><P class="p25 ft15 color"><?=$signature?></P></TD>
         </TR>
         <TR>
             <TD class="tr30 td381"><P class="p0 ft57">&nbsp;</P></TD>
@@ -2206,7 +2212,7 @@
     <P class="p237 ft130">Level II inspection – no violation discovered reward is 200$</P>
     <P class="p257 ft130">Level I inspection – no violation discovered reward is 300$</P>
     <P class="p258 ft130">DRIVER NAME______________________________________</P>
-    <P class="p259 ft130">SIGNATURE________________________ DATE________________</P>
+    <P class="p259 ft130">SIGNATURE<?=$signature?> DATE: <?=$current_date?></P>
 </DIV>
 <DIV id="page_15">
 
@@ -2218,8 +2224,8 @@
     <P class="p262 ft130">Driver Name________________________________</P>
     <P class="p263 ft130">By signing this agreement the person stated above agrees that will accept a company charge of <SPAN class="ft147">$</SPAN><SPAN class="ft148">2000 </SPAN>if at any point driver violate the <SPAN class="ft120">Cellphone Device</SPAN></P>
     <P class="p77 ft120">Regulation</P>
-    <P class="p264 ft130">Drivers Signature_______________________________</P>
-    <P class="p265 ft130">Date___________________</P>
+    <P class="p264 ft130">Drivers Signature<?=$signature?></P>
+    <P class="p265 ft130">Date: <?=$current_date?></P>
     <P class="p266 ft130"> Beverly Freight. Inc</P>
     <P class="p77 ft130">655 N. Central Ave,unit A</P>
     <P class="p77 ft130">Wood Dale,IL,60191</P>
