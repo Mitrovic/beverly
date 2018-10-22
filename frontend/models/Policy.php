@@ -27,8 +27,7 @@ class Policy extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['agree'], 'required'],
-            [['agree'], 'integer'],
+            [['sign'], 'required'],
             [['sign'], 'string'],
         ];
     }

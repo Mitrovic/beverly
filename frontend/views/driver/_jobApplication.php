@@ -12,9 +12,8 @@ use kartik\checkbox\CheckboxX;
 <div class="examination-road-test-form">
 
 
-    <?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data']]); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data','id' => 'privacyform']]); ?>
 
-    <?= $form->field($application, 'agree')->checkbox() ?>
     <?= $form->field($application, 'sign')->hiddenInput() ?>
 
 
@@ -28,10 +27,10 @@ use kartik\checkbox\CheckboxX;
 
     <div class="form-group">
 
-        <?= Html::submitButton('Continue',['class' => 'btn btn-primary',
-            'value'=>'my_value', 'name'=>'submit',
+        <?= Html::submitButton('Continue',['class' => 'btn btn-primary','name'=>'subbbmit',
             'onClick'=>'saveToServer()']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 
 </div>
+
